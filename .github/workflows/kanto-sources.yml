@@ -1,0 +1,25 @@
+name: Kanto location evidence
+on:
+  push:
+    branches: ['improve/kanto-expansion-20260914']
+    paths: ['scripts/collect-kanto-locations.py', '.github/workflows/kanto-sources.yml']
+permissions:
+  contents: read
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python scripts/collect-kanto-locations.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: kanto-location-evidence
+          path: qa/kanto-sources/
+          retention-days: 7
