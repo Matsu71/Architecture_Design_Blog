@@ -14,6 +14,7 @@ import os
 import tempfile
 import threading
 import urllib.request
+import urllib.parse
 from pathlib import Path
 from playwright.sync_api import sync_playwright
 
@@ -118,12 +119,27 @@ def run_browser(engine, browser, base):
             verify(f'{engine}/{width}: no coordinate mutation',
                    sorted(coords) == sorted([[b['lat'], b['lng']] for b in DATA]))
             verify(f'{engine}/{width}: no horizontal overflow', no_overflow(page))
-            page.locator('#search-input').fill('磯崎新')
+            verify(f'{engine}/{width}: advanced filters initially collapsed', page.locator('#extra-filters').is_hidden())
+            if width <= 390:
+                verify(f'{engine}/{width}: compact primary controls', page.locator('#filters').bounding_box()['height'] < 160)
+            page.locator('#search-input').evaluate("""element=>{
+                element.dispatchEvent(new CompositionEvent('compositionstart',{bubbles:true}));
+                element.value='磯崎新';
+                element.dispatchEvent(new InputEvent('input',{bubbles:true,isComposing:true}));
+            }""")
+            page.wait_for_timeout(250)
+            verify(f'{engine}/{width}: IME intermediate text does not refilter', page.locator('.building-card').count()==len(DATA))
+            page.locator('#search-input').evaluate("element=>element.dispatchEvent(new CompositionEvent('compositionend',{bubbles:true}))")
+
             page.wait_for_function("document.querySelectorAll('.building-card').length===2")
             verify(f'{engine}/{width}: map/list search sync',
                    page.locator('.leaflet-marker-icon').count() == 2)
             page.locator('#reset-filters').click()
             page.locator('[data-view="list"][type="button"]').click()
+            page.evaluate("""() => {window.__iconMutations=0;const original=L.Marker.prototype.setIcon;L.Marker.prototype.setIcon=function(...args){window.__iconMutations++;return original.apply(this,args)};}""")
+            page.locator('.building-card').first.hover()
+            page.locator('.building-card').nth(1).hover()
+            verify(f'{engine}/{width}: hover preserves marker DOM', page.evaluate('window.__iconMutations')==0)
             page.locator('[data-map="nmwa-main-building"]').click()
             page.wait_for_selector('.leaflet-popup')
             verify(f'{engine}/{width}: selected zoom', page.evaluate('__qualityMap.getZoom()') >= 17)
@@ -145,6 +161,26 @@ def run_browser(engine, browser, base):
             page.screenshot(path=str(OUT / f'{engine}-failure-{width}.png'), full_page=True)
         finally:
             context.close()
+    context, page, errors = prepare(browser, 390)
+    try:
+        page.goto(base+'?architect='+urllib.parse.quote('隈研吾'),wait_until='networkidle')
+        verify(f'{engine}: advanced query reveals its control', page.locator('#architect-filter').is_visible())
+        verify(f'{engine}: advanced filter query result',page.locator('.building-card').count()==1)
+        page.goto(base+'articles/kyu-iwasaki-tei-gardens.html',wait_until='networkidle')
+        page.locator('.building-photo img').scroll_into_view_if_needed()
+        page.wait_for_function("document.querySelector('.building-photo img').naturalWidth===800")
+        verify(f'{engine}: licensed photograph is decoded over HTTP',page.locator('.building-photo img').evaluate('(img)=>img.complete'))
+        verify(f'{engine}: visible author and license credit', 'Wiiii' in page.locator('.building-photo figcaption').inner_text() and 'CC BY-SA 3.0' in page.locator('.building-photo figcaption').inner_text())
+        verify(f'{engine}: photographed article has no overflow',no_overflow(page))
+        page.screenshot(path=str(OUT/f'{engine}-iwasaki-390.png'),full_page=True)
+        page.locator('a.secondary-button',has_text='地図で見る').click()
+        page.wait_for_selector('.leaflet-popup')
+        verify(f'{engine}: corrected building coordinate drives navigation',page.evaluate('Math.abs(__qualityMap.getCenter().lat-35.7097579)<0.003'))
+        verify(f'{engine}: building precision visible in popup','建物位置を照合' in page.locator('.leaflet-popup').inner_text())
+    except Exception as error:
+        failures.append({'case':f'{engine}/photos-and-filters','error':str(error),'pageErrors':errors})
+    finally:
+        context.close()
     # Thirty distinct records at a single location must remain individually selectable.
     many = [dict(DATA[0], id=f'test-{i}', nameJa=f'テスト建築 {i}') for i in range(30)]
     context, page, errors = prepare(browser, data=many)

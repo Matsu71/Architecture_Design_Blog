@@ -10,7 +10,7 @@ test('impossible and future verification dates are rejected',()=>{
  assert.equal(validDate('2024-02-29','2026-09-14'),true);
 });
 test('null records fail validation without throwing',()=>assert(validate([null,[],false]).errors.length===3));
-test('a precise building label requires polygon evidence',()=>assert(edit(b=>b.location.precision='building').some(x=>x.includes('輪郭'))));
+test('a precise building label requires polygon evidence',()=>assert(edit(b=>{b.location.precision='building';delete b.location.evidence;}).some(x=>x.includes('輪郭'))));
 test('an entrance label requires a matching public entrance point and sources',()=>assert(edit(b=>{b.location.status='cross-checked';b.location.precision='entrance';}).some(x=>x.includes('入口'))));
 test('withheld locations cannot keep invented coordinates',()=>assert(edit(b=>b.location.status='withheld').some(x=>x.includes('仮座標'))));
 test('closed status requires visit evidence',()=>assert(edit(b=>{b.visit.status='closed';b.visit.sourceIds=[];}).some(x=>x.includes('見学'))));

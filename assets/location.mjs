@@ -31,6 +31,12 @@ export function pointInRing(lat, lng, ring) {
   if (!isJapanCoordinate(lat, lng) || !Array.isArray(ring) || ring.length < 4) return false;
   if (!ring.every(p => Array.isArray(p) && p.length >= 2 && isJapanCoordinate(p[1], p[0]))) return false;
   if (ring[0][0] !== ring.at(-1)[0] || ring[0][1] !== ring.at(-1)[1]) return false;
+  if (new Set(ring.map(p=>`${p[0]},${p[1]}`)).size < 3) return false;
+  // Translate near the origin before the shoelace sum to avoid cancellation.
+  const [ox,oy]=ring[0];
+  let area=0;
+  for(let i=1;i<ring.length;i++)area+=(ring[i-1][0]-ox)*(ring[i][1]-oy)-(ring[i][0]-ox)*(ring[i-1][1]-oy);
+  if(Math.abs(area)<1e-14)return false;
   let inside = false;
   for (let i = 0, j = ring.length - 1; i < ring.length; j = i++) {
     const [xi, yi] = ring[i], [xj, yj] = ring[j];

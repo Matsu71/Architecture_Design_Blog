@@ -4,8 +4,8 @@
   <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="theme-color" content="#faf9f6"><meta name="description" content="日本の建築を地図・地域・建築家から探すガイド。見どころ、構造、素材、所在地を出典付きで紹介します。">
   <title>建築巡り JAPAN｜日本の建築マップ</title>
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
-  <link rel="stylesheet" href="assets/styles.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+  <link rel="stylesheet" href="assets/styles.css"><link rel="stylesheet" href="assets/refinements.css">
 </head>
 <body>
 <a class="skip-link" href="#building-list">建物一覧へ</a>
@@ -15,11 +15,11 @@
   <form id="filters" class="filters" role="search" aria-label="建築を探す">
     <label class="search-control"><span class="sr-only">建物名・建築家・地域</span><input id="search-input" type="search" placeholder="建物名・建築家・地域" autocomplete="off"></label>
     <label><span>地域</span><select id="region-filter"><option value="kanto">関東</option><option value="all">全国</option></select></label>
-    <label><span>建築家</span><select id="architect-filter"><option value="">すべて</option></select></label>
-    <label><span>用途</span><select id="type-filter"><option value="">すべて</option></select></label>
-    <button id="more-filters" class="quiet-button" type="button" aria-expanded="false" aria-controls="extra-filters">詳細条件</button>
+    <button id="more-filters" class="quiet-button" type="button" aria-expanded="false" aria-controls="extra-filters">絞り込み</button>
     <button id="reset-filters" class="quiet-button" type="button">クリア</button>
     <div id="extra-filters" class="extra-filters" hidden>
+    <label><span>建築家</span><select id="architect-filter"><option value="">すべて</option></select></label>
+    <label><span>用途</span><select id="type-filter"><option value="">すべて</option></select></label>
       <label><span>年代</span><select id="era-filter"><option value="">すべて</option><option value="traditional">江戸以前</option><option value="early-modern">明治</option><option value="modern">大正・昭和前期</option><option value="postwar">戦後</option><option value="contemporary">現代</option></select></label>
       <label><span>見学</span><select id="visit-filter"><option value="">すべて</option><option value="public">公開施設</option><option value="limited">公開条件あり</option><option value="reservation">予約制</option><option value="exterior-only">外観のみ</option><option value="closed">休館・閉館</option><option value="private">非公開</option><option value="demolished">現存せず</option><option value="unknown">見学要確認</option></select></label>
       <label><span>並び順</span><select id="sort-filter"><option value="name">名前順</option><option value="oldest">古い順</option><option value="newest">新しい順</option></select></label>
@@ -28,12 +28,12 @@
   <div class="explorer-toolbar"><p id="active-filters" class="muted">関東</p><div class="view-switch" aria-label="表示切り替え"><button type="button" data-view="split" aria-pressed="true">地図＋一覧</button><button type="button" data-view="list" aria-pressed="false">一覧</button><button type="button" data-view="map" aria-pressed="false">地図</button></div></div>
   <div class="explore-layout" data-view="split">
     <section id="results-panel" class="results-panel" aria-label="建物一覧"><div id="building-list" class="building-list"></div></section>
-    <section class="map-wrap" aria-label="建築マップ"><div id="map" aria-label="建物ごとの位置を表示する地図"></div><div class="map-actions"><button id="fit-results" type="button">検索結果に合わせる</button><button id="show-kanto" type="button">関東</button><button id="show-japan" type="button">全国</button></div><p id="map-note" class="map-note">1つのピンが1つの建物。施設の位置を示し、入口は未照合です。</p><div id="overlap-picker" class="overlap-picker" role="region" aria-label="重なった建物の選択" hidden></div></section>
+    <section class="map-wrap" aria-label="建築マップ"><div id="map" aria-label="建物ごとの位置を表示する地図"></div><div class="map-actions"><button id="fit-results" type="button">検索結果に合わせる</button><button id="show-kanto" type="button">関東</button><button id="show-japan" type="button">全国</button></div><p id="map-note" class="map-note">ピンは建物・施設の位置。入口は未照合です。</p><div id="overlap-picker" class="overlap-picker" role="region" aria-label="重なった建物の選択" hidden></div></section>
   </div>
   <p id="data-note" class="data-note">関東から順に資料を確認しています。公開日・料金は各施設の公式案内をご確認ください。</p>
   <noscript><p>地図・絞り込みにはJavaScriptが必要です。<a href="catalogue.html">建築一覧</a>から各記事を読めます。</p></noscript>
 </main>
 <footer><span>建築巡り JAPAN</span><a href="catalogue.html">建築一覧</a><a href="about.html">出典と掲載方針</a></footer>
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 <script type="module" src="assets/app.js"></script>
 </body></html>

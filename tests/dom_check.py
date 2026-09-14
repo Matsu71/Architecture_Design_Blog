@@ -8,7 +8,7 @@ from playwright.sync_api import sync_playwright
 ROOT=Path(__file__).resolve().parents[1]
 OUT=ROOT.parent/'qa'; OUT.mkdir(exist_ok=True)
 DATA=json.loads((ROOT/'data/buildings.json').read_text())
-CSS=(ROOT/'assets/styles.css').read_text()
+CSS=(ROOT/'assets/styles.css').read_text()+'\n'+(ROOT/'assets/refinements.css').read_text()
 STUB=(ROOT/'tests/leaflet-stub.js').read_text()
 LOC=(ROOT/'assets/location.mjs').read_text().replace('export ', '')
 CORE=re.sub(r'^import .*?;\n','',(ROOT/'assets/core.mjs').read_text(),flags=re.M).replace('export ', '')
@@ -92,7 +92,7 @@ with sync_playwright() as p:
     article=nojs.new_page();render(article,'catalogue.html')
     check('no-JavaScript catalogue contains every building',article.locator('a[href^="articles/"]').count()==len(DATA))
     render(article,'articles/bato-hiroshige-museum.html')
-    check('no-JavaScript article has original and current material sections',article.locator('details.component').count()==2)
+    check('no-JavaScriptScript article has original and current material sections',article.locator('details.component').count()==2)
     article.locator('details.component').last.locator('summary').click()
     check('native material disclosure works without JavaScript','35種類' in article.locator('details.component').last.inner_text())
     check('article reference target exists',article.locator('#source-1').count()==1)

@@ -1,6 +1,6 @@
 import {readFile} from 'node:fs/promises';
 import {fileURLToPath} from 'node:url';
-import {hasCoordinates,duplicateCoordinates,safeUrl,VISITS,ERAS} from '../assets/core.mjs';
+import {hasCoordinates,duplicateCoordinates,safeUrl,localPhotoPath,VISITS,ERAS} from '../assets/core.mjs';
 import {pointInRing} from '../assets/location.mjs';
 export function validDate(value,today=new Date().toISOString().slice(0,10)) {
   if(typeof value!=='string'||!/^\d{4}-\d{2}-\d{2}$/.test(value)||value>today)return false;
@@ -48,8 +48,12 @@ export function validate(data,{today=new Date().toISOString().slice(0,10)}={}) {
     for(const c of Array.isArray(b.components)?b.components:[])checkRefs(c.sourceIds,`構成要素 ${c.part}`);
     // A label alone is not enough evidence for a precise building or entrance pin.
     if(loc.precision==='building'){
-      if(loc.evidence?.kind!=='building-outline'||!pointInRing(b.lat,b.lng,loc.evidence?.ring))bad('建物輪郭の証拠内にピンがありません');
+      if(loc.status!=='cross-checked'||loc.evidence?.kind!=='building-outline'||!pointInRing(b.lat,b.lng,loc.evidence?.ring))bad('建物輪郭の証拠内にピンがありません');
       checkRefs(loc.evidence?.sourceIds,'建物輪郭');
+      checkRefs(loc.evidence?.identitySourceIds,'棟の同定');
+      if(!validDate(loc.evidence?.reviewedAt,today))bad('建物輪郭の確認日が不正');
+      if(!(loc.evidence?.identitySourceIds||[]).some(id=>b.sources?.some(s=>s.id===id&&s.sourceType==='official')))bad('棟の同定に公式の根拠がありません');
+      if(loc.evidence?.osmWayId&&(!loc.evidence.attribution||loc.evidence.license!=='ODbL 1.0'||!safeUrl(loc.evidence.licenseUrl)))bad('輪郭データのライセンス表示が不足');
     }
     if(loc.precision==='entrance'){
       if(loc.status!=='cross-checked'||loc.evidence?.kind!=='public-entrance'||loc.evidence?.lat!==b.lat||loc.evidence?.lng!==b.lng)bad('公開入口の照合証拠が不足');
@@ -60,6 +64,13 @@ export function validate(data,{today=new Date().toISOString().slice(0,10)}={}) {
     if(!safeUrl(b.visit?.officialUrl)||!validDate(b.visit?.lastChecked,today))bad('見学案内または確認日が不正');
     if(b.visit?.status==='closed'||b.visit?.sourceIds?.length)checkRefs(b.visit.sourceIds,'見学');
     if(!b.verification?.pending?.length&&loc.precision==='facility')warnings.push(`${label}: 入口・棟の未照合状態を明示してください`);
+    if(b.photo){
+      const p=b.photo;
+      if(!localPhotoPath(p.src)||!p.alt||!p.author||!p.caption||!p.modifications||!validDate(p.checkedAt,today))bad('写真の表示・確認情報が不足');
+      if(!Number.isInteger(p.width)||!Number.isInteger(p.height)||p.width<1||p.height<1)bad('写真の寸法が不正');
+      if(p.license!=='CC BY-SA 3.0'||p.licenseUrl!=='https://creativecommons.org/licenses/by-sa/3.0/'||!safeUrl(p.sourceUrl))bad('写真の許諾が未対応または不足');
+      if(!/^[a-f0-9]{64}$/.test(p.sha256||''))bad('写真の照合ハッシュが不足');
+    }
     if((b.oneLiner||'').length>60)warnings.push(`${label}: 一覧説明が60文字を超えています`);
   }
   for(const g of duplicateCoordinates(data.filter(b=>b&&typeof b==='object')))warnings.push(`座標重複 ${g.coordinate}: ${g.ids.join(', ')}（レコードを消さず棟を照合）`);
