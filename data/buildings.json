@@ -1,15 +1,2509 @@
 [
-{"id":"nmwa-main-building","slug":"national-museum-western-art","nameJa":"国立西洋美術館 本館","nameEn":"The National Museum of Western Art — Main Building","prefecture":"東京都","municipality":"台東区","area":"上野","address":"東京都台東区上野公園7-7","lat":35.71556,"lng":139.77583,"completionYear":1959,"era":"postwar","architects":["ル・コルビュジエ"],"buildingTypes":["美術館","文化施設"],"styles":["モダニズム"],"materials":["鉄筋コンクリート"],"oneLiner":"ピロティとスロープを備えた美術館。","summary":"本館は1959年に竣工したル・コルビュジエの設計です。本館と園地は2016年に世界文化遺産に登録されました。柱で持ち上げた建物の下の空間がピロティです。中央のホールからスロープを上がると、歩くにつれて展示空間の見え方が変わります。","highlights":["建物の下に広がるピロティ","中央ホールと上階をつなぐスロープ","展示室を巡る動線"],"components":[{"part":"骨組み","material":"鉄筋コンクリート","description":"本館は鉄筋コンクリート造です。柱で建物を持ち上げ、地上に開いたピロティを設けています。柱の位置と、その上に載る展示室の関係に注目できます。","sourceIds":["building","taito"]},{"part":"ピロティ","material":"鉄筋コンクリート","description":"地上階の柱と、その間に開かれた空間に注目します。台東区の解説では、ピロティをル・コルビュジエの近代建築の特徴の一つとして紹介しています。","sourceIds":["taito"]}],"articleSourceIds":["building","taito"],"visit":{"status":"public","officialUrl":"https://www.nmwa.go.jp/jp/visit/","note":"常設展・企画展で入場条件が異なります。建物だけを見学する場合も、立ち入れる範囲を公式案内で確認してください。","lastChecked":"2026-09-14","sourceIds":[]},"location":{"status":"address-matched","precision":"facility","sourceIds":["location","building"],"checkedAt":"2026-09-14","method":"Published facility coordinate; official name and address matched. Not rooftop or entrance geocoding.","note":"施設単位の座標です。建物輪郭・敷地内の棟・入口の位置は未照合です。"},"sources":[{"id":"building","title":"美術館の建築","url":"https://www.nmwa.go.jp/jp/about/building.html","publisher":"国立西洋美術館","scope":"本館の設計・竣工・構造・所在地","sourceType":"official","checkedAt":"2026-09-14"},{"id":"taito","title":"国立西洋美術館の価値","url":"https://www.city.taito.lg.jp/bunka_kanko/sekaiisan/kachi.html","publisher":"台東区","scope":"ピロティ・建築の特徴","sourceType":"official","checkedAt":"2026-09-14"},{"id":"location","title":"施設座標","url":"https://ja.wikipedia.org/wiki/国立西洋美術館","publisher":"Wikipedia（座標のみ）","scope":"施設の概略座標。本文は転載せず、名称・住所を公式資料と照合。入口・建物輪郭は未照合。","sourceType":"reference","checkedAt":"2026-09-14"}],"verification":{"status":"basic-checked","lastVerified":"2026-09-14","fields":{"completionYear":{"status":"source-checked","sourceIds":["building"],"checkedAt":"2026-09-14"},"architects":{"status":"source-checked","sourceIds":["building"],"checkedAt":"2026-09-14"},"buildingTypes":{"status":"source-checked","sourceIds":["building"],"checkedAt":"2026-09-14"},"address":{"status":"source-checked","sourceIds":["building"],"checkedAt":"2026-09-14"},"nameJa":{"status":"source-checked","sourceIds":["building"],"checkedAt":"2026-09-14"}},"pending":["現地入口と建物輪郭に対する座標の照合","公開日・料金・予約条件の訪問直前の再確認","監理・増築・改修の担当者別の詳細記事"]}},
-{"id":"kyu-iwasaki-tei","slug":"kyu-iwasaki-tei-gardens","nameJa":"旧岩崎邸庭園 洋館","nameEn":"Former Iwasaki Residence — Western-style House","prefecture":"東京都","municipality":"台東区","area":"池之端","address":"東京都台東区池之端1-3-45","lat":35.70972,"lng":139.76778,"completionYear":1896,"era":"early-modern","architects":["ジョサイア・コンドル"],"buildingTypes":["邸宅","歴史建築"],"styles":["西洋館"],"materials":[],"oneLiner":"明治の洋館と和館がつながる邸宅。","summary":"岩崎久彌の本邸として建てられた洋館です。洋館・和館・撞球室が残り、異なる建築のつくりを同じ敷地で比べられます。洋館の装飾を見るだけでなく、和館へのつながりや庭に向いた面にも目を向けてみてください。","highlights":["洋館の装飾","和館とのつながり","別棟の撞球室"],"components":[],"articleSourceIds":["park","taito"],"visit":{"status":"public","officialUrl":"https://www.tokyo-park.or.jp/park/kyu-iwasaki-tei/index.html","note":"庭園・建物の公開範囲、撮影条件、特別公開は公式案内で確認してください。撞球室の内部が常時公開されるとは限りません。","lastChecked":"2026-09-14","sourceIds":[]},"location":{"status":"address-matched","precision":"facility","sourceIds":["location","park"],"checkedAt":"2026-09-14","method":"Published facility coordinate; official name and address matched. Not rooftop or entrance geocoding.","note":"施設単位の座標です。建物輪郭・敷地内の棟・入口の位置は未照合です。"},"sources":[{"id":"park","title":"旧岩崎邸庭園","url":"https://www.tokyo-park.or.jp/park/kyu-iwasaki-tei/index.html","publisher":"東京都公園協会","scope":"1896年の建設・設計者・所在地・園内施設","sourceType":"official","checkedAt":"2026-09-14"},{"id":"taito","title":"旧岩崎邸庭園 施設情報","url":"https://www.culture.city.taito.lg.jp/ja/facilities/00001c0000000000000200000054005d","publisher":"台東区","scope":"洋館・撞球室と和館の設計者の区別","sourceType":"official","checkedAt":"2026-09-14"},{"id":"location","title":"施設座標","url":"https://ja.wikipedia.org/wiki/旧岩崎邸庭園","publisher":"Wikipedia（座標のみ）","scope":"施設の概略座標。本文は転載せず、名称・住所を公式資料と照合。入口・建物輪郭は未照合。","sourceType":"reference","checkedAt":"2026-09-14"}],"verification":{"status":"basic-checked","lastVerified":"2026-09-14","fields":{"completionYear":{"status":"source-checked","sourceIds":["park"],"checkedAt":"2026-09-14"},"architects":{"status":"source-checked","sourceIds":["park","taito"],"checkedAt":"2026-09-14"},"buildingTypes":{"status":"source-checked","sourceIds":["park"],"checkedAt":"2026-09-14"},"address":{"status":"source-checked","sourceIds":["park"],"checkedAt":"2026-09-14"},"nameJa":{"status":"source-checked","sourceIds":["park"],"checkedAt":"2026-09-14"}},"pending":["現地入口と建物輪郭に対する座標の照合","公開日・料金・予約条件の訪問直前の再確認","洋館の部位別材料・樹種・産地の一次資料確認"]}},
-{"id":"teien-art-museum-main","slug":"tokyo-metropolitan-teien-art-museum","nameJa":"東京都庭園美術館 本館","nameEn":"Tokyo Metropolitan Teien Art Museum — Main Building","prefecture":"東京都","municipality":"港区","area":"白金台","address":"東京都港区白金台5-21-9","lat":35.636862,"lng":139.719269,"completionYear":1933,"era":"modern","architects":["宮内省内匠寮","権藤要吉（基本設計）","アンリ・ラパン（主要内装）"],"buildingTypes":["美術館","邸宅","歴史建築"],"styles":["アール・デコ"],"materials":["室内装飾","ガラス","カエデ","ケヤキ","黒檀","カリン","蛇紋岩"],"oneLiner":"旧朝香宮邸に残るアール・デコの室内。","summary":"1933年に朝香宮邸として建てられた本館です。建築全体の設計と主要室の内装では担当者が異なります。壁・扉・照明を別々の装飾として見るだけでなく、一つの部屋としてどう組み合わされているかを見ると、アール・デコの特徴が分かります。","highlights":["主要室の内装","扉と照明の組み合わせ","部屋ごとに異なる装飾"],"components":[{"part":"主要室の内装","material":"室内装飾","description":"大客室・大食堂など7室の内装はアンリ・ラパンがデザインしました。宮内省内匠寮が担った建築全体の設計に、フランス側の装飾計画が組み合わされています。","sourceIds":["building","people"]},{"part":"正面玄関の扉","material":"ガラス","description":"正面玄関のレリーフ扉はルネ・ラリックの作品で、女性像は型押しガラスで作られています。絵柄だけでなく、ガラスの凹凸と光の通り方が建築の一部になっています。","sourceIds":["people","rooms"]},{"part":"第一応接室の木部・床","material":"カエデ・ケヤキ・黒檀・カリン","description":"室内の柱・扉・窓枠にはカエデ材が使われています。床はケヤキを市松模様に並べ、その周囲に黒檀とカリンを配した寄木張りです。木の色や木目の違いを部屋の中で見比べられます。","sourceIds":["rooms"]},{"part":"小客室の暖炉まわり","material":"ティノス・グリーン","description":"暖炉の装飾枠には緑色の蛇紋岩が用いられています。石の名前と産地は、外見から推測したものではなく、美術館の部屋別解説に基づきます。","origin":"ギリシャ産の蛇紋岩。美術館が「ティノス・グリーン」と記載。","sourceIds":["rooms"]}],"articleSourceIds":["building","people"],"visit":{"status":"public","officialUrl":"https://www.teien-art-museum.ne.jp/visit/","note":"建物公開・展覧会・庭園では見学範囲が異なります。展示替え休館や撮影可能な範囲を公式案内で確認してください。","lastChecked":"2026-09-14","sourceIds":[]},"location":{"status":"address-matched","precision":"facility","sourceIds":["location","visit"],"checkedAt":"2026-09-14","method":"Published facility coordinate; official name and address matched. Not rooftop or entrance geocoding.","note":"施設単位の座標です。建物輪郭・敷地内の棟・入口の位置は未照合です。"},"sources":[{"id":"building","title":"旧朝香宮邸について","url":"https://www.teien-art-museum.ne.jp/museum/building/","publisher":"東京都庭園美術館","scope":"1933年・設計とアール・デコ","sourceType":"official","checkedAt":"2026-09-14"},{"id":"people","title":"旧朝香宮邸内装にかかわった人々","url":"https://www.teien-art-museum.ne.jp/museum/building_people/","publisher":"東京都庭園美術館","scope":"主要内装の担当者","sourceType":"official","checkedAt":"2026-09-14"},{"id":"visit","title":"来館のご案内","url":"https://www.teien-art-museum.ne.jp/visit/","publisher":"東京都庭園美術館","scope":"所在地・見学案内","sourceType":"official","checkedAt":"2026-09-14"},{"id":"location","title":"施設座標","url":"https://ja.wikipedia.org/wiki/東京都庭園美術館","publisher":"Wikipedia（座標のみ）","scope":"施設の概略座標。本文は転載せず、名称・住所を公式資料と照合。入口・建物輪郭は未照合。","sourceType":"reference","checkedAt":"2026-09-14"},{"id":"rooms","title":"本館の各室と仕上げ材","publisher":"東京都庭園美術館","url":"https://www.teien-art-museum.ne.jp/museum/floor_map/","sourceType":"official","checkedAt":"2026-09-14","scope":"正面玄関・第一応接室・小客室の材料と製法"}],"verification":{"status":"basic-checked","lastVerified":"2026-09-14","fields":{"completionYear":{"status":"source-checked","sourceIds":["building"],"checkedAt":"2026-09-14"},"architects":{"status":"source-checked","sourceIds":["building","people"],"checkedAt":"2026-09-14"},"buildingTypes":{"status":"source-checked","sourceIds":["building"],"checkedAt":"2026-09-14"},"address":{"status":"source-checked","sourceIds":["visit"],"checkedAt":"2026-09-14"},"nameJa":{"status":"source-checked","sourceIds":["visit"],"checkedAt":"2026-09-14"}},"pending":["現地入口と建物輪郭に対する座標の照合","公開日・料金・予約条件の訪問直前の再確認","その他の装飾品の作者・素材・部屋別の対応と材料製法の確認"]}},
-{"id":"yoyogi-national-gymnasium","slug":"yoyogi-national-gymnasium","nameJa":"国立代々木競技場 第一体育館","nameEn":"Yoyogi National Gymnasium — First Gymnasium","prefecture":"東京都","municipality":"渋谷区","area":"代々木","address":"東京都渋谷区神南2-1-1","lat":35.66775,"lng":139.700139,"completionYear":1964,"era":"postwar","architects":["丹下健三","坪井善勝（構造）"],"buildingTypes":["スポーツ施設"],"styles":["モダニズム"],"materials":["吊り構造"],"oneLiner":"吊り屋根で大空間を覆う体育館。","summary":"1964年の東京オリンピックに向けて建設された体育館です。総合意匠は丹下健三、構造は坪井善勝が担当しました。屋根を支える仕組みと、その結果生まれる曲線を分けずに見ると、形と構造の関係が分かります。","highlights":["吊り屋根の曲線","屋根を支える主柱","内部の大きな無柱空間"],"components":[{"part":"屋根","material":"吊り構造","description":"屋根を吊る方式を用いて、大きな競技空間を覆っています。屋根の曲面と主柱が外観の特徴となり、内部には競技面を柱で区切らない空間が広がります。","sourceIds":["history"]}],"articleSourceIds":["history"],"visit":{"status":"limited","officialUrl":"https://www.jpnsport.go.jp/yoyogi/","note":"内部への入場は催事や施設の利用条件によります。一般見学できると決めつけず、主催者・施設の案内を確認してください。","lastChecked":"2026-09-14","sourceIds":[]},"location":{"status":"address-matched","precision":"facility","sourceIds":["location","official"],"checkedAt":"2026-09-14","method":"Published facility coordinate; official name and address matched. Not rooftop or entrance geocoding.","note":"施設単位の座標です。建物輪郭・敷地内の棟・入口の位置は未照合です。"},"sources":[{"id":"history","title":"国立代々木競技場の歴史詳細","url":"https://www.jpnsport.go.jp/yoyogi/sisetu/tabid/278/Default.aspx","publisher":"日本スポーツ振興センター","scope":"建設経緯・設計担当・吊り屋根","sourceType":"official","checkedAt":"2026-09-14"},{"id":"official","title":"国立代々木競技場","url":"https://www.jpnsport.go.jp/yoyogi/","publisher":"日本スポーツ振興センター","scope":"所在地・施設案内","sourceType":"official","checkedAt":"2026-09-14"},{"id":"location","title":"施設座標","url":"https://ja.wikipedia.org/wiki/国立代々木競技場","publisher":"Wikipedia（座標のみ）","scope":"施設の概略座標。本文は転載せず、名称・住所を公式資料と照合。入口・建物輪郭は未照合。","sourceType":"reference","checkedAt":"2026-09-14"}],"verification":{"status":"basic-checked","lastVerified":"2026-09-14","fields":{"completionYear":{"status":"source-checked","sourceIds":["history"],"checkedAt":"2026-09-14"},"architects":{"status":"source-checked","sourceIds":["history"],"checkedAt":"2026-09-14"},"buildingTypes":{"status":"source-checked","sourceIds":["history"],"checkedAt":"2026-09-14"},"address":{"status":"source-checked","sourceIds":["official"],"checkedAt":"2026-09-14"},"nameJa":{"status":"source-checked","sourceIds":["official"],"checkedAt":"2026-09-14"}},"pending":["現地入口と建物輪郭に対する座標の照合","公開日・料金・予約条件の訪問直前の再確認","改修後の各部材仕様と現状の確認"]}},
-{"id":"tokyo-international-forum","slug":"tokyo-international-forum","nameJa":"東京国際フォーラム","nameEn":"Tokyo International Forum","prefecture":"東京都","municipality":"千代田区","area":"有楽町","address":"東京都千代田区丸の内3-5-1","lat":35.67667,"lng":139.76444,"completionYear":1996,"era":"contemporary","architects":["ラファエル・ヴィニオリ"],"buildingTypes":["ホール","文化施設","複合施設"],"styles":[],"materials":["ガラス"],"oneLiner":"ガラス棟とホール群が向き合う文化施設。","summary":"ラファエル・ヴィニオリの設計による複合文化施設です。ガラス棟では、大きな吹き抜けと上部の構造、ブリッジやスロープの位置関係が見どころです。建物の竣工は1996年で、1997年の開館とは区別しています。","highlights":["ガラス棟の吹き抜け","空間を横切るブリッジ","地上広場とホール群"],"components":[{"part":"外皮・吹き抜け","material":"ガラス","description":"ガラス棟は外皮の透明さと、大空間を支える構造の組み合わせが特徴です。施工者の資料はガラス棟の竣工を1996年5月としています。","sourceIds":["obayashi"]}],"articleSourceIds":["history","obayashi"],"visit":{"status":"public","officialUrl":"https://www.t-i-forum.co.jp/","note":"共用部と各ホールでは入場条件が異なります。催事による動線変更や立入制限は公式案内で確認してください。","lastChecked":"2026-09-14","sourceIds":[]},"location":{"status":"address-matched","precision":"facility","sourceIds":["location","access"],"checkedAt":"2026-09-14","method":"Published facility coordinate; official name and address matched. Not rooftop or entrance geocoding.","note":"施設単位の座標です。建物輪郭・敷地内の棟・入口の位置は未照合です。"},"sources":[{"id":"history","title":"東京国際フォーラムの歴史","url":"https://www.t-i-forum.co.jp/about/history/","publisher":"東京国際フォーラム","scope":"1996年竣工・設計競技・開館との区別","sourceType":"official","checkedAt":"2026-09-14"},{"id":"obayashi","title":"東京国際フォーラム ガラス棟","url":"https://www.obayashi.co.jp/works/detail/work_144.html","publisher":"大林組","scope":"設計・竣工・ガラス棟の空間構成","sourceType":"official","checkedAt":"2026-09-14"},{"id":"access","title":"アクセス","url":"https://www.t-i-forum.co.jp/access/access/","publisher":"東京国際フォーラム","scope":"所在地・アクセス","sourceType":"official","checkedAt":"2026-09-14"},{"id":"location","title":"施設座標","url":"https://ja.wikipedia.org/wiki/東京国際フォーラム","publisher":"Wikipedia（座標のみ）","scope":"施設の概略座標。本文は転載せず、名称・住所を公式資料と照合。入口・建物輪郭は未照合。","sourceType":"reference","checkedAt":"2026-09-14"}],"verification":{"status":"basic-checked","lastVerified":"2026-09-14","fields":{"completionYear":{"status":"source-checked","sourceIds":["history","obayashi"],"checkedAt":"2026-09-14"},"architects":{"status":"source-checked","sourceIds":["history","obayashi"],"checkedAt":"2026-09-14"},"buildingTypes":{"status":"source-checked","sourceIds":["history"],"checkedAt":"2026-09-14"},"address":{"status":"source-checked","sourceIds":["access"],"checkedAt":"2026-09-14"},"nameJa":{"status":"source-checked","sourceIds":["access"],"checkedAt":"2026-09-14"}},"pending":["現地入口と建物輪郭に対する座標の照合","公開日・料金・予約条件の訪問直前の再確認"]}},
-{"id":"yokohama-kaiko-kinen-kaikan","slug":"yokohama-kaiko-kinen-kaikan","nameJa":"横浜市開港記念会館","nameEn":"Yokohama Port Opening Memorial Hall","prefecture":"神奈川県","municipality":"横浜市中区","area":"関内","address":"神奈川県横浜市中区本町1-6","lat":35.447648,"lng":139.641359,"completionYear":1917,"era":"modern","architects":["山田七五郎","福田重義（原案）"],"buildingTypes":["集会場","歴史建築"],"styles":["辰野式フリークラシック"],"materials":["煉瓦・花崗岩","復元部分"],"oneLiner":"赤煉瓦と花崗岩、時計塔を備える公会堂。","summary":"横浜開港50周年を記念し、市民の寄付をもとに建てられた公会堂です。1917年に竣工し、福田重義の当選案を山田七五郎らが具体化しました。震災後の復旧やドームの復元を経ており、現在の姿をすべて創建時のままと考えないことも大切です。","highlights":["赤煉瓦と花崗岩の外壁","時計塔と隅部の塔","復旧・復元の履歴"],"components":[{"part":"外壁","material":"煉瓦・花崗岩","description":"赤煉瓦と花崗岩を組み合わせた外観です。色の違いと石材による縁取りを見ると、壁面の構成が分かります。石の具体的な産地は未確認です。","sourceIds":["history"]},{"part":"屋根・ドーム","material":"復元部分","description":"震災で失われたドーム群は、創建時の図面の発見を経て1989年に復元されました。復元部分と残存部分を区別して見る対象です。","sourceIds":["history"]}],"articleSourceIds":["history"],"visit":{"status":"limited","officialUrl":"https://www.kaikokinenkaikan.com/","note":"一般見学の時間と公開範囲は、催事や管理上の都合で変わります。最新の一般見学案内を確認してください。","lastChecked":"2026-09-14","sourceIds":[]},"location":{"status":"address-matched","precision":"facility","sourceIds":["location","facility"],"checkedAt":"2026-09-14","method":"Published facility coordinate; official name and address matched. Not rooftop or entrance geocoding.","note":"施設単位の座標です。建物輪郭・敷地内の棟・入口の位置は未照合です。"},"sources":[{"id":"history","title":"会館の歴史","url":"https://www.kaikokinenkaikan.com/facility/history/","publisher":"横浜市開港記念会館","scope":"竣工・設計・材料・復旧と復元","sourceType":"official","checkedAt":"2026-09-14"},{"id":"facility","title":"施設紹介","url":"https://www.kaikokinenkaikan.com/facility/","publisher":"横浜市開港記念会館","scope":"所在地・用途・施設案内","sourceType":"official","checkedAt":"2026-09-14"},{"id":"location","title":"施設座標","url":"https://ja.wikipedia.org/wiki/横浜市開港記念会館","publisher":"Wikipedia（座標のみ）","scope":"施設の概略座標。本文は転載せず、名称・住所を公式資料と照合。入口・建物輪郭は未照合。","sourceType":"reference","checkedAt":"2026-09-14"}],"verification":{"status":"basic-checked","lastVerified":"2026-09-14","fields":{"completionYear":{"status":"source-checked","sourceIds":["history"],"checkedAt":"2026-09-14"},"architects":{"status":"source-checked","sourceIds":["history"],"checkedAt":"2026-09-14"},"buildingTypes":{"status":"source-checked","sourceIds":["history"],"checkedAt":"2026-09-14"},"address":{"status":"source-checked","sourceIds":["facility"],"checkedAt":"2026-09-14"},"nameJa":{"status":"source-checked","sourceIds":["facility"],"checkedAt":"2026-09-14"}},"pending":["現地入口と建物輪郭に対する座標の照合","公開日・料金・予約条件の訪問直前の再確認","花崗岩の産地と各補修年代の部位対応"]}},
-{"id":"momas","slug":"saitama-museum-modern-art","nameJa":"埼玉県立近代美術館","nameEn":"The Museum of Modern Art, Saitama","prefecture":"埼玉県","municipality":"さいたま市浦和区","area":"北浦和","address":"埼玉県さいたま市浦和区常盤9-30-1","lat":35.869611,"lng":139.642917,"completionYear":1982,"era":"postwar","architects":["黒川紀章"],"buildingTypes":["美術館","文化施設"],"styles":[],"materials":["鉄筋コンクリート・鉄骨鉄筋コンクリート","アトリウム・サンクガーデン"],"oneLiner":"格子状の骨組みと中央の吹き抜け。","summary":"北浦和公園に建つ黒川紀章の美術館です。中央の吹き抜けを囲む動線と、格子状に組まれた柱・梁が特徴です。地下に光を届けるためのサンクガーデンは、地面より低く設けた庭のことです。公園と館内がどうつながるかを見比べられます。","highlights":["格子状の柱と梁","中央のアトリウム","地下へ光を導くサンクガーデン"],"components":[{"part":"骨組み","material":"鉄筋コンクリート・鉄骨鉄筋コンクリート","description":"設計者の資料では鉄筋コンクリート造を中心に、一部を鉄骨鉄筋コンクリート造としています。格子状の柱と梁が、内部と外部の境界にも現れています。","sourceIds":["design"]},{"part":"採光","material":"アトリウム・サンクガーデン","description":"中央の吹き抜けの天窓と、地下へ向かう庭によって自然光を取り入れます。どこから光が入るかを歩きながら確認できます。","sourceIds":["design"]}],"articleSourceIds":["design"],"visit":{"status":"public","officialUrl":"https://pref.spec.ed.jp/momas/利用案内---交通案内","note":"建物への入館と展覧会の観覧は別です。休館日・展示替え・公開範囲は公式案内で確認してください。","lastChecked":"2026-09-14","sourceIds":[]},"location":{"status":"address-matched","precision":"facility","sourceIds":["location","access"],"checkedAt":"2026-09-14","method":"Published facility coordinate; official name and address matched. Not rooftop or entrance geocoding.","note":"施設単位の座標です。建物輪郭・敷地内の棟・入口の位置は未照合です。"},"sources":[{"id":"design","title":"埼玉県立近代美術館","url":"https://www.kisho.co.jp/project/1980/saitama_prefectural_museum_of_modern_art/","publisher":"黒川紀章建築都市設計事務所","scope":"設計・1982年竣工・構造・採光","sourceType":"official","checkedAt":"2026-09-14"},{"id":"access","title":"利用案内・交通案内","url":"https://pref.spec.ed.jp/momas/利用案内---交通案内","publisher":"埼玉県立近代美術館","scope":"所在地・入館と展覧会観覧の区別","sourceType":"official","checkedAt":"2026-09-14"},{"id":"location","title":"施設座標","url":"https://ja.wikipedia.org/wiki/埼玉県立近代美術館","publisher":"Wikipedia（座標のみ）","scope":"施設の概略座標。本文は転載せず、名称・住所を公式資料と照合。入口・建物輪郭は未照合。","sourceType":"reference","checkedAt":"2026-09-14"}],"verification":{"status":"basic-checked","lastVerified":"2026-09-14","fields":{"completionYear":{"status":"source-checked","sourceIds":["design"],"checkedAt":"2026-09-14"},"architects":{"status":"source-checked","sourceIds":["design"],"checkedAt":"2026-09-14"},"buildingTypes":{"status":"source-checked","sourceIds":["design"],"checkedAt":"2026-09-14"},"address":{"status":"source-checked","sourceIds":["access"],"checkedAt":"2026-09-14"},"nameJa":{"status":"source-checked","sourceIds":["access"],"checkedAt":"2026-09-14"}},"pending":["現地入口と建物輪郭に対する座標の照合","公開日・料金・予約条件の訪問直前の再確認"]}},
-{"id":"hoki-museum","slug":"hoki-museum","nameJa":"ホキ美術館","nameEn":"Hoki Museum","prefecture":"千葉県","municipality":"千葉市緑区","area":"あすみが丘","address":"千葉県千葉市緑区あすみが丘東3-15","lat":35.52194,"lng":140.28,"completionYear":2010,"era":"contemporary","architects":["日建設計","山梨知彦"],"buildingTypes":["美術館"],"styles":[],"materials":["鉄筋コンクリート・鉄骨","LED照明・設備孔"],"oneLiner":"絵画に向き合う、回廊型の展示空間。","summary":"写実絵画の鑑賞のために計画された美術館です。鑑賞の邪魔になる設備や目地を目立たせず、絵画と壁面が主役になるよう計画されています。自然光と照明、壁面と作品の距離など、展示のための細部が建築の主題です。","highlights":["連続する回廊型ギャラリー","自然光と展示照明","設備を目立たせない天井"],"components":[{"part":"構造","material":"鉄筋コンクリート・鉄骨","description":"公式施設概要はRC造、一部鉄骨造としています。RCは鉄筋コンクリートのことです。地上1階・地下2階に展示空間が重なります。","sourceIds":["building"]},{"part":"天井・照明","material":"LED照明・設備孔","description":"照明、空調、排煙などを小さな孔にまとめ、天井の設備が鑑賞の邪魔をしないよう計画されています。","sourceIds":["building"]}],"articleSourceIds":["building"],"visit":{"status":"public","officialUrl":"https://www.hoki-museum.jp/","note":"館内撮影は原則禁止と案内されています。来館日時・予約・料金は公式案内で確認してください。建物の商業撮影には別の確認が必要です。","lastChecked":"2026-09-14","sourceIds":[]},"location":{"status":"address-matched","precision":"facility","sourceIds":["location","building"],"checkedAt":"2026-09-14","method":"Published facility coordinate; official name and address matched. Not rooftop or entrance geocoding.","note":"施設単位の座標です。建物輪郭・敷地内の棟・入口の位置は未照合です。"},"sources":[{"id":"building","title":"建物について","url":"https://www.hoki-museum.jp/about2/","publisher":"ホキ美術館","scope":"設計・2010年9月竣工・構造・所在地・撮影条件","sourceType":"official","checkedAt":"2026-09-14"},{"id":"location","title":"施設座標","url":"https://ja.wikipedia.org/wiki/ホキ美術館","publisher":"Wikipedia（座標のみ）","scope":"施設の概略座標。本文は転載せず、名称・住所を公式資料と照合。入口・建物輪郭は未照合。","sourceType":"reference","checkedAt":"2026-09-14"}],"verification":{"status":"basic-checked","lastVerified":"2026-09-14","fields":{"completionYear":{"status":"source-checked","sourceIds":["building"],"checkedAt":"2026-09-14"},"architects":{"status":"source-checked","sourceIds":["building"],"checkedAt":"2026-09-14"},"buildingTypes":{"status":"source-checked","sourceIds":["building"],"checkedAt":"2026-09-14"},"address":{"status":"source-checked","sourceIds":["building"],"checkedAt":"2026-09-14"},"nameJa":{"status":"source-checked","sourceIds":["building"],"checkedAt":"2026-09-14"}},"pending":["現地入口と建物輪郭に対する座標の照合","公開日・料金・予約条件の訪問直前の再確認"]}},
-{"id":"art-tower-mito","slug":"art-tower-mito","nameJa":"水戸芸術館","nameEn":"Art Tower Mito","prefecture":"茨城県","municipality":"水戸市","area":"五軒町","address":"茨城県水戸市五軒町1-6-8","lat":36.38028,"lng":140.46583,"completionYear":1990,"era":"contemporary","architects":["磯崎新"],"buildingTypes":["文化施設","美術館","ホール","劇場"],"styles":[],"materials":[],"oneLiner":"音楽・演劇・美術の三つの空間。","summary":"水戸市制100周年を記念して開館した、磯崎新設計の複合文化施設です。コンサートホール、劇場、現代美術ギャラリーを一つの施設にまとめています。特徴的な塔だけでなく、各施設への動線や、街から入るエントランスにも注目できます。","highlights":["特徴的なシンボルタワー","三つの専用空間","街に開かれたエントランス"],"components":[],"articleSourceIds":["about","access"],"visit":{"status":"public","officialUrl":"https://www.arttowermito.or.jp/access/","note":"エントランスホール、塔、ギャラリー、劇場・ホールでは公開条件が異なります。目的の施設の案内を確認してください。","lastChecked":"2026-09-14","sourceIds":[]},"location":{"status":"address-matched","precision":"facility","sourceIds":["location","access"],"checkedAt":"2026-09-14","method":"Published facility coordinate; official name and address matched. Not rooftop or entrance geocoding.","note":"施設単位の座標です。建物輪郭・敷地内の棟・入口の位置は未照合です。"},"sources":[{"id":"about","title":"水戸芸術館とは","url":"https://www.arttowermito.or.jp/about/","publisher":"水戸芸術館","scope":"設計者・用途・成り立ち","sourceType":"official","checkedAt":"2026-09-14"},{"id":"year","title":"磯崎新：群島としての建築","url":"https://www.arttowermito.or.jp/gallery/lineup/article_5359.html","publisher":"水戸芸術館","scope":"参考図版に1990年竣工を明記。展覧会会期の現在情報としては使わない","sourceType":"official","checkedAt":"2026-09-14"},{"id":"access","title":"アクセス・来館情報","url":"https://www.arttowermito.or.jp/access/","publisher":"水戸芸術館","scope":"所在地・各施設の公開条件","sourceType":"official","checkedAt":"2026-09-14"},{"id":"location","title":"施設座標","url":"https://ja.wikipedia.org/wiki/水戸芸術館","publisher":"Wikipedia（座標のみ）","scope":"施設の概略座標。本文は転載せず、名称・住所を公式資料と照合。入口・建物輪郭は未照合。","sourceType":"reference","checkedAt":"2026-09-14"}],"verification":{"status":"basic-checked","lastVerified":"2026-09-14","fields":{"completionYear":{"status":"source-checked","sourceIds":["year"],"checkedAt":"2026-09-14"},"architects":{"status":"source-checked","sourceIds":["about"],"checkedAt":"2026-09-14"},"buildingTypes":{"status":"source-checked","sourceIds":["about"],"checkedAt":"2026-09-14"},"address":{"status":"source-checked","sourceIds":["access"],"checkedAt":"2026-09-14"},"nameJa":{"status":"source-checked","sourceIds":["access"],"checkedAt":"2026-09-14"}},"pending":["現地入口と建物輪郭に対する座標の照合","公開日・料金・予約条件の訪問直前の再確認","共同設計者・構造設計者と塔の材料仕様の一次資料確認"]}},
-{"id":"bato-hiroshige","slug":"bato-hiroshige-museum","nameJa":"那珂川町馬頭広重美術館","nameEn":"Nakagawa-machi Bato Hiroshige Museum of Art","prefecture":"栃木県","municipality":"那珂川町","area":"馬頭","address":"栃木県那須郡那珂川町馬頭116-9","lat":36.739111,"lng":140.170944,"completionYear":2000,"era":"contemporary","architects":["隈研吾"],"buildingTypes":["美術館"],"styles":[],"materials":["杉","木目付きアルミ"],"oneLiner":"重なるルーバーと、改修で変わった屋根材。","summary":"隈研吾の設計による、広重の作品を展示する美術館です。細い部材を並べたルーバーが、光や視線を通す層をつくります。2000年の創建時は杉材を屋根にも使いましたが、2026年の改修では屋根のルーバーを木目付きアルミに変更しています。","highlights":["細い部材の重なり","光を通すルーバー","創建時と改修後の材料の違い"],"components":[{"part":"屋根・創建時","material":"杉","description":"創建時は地元の杉に不燃・防腐処理を行い、屋根のルーバーにも使用しました。2026年の改修で、この部分は木目付きアルミに置き換わりました。","sourceIds":["original"],"origin":"設計者の説明では地元産の杉。具体的な産地範囲・供給元は未確認。"},{"part":"屋根・2026年改修","material":"木目付きアルミ","description":"傷みの進んだ屋根の木ルーバーを、木目をプリントしたアルミに取り換えています。35種類のパターンを用い、木の外観を引き継ぎながら、風雨にさらされる部分の材料を変えています。","sourceIds":["renewal"]}],"articleSourceIds":["original","renewal"],"visit":{"status":"public","officialUrl":"https://www.hiroshige.bato.tochigi.jp/","note":"改修前の案内と混同しないよう、現在の公式サイトで公開範囲・休館日を確認してください。","lastChecked":"2026-09-14","sourceIds":[]},"location":{"status":"address-matched","precision":"facility","sourceIds":["location","renewal","access"],"checkedAt":"2026-09-14","method":"Published facility coordinate; official name and address matched. Not rooftop or entrance geocoding.","note":"施設単位の座標です。建物輪郭・敷地内の棟・入口の位置は未照合です。"},"sources":[{"id":"original","title":"那珂川町馬頭広重美術館","url":"https://kkaa.co.jp/project/nakagawa-machi-bato-hiroshige-museum-of-art/","publisher":"隈研吾建築都市設計事務所","scope":"2000年竣工・創建時の杉材と設計意図","sourceType":"official","checkedAt":"2026-09-14"},{"id":"renewal","title":"馬頭広重美術館リニューアル","url":"https://kkaa.co.jp/project/renewal-of-bato-hiroshige-museum/","publisher":"隈研吾建築都市設計事務所","scope":"2026年3月改修・屋根材の変更・公式埋込地図の住所","sourceType":"official","checkedAt":"2026-09-14"},{"id":"access","title":"交通アクセス","url":"https://www.hiroshige.bato.tochigi.jp/access","publisher":"那珂川町馬頭広重美術館","scope":"所在地。検索結果の公式情報で照合、本文取得に制限あり","sourceType":"official","checkedAt":"2026-09-14"},{"id":"location","title":"施設座標","url":"https://ja.wikipedia.org/wiki/那珂川町馬頭広重美術館","publisher":"Wikipedia（座標のみ）","scope":"施設の概略座標。本文は転載せず、名称・住所を公式資料と照合。入口・建物輪郭は未照合。","sourceType":"reference","checkedAt":"2026-09-14"}],"verification":{"status":"basic-checked","lastVerified":"2026-09-14","fields":{"completionYear":{"status":"source-checked","sourceIds":["original"],"checkedAt":"2026-09-14"},"architects":{"status":"source-checked","sourceIds":["original"],"checkedAt":"2026-09-14"},"buildingTypes":{"status":"source-checked","sourceIds":["original"],"checkedAt":"2026-09-14"},"address":{"status":"source-checked","sourceIds":["renewal","access"],"checkedAt":"2026-09-14"},"nameJa":{"status":"source-checked","sourceIds":["renewal","access"],"checkedAt":"2026-09-14"}},"pending":["現地入口と建物輪郭に対する座標の照合","公開日・料金・予約条件の訪問直前の再確認","改修部材の全範囲・メーカーと杉の供給元"]}},
-{"id":"gunma-museum-modern-art","slug":"gunma-museum-modern-art","nameJa":"群馬県立近代美術館","nameEn":"The Museum of Modern Art, Gunma","prefecture":"群馬県","municipality":"高崎市","area":"群馬の森","address":"群馬県高崎市綿貫町992-1","lat":36.298722,"lng":139.078639,"completionYear":1974,"era":"postwar","architects":["磯崎新"],"buildingTypes":["美術館","文化施設"],"styles":[],"materials":["アルミ・ガラス","大理石"],"oneLiner":"立方体の骨組みと、繰り返す正方形。","summary":"磯崎新が設計した、群馬の森に建つ美術館です。12メートルの立方体を基本に、外壁や床にも正方形の寸法の関係が現れます。建物全体の形から壁のパネルまで、同じ考え方がどう繰り返されるかを見ると理解しやすくなります。","highlights":["立方体を組み合わせた構成","外壁の正方形パネル","ホールの床と壁の寸法関係"],"components":[{"part":"外壁","material":"アルミ・ガラス","description":"公式建築解説では外壁のアルミパネルとガラスの格子を120センチ角と説明しています。12メートルの基本構成を小さく分けた寸法です。","sourceIds":["architecture"]},{"part":"ホールの床・壁","material":"大理石","description":"エントランスホールには60センチ角の大理石パネルが使われています。石種や採石地は、この解説だけでは確定できません。","sourceIds":["architecture"]}],"articleSourceIds":["architecture"],"visit":{"status":"public","officialUrl":"https://mmag.pref.gunma.jp/","note":"休館日・展覧会・各施設の公開条件は公式案内を確認してください。増築された部分は本館の創建時とは分けて見る必要があります。","lastChecked":"2026-09-14","sourceIds":[]},"location":{"status":"address-matched","precision":"facility","sourceIds":["location","architecture"],"checkedAt":"2026-09-14","method":"Published facility coordinate; official name and address matched. Not rooftop or entrance geocoding.","note":"施設単位の座標です。建物輪郭・敷地内の棟・入口の位置は未照合です。"},"sources":[{"id":"architecture","title":"磯崎新の建築","url":"https://mmag.pref.gunma.jp/architecture","publisher":"群馬県立近代美術館","scope":"設計者・所在地・構成・アルミと大理石","sourceType":"official","checkedAt":"2026-09-14"},{"id":"year","title":"磯崎新：群島としての建築","url":"https://www.arttowermito.or.jp/gallery/lineup/article_5359.html","publisher":"水戸芸術館","scope":"参考図版に群馬県立近代美術館の1974年竣工を明記","sourceType":"official","checkedAt":"2026-09-14"},{"id":"location","title":"施設座標","url":"https://ja.wikipedia.org/wiki/群馬県立近代美術館","publisher":"Wikipedia（座標のみ）","scope":"施設の概略座標。本文は転載せず、名称・住所を公式資料と照合。入口・建物輪郭は未照合。","sourceType":"reference","checkedAt":"2026-09-14"}],"verification":{"status":"basic-checked","lastVerified":"2026-09-14","fields":{"completionYear":{"status":"source-checked","sourceIds":["year"],"checkedAt":"2026-09-14"},"architects":{"status":"source-checked","sourceIds":["architecture"],"checkedAt":"2026-09-14"},"buildingTypes":{"status":"source-checked","sourceIds":["architecture"],"checkedAt":"2026-09-14"},"address":{"status":"source-checked","sourceIds":["architecture"],"checkedAt":"2026-09-14"},"nameJa":{"status":"source-checked","sourceIds":["architecture"],"checkedAt":"2026-09-14"}},"pending":["現地入口と建物輪郭に対する座標の照合","公開日・料金・予約条件の訪問直前の再確認","大理石の石種・採石地と改修材の対応"]}},
-{"id":"tokyo-bunka-kaikan","slug":"tokyo-bunka-kaikan","nameJa":"東京文化会館","nameEn":"","prefecture":"東京都","municipality":"台東区","area":"上野","address":"東京都台東区上野公園5-45","lat":35.714449,"lng":139.775327,"completionYear":1961,"openingYear":1961,"era":"postwar","architects":["前川國男","横山建築構造設計事務所（構造）"],"buildingTypes":["ホール","文化施設"],"styles":["モダニズム"],"materials":["鉄骨鉄筋コンクリート","打放しコンクリート・塗装"],"oneLiner":"反り上がる屋根と広いロビーを持つ音楽ホール。","summary":"国立西洋美術館と向かい合う、前川國男設計の音楽ホールです。大きな屋根の下にロビーとホワイエを広く取り、演奏の前後に人が集まる空間も重視して設計されました。","highlights":["大きな屋根と太い柱","ロビーとホワイエの広がり","国立西洋美術館と向き合う配置"],"components":[{"part":"骨組み・屋根","material":"鉄骨鉄筋コンクリート","description":"本館の構造は鉄骨鉄筋コンクリート造です。太い柱と大きな屋根の下にロビーなどの空間を確保し、対面する美術館との高さの関係にも配慮しています。","sourceIds":["building","history"]},{"part":"外壁の保存","material":"打放しコンクリート・塗装","description":"外壁は1981年に本格的な修復が行われ、赤みを帯びた透明な塗料で保護されました。現在の色を、そのまま竣工時の無塗装コンクリートの色だと考えないことが大切です。","sourceIds":["building"]}],"articleSourceIds":["building"],"visit":{"status":"closed","officialUrl":"https://www.t-bunka.jp/info/32755/","note":"大規模改修で休館中です。大ホールなどは2026年5月7日、小ホールは5月14日から休館し、再開は2028年度中を予定しています。予定は変更される可能性があります。地図は青海の仮事務所ではなく、上野の建物を示します。","lastChecked":"2026-09-14","sourceIds":["closure","access"]},"location":{"status":"address-matched","precision":"facility","sourceIds":["location","access"],"checkedAt":"2026-09-14","method":"Published facility point matched to official building name and permanent address. Embedded map viewport centers and temporary office addresses are not used.","note":"施設単位の公開座標です。建物輪郭・入口は未照合です。"},"sources":[{"id":"building","title":"建築について","url":"https://www.t-bunka.jp/gallery/","publisher":"東京文化会館","scope":"1961年竣工・前川國男・外壁・屋根とロビー","sourceType":"official","checkedAt":"2026-09-14"},{"id":"history","title":"施設概要","url":"https://www.t-bunka.jp/about/venue.html","publisher":"東京文化会館","scope":"施設の用途と開館年","sourceType":"official","checkedAt":"2026-09-14"},{"id":"access","title":"交通アクセス","url":"https://www.t-bunka.jp/access/","publisher":"東京文化会館","scope":"上野公園の建物の名称・住所","sourceType":"official","checkedAt":"2026-09-14"},{"id":"closure","title":"大規模改修工事に伴う休館（2026年7月1日更新）","url":"https://www.t-bunka.jp/info/32755/","publisher":"東京文化会館","scope":"2026年5月7日から休館・再開予定・仮事務所との区別","sourceType":"official","checkedAt":"2026-09-14"},{"id":"location","title":"東京文化会館の施設座標","url":"https://www.navitime.co.jp/poi?spot=00004-13104900131","publisher":"ナビタイムジャパン","scope":"施設の公開座標と住所のみ。掲載電話・営業情報は採用しない。","sourceType":"map-provider","checkedAt":"2026-09-14"}],"verification":{"status":"basic-checked","lastVerified":"2026-09-14","fields":{"nameJa":{"status":"source-checked","sourceIds":["access"],"checkedAt":"2026-09-14"},"completionYear":{"status":"source-checked","sourceIds":["history"],"checkedAt":"2026-09-14"},"openingYear":{"status":"source-checked","sourceIds":["history"],"checkedAt":"2026-09-14"},"architects":{"status":"source-checked","sourceIds":["building","history"],"checkedAt":"2026-09-14"},"address":{"status":"source-checked","sourceIds":["access"],"checkedAt":"2026-09-14"},"buildingTypes":{"status":"source-checked","sourceIds":["building"],"checkedAt":"2026-09-14"}},"pending":["建物輪郭と公開入口に対する座標の照合","見学条件の訪問直前の再確認","写真・図版の利用権確認"]}},
-{"id":"national-art-center-tokyo","slug":"national-art-center-tokyo","nameJa":"国立新美術館","nameEn":"","prefecture":"東京都","municipality":"港区","area":"六本木","address":"東京都港区六本木7-22-2","lat":35.665312,"lng":139.726382,"completionYear":2006,"openingYear":2007,"era":"contemporary","architects":["黒川紀章","日本設計"],"buildingTypes":["美術館","文化施設"],"styles":["現代建築"],"materials":["ガラス","鉄骨・鉄骨鉄筋コンクリート"],"oneLiner":"波打つガラス外壁と吹き抜けのロビー。","summary":"黒川紀章・日本設計共同体が設計し、2006年に竣工、2007年に開館した美術館です。南側の曲面ガラスと円錐形の入口が、四角い展示室とは異なる開放的な共用空間をつくっています。","highlights":["波状のガラスカーテンウォール","円錐形の正面入口","吹き抜けロビーと庭のつながり"],"components":[{"part":"南側の外壁","material":"ガラス","description":"波のような曲面のガラス外壁を通して、ロビーと周辺の緑がつながります。外壁の形と館内からの眺めを両方見ると、曲面の役割を理解しやすくなります。","sourceIds":["building"]},{"part":"骨組みと免震","material":"鉄骨・鉄骨鉄筋コンクリート","description":"主な構造は鉄骨造で、一部に鉄骨鉄筋コンクリートを使います。免震装置のほか、雨水の再利用や床から空気を送る空調も採用されています。","sourceIds":["building"]}],"articleSourceIds":["building","history"],"visit":{"status":"public","officialUrl":"https://www.nact.jp/information/","note":"展示室と共用部の利用条件は異なります。展覧会の料金、開館日、臨時休館は公式案内を確認してください。乃木坂駅6出口から美術館への連絡通路があります。","lastChecked":"2026-09-14","sourceIds":["access"]},"location":{"status":"address-matched","precision":"facility","sourceIds":["location","access"],"checkedAt":"2026-09-14","method":"Published facility point matched to official building name and permanent address. Embedded map viewport centers and temporary office addresses are not used.","note":"施設単位の公開座標です。建物輪郭・入口は未照合です。"},"sources":[{"id":"building","title":"建築","url":"https://www.nact.jp/introduce/architecture.html","publisher":"国立新美術館","scope":"2006年竣工・共同設計者・構造・ガラス外壁","sourceType":"official","checkedAt":"2026-09-14"},{"id":"history","title":"美術館のご紹介・沿革","url":"https://www.nact.jp/introduce/about.html","publisher":"国立新美術館","scope":"2007年1月21日開館","sourceType":"official","checkedAt":"2026-09-14"},{"id":"access","title":"アクセスマップ","url":"https://www.nact.jp/information/access/","publisher":"国立新美術館","scope":"名称・所在地・乃木坂駅との連絡","sourceType":"official","checkedAt":"2026-09-14"},{"id":"location","title":"国立新美術館の施設座標","url":"https://www.navitime.co.jp/poi?spot=02301-1300503","publisher":"ナビタイムジャパン","scope":"施設の公開座標と住所のみ。営業時間等は公式案内を優先。","sourceType":"map-provider","checkedAt":"2026-09-14"}],"verification":{"status":"basic-checked","lastVerified":"2026-09-14","fields":{"nameJa":{"status":"source-checked","sourceIds":["access"],"checkedAt":"2026-09-14"},"completionYear":{"status":"source-checked","sourceIds":["building"],"checkedAt":"2026-09-14"},"openingYear":{"status":"source-checked","sourceIds":["history"],"checkedAt":"2026-09-14"},"architects":{"status":"source-checked","sourceIds":["building"],"checkedAt":"2026-09-14"},"address":{"status":"source-checked","sourceIds":["access"],"checkedAt":"2026-09-14"},"buildingTypes":{"status":"source-checked","sourceIds":["building"],"checkedAt":"2026-09-14"}},"pending":["建物輪郭と公開入口に対する座標の照合","見学条件の訪問直前の再確認","写真・図版の利用権確認"]}}
+  {
+    "id": "nmwa-main-building",
+    "slug": "national-museum-western-art",
+    "nameJa": "国立西洋美術館 本館",
+    "nameEn": "The National Museum of Western Art — Main Building",
+    "prefecture": "東京都",
+    "municipality": "台東区",
+    "area": "上野",
+    "address": "東京都台東区上野公園7-7",
+    "lat": 35.71556,
+    "lng": 139.77583,
+    "completionYear": 1959,
+    "era": "postwar",
+    "architects": [
+      "ル・コルビュジエ"
+    ],
+    "buildingTypes": [
+      "美術館",
+      "文化施設"
+    ],
+    "styles": [
+      "モダニズム"
+    ],
+    "materials": [
+      "鉄筋コンクリート"
+    ],
+    "oneLiner": "ピロティとスロープを備えた美術館。",
+    "summary": "本館は1959年に竣工したル・コルビュジエの設計です。本館と園地は2016年に世界文化遺産に登録されました。柱で持ち上げた建物の下の空間がピロティです。中央のホールからスロープを上がると、歩くにつれて展示空間の見え方が変わります。",
+    "highlights": [
+      "建物の下に広がるピロティ",
+      "中央ホールと上階をつなぐスロープ",
+      "展示室を巡る動線"
+    ],
+    "components": [
+      {
+        "part": "骨組み",
+        "material": "鉄筋コンクリート",
+        "description": "本館は鉄筋コンクリート造です。柱で建物を持ち上げ、地上に開いたピロティを設けています。柱の位置と、その上に載る展示室の関係に注目できます。",
+        "sourceIds": [
+          "building",
+          "taito"
+        ]
+      },
+      {
+        "part": "ピロティ",
+        "material": "鉄筋コンクリート",
+        "description": "地上階の柱と、その間に開かれた空間に注目します。台東区の解説では、ピロティをル・コルビュジエの近代建築の特徴の一つとして紹介しています。",
+        "sourceIds": [
+          "taito"
+        ]
+      }
+    ],
+    "articleSourceIds": [
+      "building",
+      "taito"
+    ],
+    "visit": {
+      "status": "public",
+      "officialUrl": "https://www.nmwa.go.jp/jp/visit/",
+      "note": "公式案内では、19世紀ホール、本館ロビー、カフェ、ミュージアムショップは観覧券なしで利用できます。展示室の観覧は別です。休館日・臨時の立入制限は訪問前に確認してください。",
+      "lastChecked": "2026-09-14",
+      "sourceIds": [
+        "floorplans"
+      ]
+    },
+    "location": {
+      "status": "cross-checked",
+      "precision": "building",
+      "sourceIds": [
+        "site-plan",
+        "osm-footprint"
+      ],
+      "checkedAt": "2026-09-14",
+      "method": "公式の敷地案内で棟を区別し、OpenStreetMapの対応する建物輪郭と点の内外を照合。",
+      "note": "建物輪郭と棟の対応を資料で照合しています。公開入口・現地測量による精度は未確認です。",
+      "evidence": {
+        "kind": "building-outline",
+        "ring": [
+          [
+            139.7759661,
+            35.7151162
+          ],
+          [
+            139.7755734,
+            35.7152944
+          ],
+          [
+            139.7756472,
+            35.7154016
+          ],
+          [
+            139.7757101,
+            35.7154931
+          ],
+          [
+            139.7757921,
+            35.7156123
+          ],
+          [
+            139.7761849,
+            35.7154342
+          ],
+          [
+            139.7759661,
+            35.7151162
+          ]
+        ],
+        "sourceIds": [
+          "osm-footprint"
+        ],
+        "identitySourceIds": [
+          "site-plan"
+        ],
+        "reviewedAt": "2026-09-14",
+        "osmWayId": 145344184,
+        "sourceTimestamp": "2026-09-14T03:56:41Z",
+        "previousPoint": [
+          139.77583,
+          35.71556
+        ],
+        "previousPointInside": true,
+        "decision": "元の座標が対象棟の輪郭内にあるため、座標値を維持。",
+        "license": "ODbL 1.0",
+        "licenseUrl": "https://opendatacommons.org/licenses/odbl/1-0/",
+        "attribution": "OpenStreetMap contributors"
+      }
+    },
+    "sources": [
+      {
+        "id": "building",
+        "title": "美術館の建築",
+        "url": "https://www.nmwa.go.jp/jp/about/building.html",
+        "publisher": "国立西洋美術館",
+        "scope": "本館の設計・竣工・構造・所在地",
+        "sourceType": "official",
+        "checkedAt": "2026-09-14"
+      },
+      {
+        "id": "taito",
+        "title": "国立西洋美術館の価値",
+        "url": "https://www.city.taito.lg.jp/bunka_kanko/sekaiisan/kachi.html",
+        "publisher": "台東区",
+        "scope": "ピロティ・建築の特徴",
+        "sourceType": "official",
+        "checkedAt": "2026-09-14"
+      },
+      {
+        "id": "location",
+        "title": "施設座標",
+        "url": "https://ja.wikipedia.org/wiki/国立西洋美術館",
+        "publisher": "Wikipedia（座標のみ）",
+        "scope": "以前の施設代表点の記録。現在のピンは建物輪郭と公式の敷地案内を照合した位置を使う。",
+        "sourceType": "reference",
+        "checkedAt": "2026-09-14"
+      },
+      {
+        "id": "floorplans",
+        "title": "施設案内",
+        "url": "https://www.nmwa.go.jp/jp/visit/floorplans.html",
+        "publisher": "国立西洋美術館",
+        "scope": "本館と新館の配置、観覧券なしで利用できる施設の案内。",
+        "sourceType": "official",
+        "checkedAt": "2026-09-14"
+      },
+      {
+        "id": "site-plan",
+        "title": "国立西洋美術館 施設案内・本館と新館の配置",
+        "url": "https://www.nmwa.go.jp/jp/visit/floorplans.html",
+        "publisher": "国立西洋美術館",
+        "scope": "敷地内の対象棟と周囲の施設配置を照合。図の表示中心を座標として流用しない。",
+        "sourceType": "official",
+        "checkedAt": "2026-09-14"
+      },
+      {
+        "id": "osm-footprint",
+        "title": "建物輪郭（OpenStreetMap）",
+        "url": "https://www.openstreetmap.org/way/145344184",
+        "publisher": "OpenStreetMap contributors",
+        "scope": "way 145344184 の建物輪郭。取得時点 2026-09-14T03:56:41Z。ODbL 1.0。入口・測量精度は保証しない。",
+        "sourceType": "open-map",
+        "checkedAt": "2026-09-14"
+      }
+    ],
+    "verification": {
+      "status": "basic-checked",
+      "lastVerified": "2026-09-14",
+      "fields": {
+        "completionYear": {
+          "status": "source-checked",
+          "sourceIds": [
+            "building"
+          ],
+          "checkedAt": "2026-09-14"
+        },
+        "architects": {
+          "status": "source-checked",
+          "sourceIds": [
+            "building"
+          ],
+          "checkedAt": "2026-09-14"
+        },
+        "buildingTypes": {
+          "status": "source-checked",
+          "sourceIds": [
+            "building"
+          ],
+          "checkedAt": "2026-09-14"
+        },
+        "address": {
+          "status": "source-checked",
+          "sourceIds": [
+            "building"
+          ],
+          "checkedAt": "2026-09-14"
+        },
+        "nameJa": {
+          "status": "source-checked",
+          "sourceIds": [
+            "building"
+          ],
+          "checkedAt": "2026-09-14"
+        }
+      },
+      "pending": [
+        "公開入口・現地測量による位置精度の確認",
+        "公開日・料金・予約条件の訪問直前の再確認",
+        "監理・増築・改修の担当者別の詳細記事"
+      ]
+    }
+  },
+  {
+    "id": "kyu-iwasaki-tei",
+    "slug": "kyu-iwasaki-tei-gardens",
+    "nameJa": "旧岩崎邸庭園 洋館",
+    "nameEn": "Former Iwasaki Residence — Western-style House",
+    "prefecture": "東京都",
+    "municipality": "台東区",
+    "area": "池之端",
+    "address": "東京都台東区池之端1-3-45",
+    "lat": 35.7097579,
+    "lng": 139.7671857,
+    "completionYear": 1896,
+    "era": "early-modern",
+    "architects": [
+      "ジョサイア・コンドル"
+    ],
+    "buildingTypes": [
+      "邸宅",
+      "歴史建築"
+    ],
+    "styles": [
+      "西洋館"
+    ],
+    "materials": [
+      "木材",
+      "煉瓦",
+      "スレート",
+      "タイル"
+    ],
+    "oneLiner": "明治の洋館と和館がつながる邸宅。",
+    "summary": "岩崎久彌の本邸として建てられた洋館です。洋館・和館・撞球室が残り、異なる建築のつくりを同じ敷地で比べられます。洋館の装飾を見るだけでなく、和館へのつながりや庭に向いた面にも目を向けてみてください。",
+    "highlights": [
+      "南側のベランダと列柱",
+      "ミントン製タイルの床",
+      "洋館と和館のつながり"
+    ],
+    "components": [
+      {
+        "part": "骨組み・地下室",
+        "material": "木造・煉瓦",
+        "description": "洋館は木造2階建てで、地下室は煉瓦造です。地上の木の骨組みと、地下の煉瓦を区別して記録しています。屋根にはスレートが使われています。",
+        "sourceIds": [
+          "heritage"
+        ]
+      },
+      {
+        "part": "南側のベランダ",
+        "material": "タイル",
+        "description": "1階のベランダの床には、英国ミントン製のタイルが使われています。床の模様と、上下階で異なる列柱の形を見比べられます。",
+        "sourceIds": [
+          "park"
+        ]
+      }
+    ],
+    "articleSourceIds": [
+      "park",
+      "taito"
+    ],
+    "visit": {
+      "status": "public",
+      "officialUrl": "https://www.tokyo-park.or.jp/park/kyu-iwasaki-tei/index.html",
+      "note": "洋館・和館と、別棟の撞球室では公開範囲が異なります。地下通路と撞球室内は通常の自由見学ではなく、定員のあるガイドで案内されています。開催日と受付条件は公式案内をご確認ください。",
+      "lastChecked": "2026-09-14",
+      "sourceIds": [
+        "park"
+      ]
+    },
+    "location": {
+      "status": "cross-checked",
+      "precision": "building",
+      "sourceIds": [
+        "site-plan",
+        "osm-footprint"
+      ],
+      "checkedAt": "2026-09-14",
+      "method": "公式の敷地案内で棟を区別し、OpenStreetMapの対応する建物輪郭と点の内外を照合。",
+      "note": "建物輪郭と棟の対応を資料で照合しています。公開入口・現地測量による精度は未確認です。",
+      "evidence": {
+        "kind": "building-outline",
+        "ring": [
+          [
+            139.7670817,
+            35.7096808
+          ],
+          [
+            139.7669828,
+            35.7096801
+          ],
+          [
+            139.7669505,
+            35.7096799
+          ],
+          [
+            139.7669493,
+            35.7097928
+          ],
+          [
+            139.7669773,
+            35.7097929
+          ],
+          [
+            139.7669771,
+            35.7098152
+          ],
+          [
+            139.7670203,
+            35.7098155
+          ],
+          [
+            139.7670203,
+            35.7098123
+          ],
+          [
+            139.7670949,
+            35.7098128
+          ],
+          [
+            139.7670945,
+            35.7098485
+          ],
+          [
+            139.7671599,
+            35.709849
+          ],
+          [
+            139.7671602,
+            35.7098243
+          ],
+          [
+            139.7673,
+            35.7098253
+          ],
+          [
+            139.7672998,
+            35.7098418
+          ],
+          [
+            139.767369,
+            35.7098423
+          ],
+          [
+            139.7673692,
+            35.7098236
+          ],
+          [
+            139.7674,
+            35.7098216
+          ],
+          [
+            139.7674061,
+            35.7097939
+          ],
+          [
+            139.7674203,
+            35.7097822
+          ],
+          [
+            139.767423,
+            35.7097335
+          ],
+          [
+            139.7674046,
+            35.7097184
+          ],
+          [
+            139.7674051,
+            35.7096788
+          ],
+          [
+            139.7673707,
+            35.7096785
+          ],
+          [
+            139.767371,
+            35.7096504
+          ],
+          [
+            139.767253,
+            35.7096496
+          ],
+          [
+            139.7671437,
+            35.7096488
+          ],
+          [
+            139.7671434,
+            35.7096812
+          ],
+          [
+            139.7670817,
+            35.7096808
+          ]
+        ],
+        "sourceIds": [
+          "osm-footprint"
+        ],
+        "identitySourceIds": [
+          "site-plan"
+        ],
+        "reviewedAt": "2026-09-14",
+        "osmWayId": 502703799,
+        "sourceTimestamp": "2026-09-14T03:56:41Z",
+        "previousPoint": [
+          139.76778,
+          35.70972
+        ],
+        "previousPointInside": false,
+        "decision": "棟外の旧代表点から、洋館の輪郭内にある点へ修正。近い別棟には移さない。",
+        "license": "ODbL 1.0",
+        "licenseUrl": "https://opendatacommons.org/licenses/odbl/1-0/",
+        "attribution": "OpenStreetMap contributors"
+      }
+    },
+    "sources": [
+      {
+        "id": "park",
+        "title": "旧岩崎邸庭園",
+        "url": "https://www.tokyo-park.or.jp/park/kyu-iwasaki-tei/index.html",
+        "publisher": "東京都公園協会",
+        "scope": "1896年の建設・設計者・所在地・園内施設",
+        "sourceType": "official",
+        "checkedAt": "2026-09-14"
+      },
+      {
+        "id": "taito",
+        "title": "旧岩崎邸庭園 施設情報",
+        "url": "https://www.culture.city.taito.lg.jp/ja/facilities/00001c0000000000000200000054005d",
+        "publisher": "台東区",
+        "scope": "洋館・撞球室と和館の設計者の区別",
+        "sourceType": "official",
+        "checkedAt": "2026-09-14"
+      },
+      {
+        "id": "location",
+        "title": "施設座標",
+        "url": "https://ja.wikipedia.org/wiki/旧岩崎邸庭園",
+        "publisher": "Wikipedia（座標のみ）",
+        "scope": "以前の施設代表点の記録。現在のピンは建物輪郭と公式の敷地案内を照合した位置を使う。",
+        "sourceType": "reference",
+        "checkedAt": "2026-09-14"
+      },
+      {
+        "id": "site-plan",
+        "title": "旧岩崎邸庭園 バリアフリーマップ（2024年1月）",
+        "url": "https://www.tokyo-park.or.jp/park/kyu-iwasaki-tei/assets/files/kyuiwasaki_bf.pdf",
+        "publisher": "東京都公園協会",
+        "scope": "敷地内の対象棟と周囲の施設配置を照合。図の表示中心を座標として流用しない。",
+        "sourceType": "official",
+        "checkedAt": "2026-09-14"
+      },
+      {
+        "id": "osm-footprint",
+        "title": "建物輪郭（OpenStreetMap）",
+        "url": "https://www.openstreetmap.org/way/502703799",
+        "publisher": "OpenStreetMap contributors",
+        "scope": "way 502703799 の建物輪郭。取得時点 2026-09-14T03:56:41Z。ODbL 1.0。入口・測量精度は保証しない。",
+        "sourceType": "open-map",
+        "checkedAt": "2026-09-14"
+      },
+      {
+        "id": "heritage",
+        "title": "旧岩崎家住宅 洋館",
+        "url": "https://kunishitei.bunka.go.jp/bsys/maindetails/102/529",
+        "publisher": "文化庁",
+        "scope": "木造2階建、煉瓦造地下室、スレート葺。文化財の地番と来園者向け住所は区別する。",
+        "sourceType": "official",
+        "checkedAt": "2026-09-14"
+      }
+    ],
+    "verification": {
+      "status": "basic-checked",
+      "lastVerified": "2026-09-14",
+      "fields": {
+        "completionYear": {
+          "status": "source-checked",
+          "sourceIds": [
+            "park"
+          ],
+          "checkedAt": "2026-09-14"
+        },
+        "architects": {
+          "status": "source-checked",
+          "sourceIds": [
+            "park",
+            "taito"
+          ],
+          "checkedAt": "2026-09-14"
+        },
+        "buildingTypes": {
+          "status": "source-checked",
+          "sourceIds": [
+            "park"
+          ],
+          "checkedAt": "2026-09-14"
+        },
+        "address": {
+          "status": "source-checked",
+          "sourceIds": [
+            "park"
+          ],
+          "checkedAt": "2026-09-14"
+        },
+        "nameJa": {
+          "status": "source-checked",
+          "sourceIds": [
+            "park"
+          ],
+          "checkedAt": "2026-09-14"
+        }
+      },
+      "pending": [
+        "公開入口・現地測量による位置精度の確認",
+        "公開日・料金・予約条件の訪問直前の再確認",
+        "木材の樹種、煉瓦・スレートの産地と改修年代の部位対応"
+      ]
+    },
+    "photo": {
+      "src": "assets/photos/iwasaki-exterior.webp",
+      "width": 800,
+      "height": 573,
+      "alt": "芝庭から見た旧岩崎邸の洋館と二層のベランダ",
+      "caption": "旧岩崎邸庭園の洋館、南側の外観。2009年撮影。",
+      "author": "Wiiii",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Former_Iwasaki_Family_House_and_Garden_2009.jpg",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c2/Former_Iwasaki_Family_House_and_Garden_2009.jpg",
+      "originalSha1": "96f1723a1e1922302e735a136a3c899c431a4576",
+      "dateTaken": "2009",
+      "modifications": "縮小・WebP変換",
+      "checkedAt": "2026-09-14",
+      "sha256": "67cc0f703ed4013747f93e3690eb99b5b516c707551b2170a3c5f7f511a4b8fb"
+    }
+  },
+  {
+    "id": "teien-art-museum-main",
+    "slug": "tokyo-metropolitan-teien-art-museum",
+    "nameJa": "東京都庭園美術館 本館",
+    "nameEn": "Tokyo Metropolitan Teien Art Museum — Main Building",
+    "prefecture": "東京都",
+    "municipality": "港区",
+    "area": "白金台",
+    "address": "東京都港区白金台5-21-9",
+    "lat": 35.636862,
+    "lng": 139.719269,
+    "completionYear": 1933,
+    "era": "modern",
+    "architects": [
+      "宮内省内匠寮",
+      "権藤要吉（基本設計）",
+      "アンリ・ラパン（主要内装）"
+    ],
+    "buildingTypes": [
+      "美術館",
+      "邸宅",
+      "歴史建築"
+    ],
+    "styles": [
+      "アール・デコ"
+    ],
+    "materials": [
+      "室内装飾",
+      "ガラス",
+      "カエデ",
+      "ケヤキ",
+      "黒檀",
+      "カリン",
+      "蛇紋岩"
+    ],
+    "oneLiner": "旧朝香宮邸に残るアール・デコの室内。",
+    "summary": "1933年に朝香宮邸として建てられた本館です。建築全体の設計と主要室の内装では担当者が異なります。壁・扉・照明を別々の装飾として見るだけでなく、一つの部屋としてどう組み合わされているかを見ると、アール・デコの特徴が分かります。",
+    "highlights": [
+      "主要室の内装",
+      "扉と照明の組み合わせ",
+      "部屋ごとに異なる装飾"
+    ],
+    "components": [
+      {
+        "part": "主要室の内装",
+        "material": "室内装飾",
+        "description": "大客室・大食堂など7室の内装はアンリ・ラパンがデザインしました。宮内省内匠寮が担った建築全体の設計に、フランス側の装飾計画が組み合わされています。",
+        "sourceIds": [
+          "building",
+          "people"
+        ]
+      },
+      {
+        "part": "正面玄関の扉",
+        "material": "ガラス",
+        "description": "正面玄関のレリーフ扉はルネ・ラリックの作品で、女性像は型押しガラスで作られています。絵柄だけでなく、ガラスの凹凸と光の通り方が建築の一部になっています。",
+        "sourceIds": [
+          "people",
+          "rooms"
+        ]
+      },
+      {
+        "part": "第一応接室の木部・床",
+        "material": "カエデ・ケヤキ・黒檀・カリン",
+        "description": "室内の柱・扉・窓枠にはカエデ材が使われています。床はケヤキを市松模様に並べ、その周囲に黒檀とカリンを配した寄木張りです。木の色や木目の違いを部屋の中で見比べられます。",
+        "sourceIds": [
+          "rooms"
+        ]
+      },
+      {
+        "part": "小客室の暖炉まわり",
+        "material": "ティノス・グリーン",
+        "description": "暖炉の装飾枠には緑色の蛇紋岩が用いられています。石の名前と産地は、外見から推測したものではなく、美術館の部屋別解説に基づきます。",
+        "origin": "ギリシャ産の蛇紋岩。美術館が「ティノス・グリーン」と記載。",
+        "sourceIds": [
+          "rooms"
+        ]
+      }
+    ],
+    "articleSourceIds": [
+      "building",
+      "people"
+    ],
+    "visit": {
+      "status": "public",
+      "officialUrl": "https://www.teien-art-museum.ne.jp/visit/",
+      "note": "建物公開・展覧会・庭園では見学範囲が異なります。展示替え休館や撮影可能な範囲を公式案内で確認してください。",
+      "lastChecked": "2026-09-14",
+      "sourceIds": []
+    },
+    "location": {
+      "status": "address-matched",
+      "precision": "facility",
+      "sourceIds": [
+        "location",
+        "visit"
+      ],
+      "checkedAt": "2026-09-14",
+      "method": "Published facility coordinate; official name and address matched. Not rooftop or entrance geocoding.",
+      "note": "本館と新館の配置を公式図で確認しましたが、取得した公開地図の輪郭は両館を含むため、本館単独の輪郭照合は保留しています。施設座標を維持し、入口として扱いません。",
+      "review": {
+        "checkedAt": "2026-09-14",
+        "sourceIds": [
+          "site-plan"
+        ],
+        "decision": "本館・新館を含む複合輪郭のため、建物単位の確認済みには変更しない。",
+        "candidateOsmWayId": 161011785
+      }
+    },
+    "sources": [
+      {
+        "id": "building",
+        "title": "旧朝香宮邸について",
+        "url": "https://www.teien-art-museum.ne.jp/museum/building/",
+        "publisher": "東京都庭園美術館",
+        "scope": "1933年・設計とアール・デコ",
+        "sourceType": "official",
+        "checkedAt": "2026-09-14"
+      },
+      {
+        "id": "people",
+        "title": "旧朝香宮邸内装にかかわった人々",
+        "url": "https://www.teien-art-museum.ne.jp/museum/building_people/",
+        "publisher": "東京都庭園美術館",
+        "scope": "主要内装の担当者",
+        "sourceType": "official",
+        "checkedAt": "2026-09-14"
+      },
+      {
+        "id": "visit",
+        "title": "来館のご案内",
+        "url": "https://www.teien-art-museum.ne.jp/visit/",
+        "publisher": "東京都庭園美術館",
+        "scope": "所在地・見学案内",
+        "sourceType": "official",
+        "checkedAt": "2026-09-14"
+      },
+      {
+        "id": "location",
+        "title": "施設座標",
+        "url": "https://ja.wikipedia.org/wiki/東京都庭園美術館",
+        "publisher": "Wikipedia（座標のみ）",
+        "scope": "施設の概略座標。本文は転載せず、名称・住所を公式資料と照合。入口・建物輪郭は未照合。",
+        "sourceType": "reference",
+        "checkedAt": "2026-09-14"
+      },
+      {
+        "id": "rooms",
+        "title": "本館の各室と仕上げ材",
+        "publisher": "東京都庭園美術館",
+        "url": "https://www.teien-art-museum.ne.jp/museum/floor_map/",
+        "sourceType": "official",
+        "checkedAt": "2026-09-14",
+        "scope": "正面玄関・第一応接室・小客室の材料と製法"
+      },
+      {
+        "id": "site-plan",
+        "title": "園内マップ・本館と新館",
+        "url": "https://www.teien-art-museum.ne.jp/museum/floor_map/",
+        "publisher": "東京都庭園美術館",
+        "scope": "本館と新館を別の建物として確認。今回取得した公開地図の輪郭は両館を含むため、本館単独の輪郭確認には使わない。",
+        "sourceType": "official",
+        "checkedAt": "2026-09-14"
+      }
+    ],
+    "verification": {
+      "status": "basic-checked",
+      "lastVerified": "2026-09-14",
+      "fields": {
+        "completionYear": {
+          "status": "source-checked",
+          "sourceIds": [
+            "building"
+          ],
+          "checkedAt": "2026-09-14"
+        },
+        "architects": {
+          "status": "source-checked",
+          "sourceIds": [
+            "building",
+            "people"
+          ],
+          "checkedAt": "2026-09-14"
+        },
+        "buildingTypes": {
+          "status": "source-checked",
+          "sourceIds": [
+            "building"
+          ],
+          "checkedAt": "2026-09-14"
+        },
+        "address": {
+          "status": "source-checked",
+          "sourceIds": [
+            "visit"
+          ],
+          "checkedAt": "2026-09-14"
+        },
+        "nameJa": {
+          "status": "source-checked",
+          "sourceIds": [
+            "visit"
+          ],
+          "checkedAt": "2026-09-14"
+        }
+      },
+      "pending": [
+        "現地入口と建物輪郭に対する座標の照合",
+        "公開日・料金・予約条件の訪問直前の再確認",
+        "その他の装飾品の作者・素材・部屋別の対応と材料製法の確認"
+      ]
+    }
+  },
+  {
+    "id": "yoyogi-national-gymnasium",
+    "slug": "yoyogi-national-gymnasium",
+    "nameJa": "国立代々木競技場 第一体育館",
+    "nameEn": "Yoyogi National Gymnasium — First Gymnasium",
+    "prefecture": "東京都",
+    "municipality": "渋谷区",
+    "area": "代々木",
+    "address": "東京都渋谷区神南2-1-1",
+    "lat": 35.66775,
+    "lng": 139.700139,
+    "completionYear": 1964,
+    "era": "postwar",
+    "architects": [
+      "丹下健三",
+      "坪井善勝（構造）"
+    ],
+    "buildingTypes": [
+      "スポーツ施設"
+    ],
+    "styles": [
+      "モダニズム"
+    ],
+    "materials": [
+      "吊り構造"
+    ],
+    "oneLiner": "吊り屋根で大空間を覆う体育館。",
+    "summary": "1964年の東京オリンピックに向けて建設された体育館です。総合意匠は丹下健三、構造は坪井善勝が担当しました。屋根を支える仕組みと、その結果生まれる曲線を分けずに見ると、形と構造の関係が分かります。",
+    "highlights": [
+      "吊り屋根の曲線",
+      "屋根を支える主柱",
+      "内部の大きな無柱空間"
+    ],
+    "components": [
+      {
+        "part": "屋根",
+        "material": "吊り構造",
+        "description": "屋根を吊る方式を用いて、大きな競技空間を覆っています。屋根の曲面と主柱が外観の特徴となり、内部には競技面を柱で区切らない空間が広がります。",
+        "sourceIds": [
+          "history"
+        ]
+      }
+    ],
+    "articleSourceIds": [
+      "history"
+    ],
+    "visit": {
+      "status": "limited",
+      "officialUrl": "https://www.jpnsport.go.jp/yoyogi/",
+      "note": "内部への入場は催事や施設の利用条件によります。一般見学できると決めつけず、主催者・施設の案内を確認してください。",
+      "lastChecked": "2026-09-14",
+      "sourceIds": []
+    },
+    "location": {
+      "status": "cross-checked",
+      "precision": "building",
+      "sourceIds": [
+        "site-plan",
+        "osm-footprint"
+      ],
+      "checkedAt": "2026-09-14",
+      "method": "公式の敷地案内で棟を区別し、OpenStreetMapの対応する建物輪郭と点の内外を照合。",
+      "note": "建物輪郭と棟の対応を資料で照合しています。公開入口・現地測量による精度は未確認です。",
+      "evidence": {
+        "kind": "building-outline",
+        "ring": [
+          [
+            139.7013755,
+            35.6677735
+          ],
+          [
+            139.7009034,
+            35.66739
+          ],
+          [
+            139.7008019,
+            35.6673226
+          ],
+          [
+            139.7006666,
+            35.6672392
+          ],
+          [
+            139.7005115,
+            35.667175
+          ],
+          [
+            139.7003563,
+            35.6671285
+          ],
+          [
+            139.7002597,
+            35.6671146
+          ],
+          [
+            139.7001549,
+            35.6671116
+          ],
+          [
+            139.7000581,
+            35.6671221
+          ],
+          [
+            139.6999593,
+            35.6671372
+          ],
+          [
+            139.6998858,
+            35.6671527
+          ],
+          [
+            139.6998124,
+            35.6671809
+          ],
+          [
+            139.6997336,
+            35.6672166
+          ],
+          [
+            139.6996589,
+            35.6672679
+          ],
+          [
+            139.6996002,
+            35.6673212
+          ],
+          [
+            139.6995301,
+            35.6673975
+          ],
+          [
+            139.6995024,
+            35.6674421
+          ],
+          [
+            139.6994648,
+            35.6675222
+          ],
+          [
+            139.6994385,
+            35.6676229
+          ],
+          [
+            139.6988826,
+            35.6674922
+          ],
+          [
+            139.6989722,
+            35.6675643
+          ],
+          [
+            139.6992619,
+            35.6677909
+          ],
+          [
+            139.6995682,
+            35.6680002
+          ],
+          [
+            139.6997105,
+            35.6680683
+          ],
+          [
+            139.6998413,
+            35.6681221
+          ],
+          [
+            139.6999636,
+            35.6681509
+          ],
+          [
+            139.7000797,
+            35.6681667
+          ],
+          [
+            139.7002037,
+            35.6681711
+          ],
+          [
+            139.7003133,
+            35.6681657
+          ],
+          [
+            139.7004166,
+            35.6681452
+          ],
+          [
+            139.7005065,
+            35.6681125
+          ],
+          [
+            139.7006073,
+            35.6680665
+          ],
+          [
+            139.7006888,
+            35.6680088
+          ],
+          [
+            139.7007563,
+            35.6679467
+          ],
+          [
+            139.700807,
+            35.6678791
+          ],
+          [
+            139.7008533,
+            35.6677805
+          ],
+          [
+            139.7008832,
+            35.6676885
+          ],
+          [
+            139.7013755,
+            35.6677735
+          ]
+        ],
+        "sourceIds": [
+          "osm-footprint"
+        ],
+        "identitySourceIds": [
+          "site-plan"
+        ],
+        "reviewedAt": "2026-09-14",
+        "osmWayId": 101925760,
+        "sourceTimestamp": "2026-09-14T03:56:41Z",
+        "previousPoint": [
+          139.700139,
+          35.66775
+        ],
+        "previousPointInside": true,
+        "decision": "元の座標が対象棟の輪郭内にあるため、座標値を維持。",
+        "license": "ODbL 1.0",
+        "licenseUrl": "https://opendatacommons.org/licenses/odbl/1-0/",
+        "attribution": "OpenStreetMap contributors"
+      }
+    },
+    "sources": [
+      {
+        "id": "history",
+        "title": "国立代々木競技場の歴史詳細",
+        "url": "https://www.jpnsport.go.jp/yoyogi/sisetu/tabid/278/Default.aspx",
+        "publisher": "日本スポーツ振興センター",
+        "scope": "建設経緯・設計担当・吊り屋根",
+        "sourceType": "official",
+        "checkedAt": "2026-09-14"
+      },
+      {
+        "id": "official",
+        "title": "国立代々木競技場",
+        "url": "https://www.jpnsport.go.jp/yoyogi/",
+        "publisher": "日本スポーツ振興センター",
+        "scope": "所在地・施設案内",
+        "sourceType": "official",
+        "checkedAt": "2026-09-14"
+      },
+      {
+        "id": "location",
+        "title": "施設座標",
+        "url": "https://ja.wikipedia.org/wiki/国立代々木競技場",
+        "publisher": "Wikipedia（座標のみ）",
+        "scope": "以前の施設代表点の記録。現在のピンは建物輪郭と公式の敷地案内を照合した位置を使う。",
+        "sourceType": "reference",
+        "checkedAt": "2026-09-14"
+      },
+      {
+        "id": "site-plan",
+        "title": "国立代々木競技場 アクセス・場内案内",
+        "url": "https://www.jpnsport.go.jp/yoyogi/access/tabid/88/default.aspx",
+        "publisher": "日本スポーツ振興センター",
+        "scope": "敷地内の対象棟と周囲の施設配置を照合。図の表示中心を座標として流用しない。",
+        "sourceType": "official",
+        "checkedAt": "2026-09-14"
+      },
+      {
+        "id": "osm-footprint",
+        "title": "建物輪郭（OpenStreetMap）",
+        "url": "https://www.openstreetmap.org/way/101925760",
+        "publisher": "OpenStreetMap contributors",
+        "scope": "way 101925760 の建物輪郭。取得時点 2026-09-14T03:56:41Z。ODbL 1.0。入口・測量精度は保証しない。",
+        "sourceType": "open-map",
+        "checkedAt": "2026-09-14"
+      }
+    ],
+    "verification": {
+      "status": "basic-checked",
+      "lastVerified": "2026-09-14",
+      "fields": {
+        "completionYear": {
+          "status": "source-checked",
+          "sourceIds": [
+            "history"
+          ],
+          "checkedAt": "2026-09-14"
+        },
+        "architects": {
+          "status": "source-checked",
+          "sourceIds": [
+            "history"
+          ],
+          "checkedAt": "2026-09-14"
+        },
+        "buildingTypes": {
+          "status": "source-checked",
+          "sourceIds": [
+            "history"
+          ],
+          "checkedAt": "2026-09-14"
+        },
+        "address": {
+          "status": "source-checked",
+          "sourceIds": [
+            "official"
+          ],
+          "checkedAt": "2026-09-14"
+        },
+        "nameJa": {
+          "status": "source-checked",
+          "sourceIds": [
+            "official"
+          ],
+          "checkedAt": "2026-09-14"
+        }
+      },
+      "pending": [
+        "公開入口・現地測量による位置精度の確認",
+        "公開日・料金・予約条件の訪問直前の再確認",
+        "改修後の各部材仕様と現状の確認"
+      ]
+    },
+    "photo": {
+      "src": "assets/photos/yoyogi-exterior.webp",
+      "width": 800,
+      "height": 534,
+      "alt": "渋谷側から見た国立代々木競技場第一体育館の吊り屋根",
+      "caption": "渋谷側から見た第一体育館。2012年11月撮影。現在の入場口を示す写真ではありません。",
+      "author": "Rs1421",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Yoyogi-National-Gymnasium-01.jpg",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/1/1d/Yoyogi-National-Gymnasium-01.jpg",
+      "originalSha1": "b95894579ff3fe94b177f5878de4f07dc0d81f50",
+      "dateTaken": "2012-11",
+      "modifications": "縮小・WebP変換",
+      "checkedAt": "2026-09-14",
+      "sha256": "f363fcca8682d7b7f6c4c1b5c6c36aeb1faeb5830e02402f6ea2b03201ca7f90"
+    }
+  },
+  {
+    "id": "tokyo-international-forum",
+    "slug": "tokyo-international-forum",
+    "nameJa": "東京国際フォーラム",
+    "nameEn": "Tokyo International Forum",
+    "prefecture": "東京都",
+    "municipality": "千代田区",
+    "area": "有楽町",
+    "address": "東京都千代田区丸の内3-5-1",
+    "lat": 35.67667,
+    "lng": 139.76444,
+    "completionYear": 1996,
+    "era": "contemporary",
+    "architects": [
+      "ラファエル・ヴィニオリ"
+    ],
+    "buildingTypes": [
+      "ホール",
+      "文化施設",
+      "複合施設"
+    ],
+    "styles": [],
+    "materials": [
+      "ガラス"
+    ],
+    "oneLiner": "ガラス棟とホール群が向き合う文化施設。",
+    "summary": "ラファエル・ヴィニオリの設計による複合文化施設です。ガラス棟では、大きな吹き抜けと上部の構造、ブリッジやスロープの位置関係が見どころです。建物の竣工は1996年で、1997年の開館とは区別しています。",
+    "highlights": [
+      "ガラス棟の吹き抜け",
+      "空間を横切るブリッジ",
+      "地上広場とホール群"
+    ],
+    "components": [
+      {
+        "part": "外皮・吹き抜け",
+        "material": "ガラス",
+        "description": "ガラス棟は外皮の透明さと、大空間を支える構造の組み合わせが特徴です。施工者の資料はガラス棟の竣工を1996年5月としています。",
+        "sourceIds": [
+          "obayashi"
+        ]
+      }
+    ],
+    "articleSourceIds": [
+      "history",
+      "obayashi"
+    ],
+    "visit": {
+      "status": "public",
+      "officialUrl": "https://www.t-i-forum.co.jp/",
+      "note": "共用部と各ホールでは入場条件が異なります。催事による動線変更や立入制限は公式案内で確認してください。",
+      "lastChecked": "2026-09-14",
+      "sourceIds": []
+    },
+    "location": {
+      "status": "address-matched",
+      "precision": "facility",
+      "sourceIds": [
+        "location",
+        "access"
+      ],
+      "checkedAt": "2026-09-14",
+      "method": "Published facility coordinate; official name and address matched. Not rooftop or entrance geocoding.",
+      "note": "施設単位の座標です。建物輪郭・敷地内の棟・入口の位置は未照合です。"
+    },
+    "sources": [
+      {
+        "id": "history",
+        "title": "東京国際フォーラムの歴史",
+        "url": "https://www.t-i-forum.co.jp/about/history/",
+        "publisher": "東京国際フォーラム",
+        "scope": "1996年竣工・設計競技・開館との区別",
+        "sourceType": "official",
+        "checkedAt": "2026-09-14"
+      },
+      {
+        "id": "obayashi",
+        "title": "東京国際フォーラム ガラス棟",
+        "url": "https://www.obayashi.co.jp/works/detail/work_144.html",
+        "publisher": "大林組",
+        "scope": "設計・竣工・ガラス棟の空間構成",
+        "sourceType": "official",
+        "checkedAt": "2026-09-14"
+      },
+      {
+        "id": "access",
+        "title": "アクセス",
+        "url": "https://www.t-i-forum.co.jp/access/access/",
+        "publisher": "東京国際フォーラム",
+        "scope": "所在地・アクセス",
+        "sourceType": "official",
+        "checkedAt": "2026-09-14"
+      },
+      {
+        "id": "location",
+        "title": "施設座標",
+        "url": "https://ja.wikipedia.org/wiki/東京国際フォーラム",
+        "publisher": "Wikipedia（座標のみ）",
+        "scope": "施設の概略座標。本文は転載せず、名称・住所を公式資料と照合。入口・建物輪郭は未照合。",
+        "sourceType": "reference",
+        "checkedAt": "2026-09-14"
+      }
+    ],
+    "verification": {
+      "status": "basic-checked",
+      "lastVerified": "2026-09-14",
+      "fields": {
+        "completionYear": {
+          "status": "source-checked",
+          "sourceIds": [
+            "history",
+            "obayashi"
+          ],
+          "checkedAt": "2026-09-14"
+        },
+        "architects": {
+          "status": "source-checked",
+          "sourceIds": [
+            "history",
+            "obayashi"
+          ],
+          "checkedAt": "2026-09-14"
+        },
+        "buildingTypes": {
+          "status": "source-checked",
+          "sourceIds": [
+            "history"
+          ],
+          "checkedAt": "2026-09-14"
+        },
+        "address": {
+          "status": "source-checked",
+          "sourceIds": [
+            "access"
+          ],
+          "checkedAt": "2026-09-14"
+        },
+        "nameJa": {
+          "status": "source-checked",
+          "sourceIds": [
+            "access"
+          ],
+          "checkedAt": "2026-09-14"
+        }
+      },
+      "pending": [
+        "現地入口と建物輪郭に対する座標の照合",
+        "公開日・料金・予約条件の訪問直前の再確認"
+      ]
+    }
+  },
+  {
+    "id": "yokohama-kaiko-kinen-kaikan",
+    "slug": "yokohama-kaiko-kinen-kaikan",
+    "nameJa": "横浜市開港記念会館",
+    "nameEn": "Yokohama Port Opening Memorial Hall",
+    "prefecture": "神奈川県",
+    "municipality": "横浜市中区",
+    "area": "関内",
+    "address": "神奈川県横浜市中区本町1-6",
+    "lat": 35.447648,
+    "lng": 139.641359,
+    "completionYear": 1917,
+    "era": "modern",
+    "architects": [
+      "山田七五郎",
+      "福田重義（原案）"
+    ],
+    "buildingTypes": [
+      "集会場",
+      "歴史建築"
+    ],
+    "styles": [
+      "辰野式フリークラシック"
+    ],
+    "materials": [
+      "煉瓦・花崗岩",
+      "復元部分"
+    ],
+    "oneLiner": "赤煉瓦と花崗岩、時計塔を備える公会堂。",
+    "summary": "横浜開港50周年を記念し、市民の寄付をもとに建てられた公会堂です。1917年に竣工し、福田重義の当選案を山田七五郎らが具体化しました。震災後の復旧やドームの復元を経ており、現在の姿をすべて創建時のままと考えないことも大切です。",
+    "highlights": [
+      "赤煉瓦と花崗岩の外壁",
+      "時計塔と隅部の塔",
+      "復旧・復元の履歴"
+    ],
+    "components": [
+      {
+        "part": "外壁",
+        "material": "煉瓦・花崗岩",
+        "description": "赤煉瓦と花崗岩を組み合わせた外観です。色の違いと石材による縁取りを見ると、壁面の構成が分かります。石の具体的な産地は未確認です。",
+        "sourceIds": [
+          "history"
+        ]
+      },
+      {
+        "part": "屋根・ドーム",
+        "material": "復元部分",
+        "description": "震災で失われたドーム群は、創建時の図面の発見を経て1989年に復元されました。復元部分と残存部分を区別して見る対象です。",
+        "sourceIds": [
+          "history"
+        ]
+      }
+    ],
+    "articleSourceIds": [
+      "history"
+    ],
+    "visit": {
+      "status": "limited",
+      "officialUrl": "https://www.kaikokinenkaikan.com/",
+      "note": "一般見学の時間と公開範囲は、催事や管理上の都合で変わります。最新の一般見学案内を確認してください。",
+      "lastChecked": "2026-09-14",
+      "sourceIds": []
+    },
+    "location": {
+      "status": "address-matched",
+      "precision": "facility",
+      "sourceIds": [
+        "location",
+        "facility"
+      ],
+      "checkedAt": "2026-09-14",
+      "method": "Published facility coordinate; official name and address matched. Not rooftop or entrance geocoding.",
+      "note": "施設単位の座標です。建物輪郭・敷地内の棟・入口の位置は未照合です。"
+    },
+    "sources": [
+      {
+        "id": "history",
+        "title": "会館の歴史",
+        "url": "https://www.kaikokinenkaikan.com/facility/history/",
+        "publisher": "横浜市開港記念会館",
+        "scope": "竣工・設計・材料・復旧と復元",
+        "sourceType": "official",
+        "checkedAt": "2026-09-14"
+      },
+      {
+        "id": "facility",
+        "title": "施設紹介",
+        "url": "https://www.kaikokinenkaikan.com/facility/",
+        "publisher": "横浜市開港記念会館",
+        "scope": "所在地・用途・施設案内",
+        "sourceType": "official",
+        "checkedAt": "2026-09-14"
+      },
+      {
+        "id": "location",
+        "title": "施設座標",
+        "url": "https://ja.wikipedia.org/wiki/横浜市開港記念会館",
+        "publisher": "Wikipedia（座標のみ）",
+        "scope": "施設の概略座標。本文は転載せず、名称・住所を公式資料と照合。入口・建物輪郭は未照合。",
+        "sourceType": "reference",
+        "checkedAt": "2026-09-14"
+      }
+    ],
+    "verification": {
+      "status": "basic-checked",
+      "lastVerified": "2026-09-14",
+      "fields": {
+        "completionYear": {
+          "status": "source-checked",
+          "sourceIds": [
+            "history"
+          ],
+          "checkedAt": "2026-09-14"
+        },
+        "architects": {
+          "status": "source-checked",
+          "sourceIds": [
+            "history"
+          ],
+          "checkedAt": "2026-09-14"
+        },
+        "buildingTypes": {
+          "status": "source-checked",
+          "sourceIds": [
+            "history"
+          ],
+          "checkedAt": "2026-09-14"
+        },
+        "address": {
+          "status": "source-checked",
+          "sourceIds": [
+            "facility"
+          ],
+          "checkedAt": "2026-09-14"
+        },
+        "nameJa": {
+          "status": "source-checked",
+          "sourceIds": [
+            "facility"
+          ],
+          "checkedAt": "2026-09-14"
+        }
+      },
+      "pending": [
+        "現地入口と建物輪郭に対する座標の照合",
+        "公開日・料金・予約条件の訪問直前の再確認",
+        "花崗岩の産地と各補修年代の部位対応"
+      ]
+    }
+  },
+  {
+    "id": "momas",
+    "slug": "saitama-museum-modern-art",
+    "nameJa": "埼玉県立近代美術館",
+    "nameEn": "The Museum of Modern Art, Saitama",
+    "prefecture": "埼玉県",
+    "municipality": "さいたま市浦和区",
+    "area": "北浦和",
+    "address": "埼玉県さいたま市浦和区常盤9-30-1",
+    "lat": 35.869611,
+    "lng": 139.642917,
+    "completionYear": 1982,
+    "era": "postwar",
+    "architects": [
+      "黒川紀章"
+    ],
+    "buildingTypes": [
+      "美術館",
+      "文化施設"
+    ],
+    "styles": [],
+    "materials": [
+      "鉄筋コンクリート・鉄骨鉄筋コンクリート",
+      "アトリウム・サンクガーデン"
+    ],
+    "oneLiner": "格子状の骨組みと中央の吹き抜け。",
+    "summary": "北浦和公園に建つ黒川紀章の美術館です。中央の吹き抜けを囲む動線と、格子状に組まれた柱・梁が特徴です。地下に光を届けるためのサンクガーデンは、地面より低く設けた庭のことです。公園と館内がどうつながるかを見比べられます。",
+    "highlights": [
+      "格子状の柱と梁",
+      "中央のアトリウム",
+      "地下へ光を導くサンクガーデン"
+    ],
+    "components": [
+      {
+        "part": "骨組み",
+        "material": "鉄筋コンクリート・鉄骨鉄筋コンクリート",
+        "description": "設計者の資料では鉄筋コンクリート造を中心に、一部を鉄骨鉄筋コンクリート造としています。格子状の柱と梁が、内部と外部の境界にも現れています。",
+        "sourceIds": [
+          "design"
+        ]
+      },
+      {
+        "part": "採光",
+        "material": "アトリウム・サンクガーデン",
+        "description": "中央の吹き抜けの天窓と、地下へ向かう庭によって自然光を取り入れます。どこから光が入るかを歩きながら確認できます。",
+        "sourceIds": [
+          "design"
+        ]
+      }
+    ],
+    "articleSourceIds": [
+      "design"
+    ],
+    "visit": {
+      "status": "public",
+      "officialUrl": "https://pref.spec.ed.jp/momas/利用案内---交通案内",
+      "note": "建物への入館と展覧会の観覧は別です。休館日・展示替え・公開範囲は公式案内で確認してください。",
+      "lastChecked": "2026-09-14",
+      "sourceIds": []
+    },
+    "location": {
+      "status": "address-matched",
+      "precision": "facility",
+      "sourceIds": [
+        "location",
+        "access"
+      ],
+      "checkedAt": "2026-09-14",
+      "method": "Published facility coordinate; official name and address matched. Not rooftop or entrance geocoding.",
+      "note": "施設単位の座標です。建物輪郭・敷地内の棟・入口の位置は未照合です。"
+    },
+    "sources": [
+      {
+        "id": "design",
+        "title": "埼玉県立近代美術館",
+        "url": "https://www.kisho.co.jp/project/1980/saitama_prefectural_museum_of_modern_art/",
+        "publisher": "黒川紀章建築都市設計事務所",
+        "scope": "設計・1982年竣工・構造・採光",
+        "sourceType": "official",
+        "checkedAt": "2026-09-14"
+      },
+      {
+        "id": "access",
+        "title": "利用案内・交通案内",
+        "url": "https://pref.spec.ed.jp/momas/利用案内---交通案内",
+        "publisher": "埼玉県立近代美術館",
+        "scope": "所在地・入館と展覧会観覧の区別",
+        "sourceType": "official",
+        "checkedAt": "2026-09-14"
+      },
+      {
+        "id": "location",
+        "title": "施設座標",
+        "url": "https://ja.wikipedia.org/wiki/埼玉県立近代美術館",
+        "publisher": "Wikipedia（座標のみ）",
+        "scope": "施設の概略座標。本文は転載せず、名称・住所を公式資料と照合。入口・建物輪郭は未照合。",
+        "sourceType": "reference",
+        "checkedAt": "2026-09-14"
+      }
+    ],
+    "verification": {
+      "status": "basic-checked",
+      "lastVerified": "2026-09-14",
+      "fields": {
+        "completionYear": {
+          "status": "source-checked",
+          "sourceIds": [
+            "design"
+          ],
+          "checkedAt": "2026-09-14"
+        },
+        "architects": {
+          "status": "source-checked",
+          "sourceIds": [
+            "design"
+          ],
+          "checkedAt": "2026-09-14"
+        },
+        "buildingTypes": {
+          "status": "source-checked",
+          "sourceIds": [
+            "design"
+          ],
+          "checkedAt": "2026-09-14"
+        },
+        "address": {
+          "status": "source-checked",
+          "sourceIds": [
+            "access"
+          ],
+          "checkedAt": "2026-09-14"
+        },
+        "nameJa": {
+          "status": "source-checked",
+          "sourceIds": [
+            "access"
+          ],
+          "checkedAt": "2026-09-14"
+        }
+      },
+      "pending": [
+        "現地入口と建物輪郭に対する座標の照合",
+        "公開日・料金・予約条件の訪問直前の再確認"
+      ]
+    }
+  },
+  {
+    "id": "hoki-museum",
+    "slug": "hoki-museum",
+    "nameJa": "ホキ美術館",
+    "nameEn": "Hoki Museum",
+    "prefecture": "千葉県",
+    "municipality": "千葉市緑区",
+    "area": "あすみが丘",
+    "address": "千葉県千葉市緑区あすみが丘東3-15",
+    "lat": 35.52194,
+    "lng": 140.28,
+    "completionYear": 2010,
+    "era": "contemporary",
+    "architects": [
+      "日建設計",
+      "山梨知彦"
+    ],
+    "buildingTypes": [
+      "美術館"
+    ],
+    "styles": [],
+    "materials": [
+      "鉄筋コンクリート・鉄骨",
+      "LED照明・設備孔"
+    ],
+    "oneLiner": "絵画に向き合う、回廊型の展示空間。",
+    "summary": "写実絵画の鑑賞のために計画された美術館です。鑑賞の邪魔になる設備や目地を目立たせず、絵画と壁面が主役になるよう計画されています。自然光と照明、壁面と作品の距離など、展示のための細部が建築の主題です。",
+    "highlights": [
+      "連続する回廊型ギャラリー",
+      "自然光と展示照明",
+      "設備を目立たせない天井"
+    ],
+    "components": [
+      {
+        "part": "構造",
+        "material": "鉄筋コンクリート・鉄骨",
+        "description": "公式施設概要はRC造、一部鉄骨造としています。RCは鉄筋コンクリートのことです。地上1階・地下2階に展示空間が重なります。",
+        "sourceIds": [
+          "building"
+        ]
+      },
+      {
+        "part": "天井・照明",
+        "material": "LED照明・設備孔",
+        "description": "照明、空調、排煙などを小さな孔にまとめ、天井の設備が鑑賞の邪魔をしないよう計画されています。",
+        "sourceIds": [
+          "building"
+        ]
+      }
+    ],
+    "articleSourceIds": [
+      "building"
+    ],
+    "visit": {
+      "status": "public",
+      "officialUrl": "https://www.hoki-museum.jp/",
+      "note": "館内撮影は原則禁止と案内されています。来館日時・予約・料金は公式案内で確認してください。建物の商業撮影には別の確認が必要です。",
+      "lastChecked": "2026-09-14",
+      "sourceIds": []
+    },
+    "location": {
+      "status": "address-matched",
+      "precision": "facility",
+      "sourceIds": [
+        "location",
+        "building"
+      ],
+      "checkedAt": "2026-09-14",
+      "method": "Published facility coordinate; official name and address matched. Not rooftop or entrance geocoding.",
+      "note": "施設単位の座標です。建物輪郭・敷地内の棟・入口の位置は未照合です。"
+    },
+    "sources": [
+      {
+        "id": "building",
+        "title": "建物について",
+        "url": "https://www.hoki-museum.jp/about2/",
+        "publisher": "ホキ美術館",
+        "scope": "設計・2010年9月竣工・構造・所在地・撮影条件",
+        "sourceType": "official",
+        "checkedAt": "2026-09-14"
+      },
+      {
+        "id": "location",
+        "title": "施設座標",
+        "url": "https://ja.wikipedia.org/wiki/ホキ美術館",
+        "publisher": "Wikipedia（座標のみ）",
+        "scope": "施設の概略座標。本文は転載せず、名称・住所を公式資料と照合。入口・建物輪郭は未照合。",
+        "sourceType": "reference",
+        "checkedAt": "2026-09-14"
+      }
+    ],
+    "verification": {
+      "status": "basic-checked",
+      "lastVerified": "2026-09-14",
+      "fields": {
+        "completionYear": {
+          "status": "source-checked",
+          "sourceIds": [
+            "building"
+          ],
+          "checkedAt": "2026-09-14"
+        },
+        "architects": {
+          "status": "source-checked",
+          "sourceIds": [
+            "building"
+          ],
+          "checkedAt": "2026-09-14"
+        },
+        "buildingTypes": {
+          "status": "source-checked",
+          "sourceIds": [
+            "building"
+          ],
+          "checkedAt": "2026-09-14"
+        },
+        "address": {
+          "status": "source-checked",
+          "sourceIds": [
+            "building"
+          ],
+          "checkedAt": "2026-09-14"
+        },
+        "nameJa": {
+          "status": "source-checked",
+          "sourceIds": [
+            "building"
+          ],
+          "checkedAt": "2026-09-14"
+        }
+      },
+      "pending": [
+        "現地入口と建物輪郭に対する座標の照合",
+        "公開日・料金・予約条件の訪問直前の再確認"
+      ]
+    }
+  },
+  {
+    "id": "art-tower-mito",
+    "slug": "art-tower-mito",
+    "nameJa": "水戸芸術館",
+    "nameEn": "Art Tower Mito",
+    "prefecture": "茨城県",
+    "municipality": "水戸市",
+    "area": "五軒町",
+    "address": "茨城県水戸市五軒町1-6-8",
+    "lat": 36.38028,
+    "lng": 140.46583,
+    "completionYear": 1990,
+    "era": "contemporary",
+    "architects": [
+      "磯崎新"
+    ],
+    "buildingTypes": [
+      "文化施設",
+      "美術館",
+      "ホール",
+      "劇場"
+    ],
+    "styles": [],
+    "materials": [],
+    "oneLiner": "音楽・演劇・美術の三つの空間。",
+    "summary": "水戸市制100周年を記念して開館した、磯崎新設計の複合文化施設です。コンサートホール、劇場、現代美術ギャラリーを一つの施設にまとめています。特徴的な塔だけでなく、各施設への動線や、街から入るエントランスにも注目できます。",
+    "highlights": [
+      "特徴的なシンボルタワー",
+      "三つの専用空間",
+      "街に開かれたエントランス"
+    ],
+    "components": [],
+    "articleSourceIds": [
+      "about",
+      "access"
+    ],
+    "visit": {
+      "status": "public",
+      "officialUrl": "https://www.arttowermito.or.jp/access/",
+      "note": "エントランスホール、塔、ギャラリー、劇場・ホールでは公開条件が異なります。目的の施設の案内を確認してください。",
+      "lastChecked": "2026-09-14",
+      "sourceIds": []
+    },
+    "location": {
+      "status": "address-matched",
+      "precision": "facility",
+      "sourceIds": [
+        "location",
+        "access"
+      ],
+      "checkedAt": "2026-09-14",
+      "method": "Published facility coordinate; official name and address matched. Not rooftop or entrance geocoding.",
+      "note": "施設単位の座標です。建物輪郭・敷地内の棟・入口の位置は未照合です。"
+    },
+    "sources": [
+      {
+        "id": "about",
+        "title": "水戸芸術館とは",
+        "url": "https://www.arttowermito.or.jp/about/",
+        "publisher": "水戸芸術館",
+        "scope": "設計者・用途・成り立ち",
+        "sourceType": "official",
+        "checkedAt": "2026-09-14"
+      },
+      {
+        "id": "year",
+        "title": "磯崎新：群島としての建築",
+        "url": "https://www.arttowermito.or.jp/gallery/lineup/article_5359.html",
+        "publisher": "水戸芸術館",
+        "scope": "参考図版に1990年竣工を明記。展覧会会期の現在情報としては使わない",
+        "sourceType": "official",
+        "checkedAt": "2026-09-14"
+      },
+      {
+        "id": "access",
+        "title": "アクセス・来館情報",
+        "url": "https://www.arttowermito.or.jp/access/",
+        "publisher": "水戸芸術館",
+        "scope": "所在地・各施設の公開条件",
+        "sourceType": "official",
+        "checkedAt": "2026-09-14"
+      },
+      {
+        "id": "location",
+        "title": "施設座標",
+        "url": "https://ja.wikipedia.org/wiki/水戸芸術館",
+        "publisher": "Wikipedia（座標のみ）",
+        "scope": "施設の概略座標。本文は転載せず、名称・住所を公式資料と照合。入口・建物輪郭は未照合。",
+        "sourceType": "reference",
+        "checkedAt": "2026-09-14"
+      }
+    ],
+    "verification": {
+      "status": "basic-checked",
+      "lastVerified": "2026-09-14",
+      "fields": {
+        "completionYear": {
+          "status": "source-checked",
+          "sourceIds": [
+            "year"
+          ],
+          "checkedAt": "2026-09-14"
+        },
+        "architects": {
+          "status": "source-checked",
+          "sourceIds": [
+            "about"
+          ],
+          "checkedAt": "2026-09-14"
+        },
+        "buildingTypes": {
+          "status": "source-checked",
+          "sourceIds": [
+            "about"
+          ],
+          "checkedAt": "2026-09-14"
+        },
+        "address": {
+          "status": "source-checked",
+          "sourceIds": [
+            "access"
+          ],
+          "checkedAt": "2026-09-14"
+        },
+        "nameJa": {
+          "status": "source-checked",
+          "sourceIds": [
+            "access"
+          ],
+          "checkedAt": "2026-09-14"
+        }
+      },
+      "pending": [
+        "現地入口と建物輪郭に対する座標の照合",
+        "公開日・料金・予約条件の訪問直前の再確認",
+        "共同設計者・構造設計者と塔の材料仕様の一次資料確認"
+      ]
+    }
+  },
+  {
+    "id": "bato-hiroshige",
+    "slug": "bato-hiroshige-museum",
+    "nameJa": "那珂川町馬頭広重美術館",
+    "nameEn": "Nakagawa-machi Bato Hiroshige Museum of Art",
+    "prefecture": "栃木県",
+    "municipality": "那珂川町",
+    "area": "馬頭",
+    "address": "栃木県那須郡那珂川町馬頭116-9",
+    "lat": 36.739111,
+    "lng": 140.170944,
+    "completionYear": 2000,
+    "era": "contemporary",
+    "architects": [
+      "隈研吾"
+    ],
+    "buildingTypes": [
+      "美術館"
+    ],
+    "styles": [],
+    "materials": [
+      "杉",
+      "木目付きアルミ"
+    ],
+    "oneLiner": "重なるルーバーと、改修で変わった屋根材。",
+    "summary": "隈研吾の設計による、広重の作品を展示する美術館です。細い部材を並べたルーバーが、光や視線を通す層をつくります。2000年の創建時は杉材を屋根にも使いましたが、2026年の改修では屋根のルーバーを木目付きアルミに変更しています。",
+    "highlights": [
+      "細い部材の重なり",
+      "光を通すルーバー",
+      "創建時と改修後の材料の違い"
+    ],
+    "components": [
+      {
+        "part": "屋根・創建時",
+        "material": "杉",
+        "description": "創建時は地元の杉に不燃・防腐処理を行い、屋根のルーバーにも使用しました。2026年の改修で、この部分は木目付きアルミに置き換わりました。",
+        "sourceIds": [
+          "original"
+        ],
+        "origin": "設計者の説明では地元産の杉。具体的な産地範囲・供給元は未確認。"
+      },
+      {
+        "part": "屋根・2026年改修",
+        "material": "木目付きアルミ",
+        "description": "傷みの進んだ屋根の木ルーバーを、木目をプリントしたアルミに取り換えています。35種類のパターンを用い、木の外観を引き継ぎながら、風雨にさらされる部分の材料を変えています。",
+        "sourceIds": [
+          "renewal"
+        ]
+      }
+    ],
+    "articleSourceIds": [
+      "original",
+      "renewal"
+    ],
+    "visit": {
+      "status": "public",
+      "officialUrl": "https://www.hiroshige.bato.tochigi.jp/",
+      "note": "改修前の案内と混同しないよう、現在の公式サイトで公開範囲・休館日を確認してください。",
+      "lastChecked": "2026-09-14",
+      "sourceIds": []
+    },
+    "location": {
+      "status": "address-matched",
+      "precision": "facility",
+      "sourceIds": [
+        "location",
+        "renewal",
+        "access"
+      ],
+      "checkedAt": "2026-09-14",
+      "method": "Published facility coordinate; official name and address matched. Not rooftop or entrance geocoding.",
+      "note": "施設単位の座標です。建物輪郭・敷地内の棟・入口の位置は未照合です。"
+    },
+    "sources": [
+      {
+        "id": "original",
+        "title": "那珂川町馬頭広重美術館",
+        "url": "https://kkaa.co.jp/project/nakagawa-machi-bato-hiroshige-museum-of-art/",
+        "publisher": "隈研吾建築都市設計事務所",
+        "scope": "2000年竣工・創建時の杉材と設計意図",
+        "sourceType": "official",
+        "checkedAt": "2026-09-14"
+      },
+      {
+        "id": "renewal",
+        "title": "馬頭広重美術館リニューアル",
+        "url": "https://kkaa.co.jp/project/renewal-of-bato-hiroshige-museum/",
+        "publisher": "隈研吾建築都市設計事務所",
+        "scope": "2026年3月改修・屋根材の変更・公式埋込地図の住所",
+        "sourceType": "official",
+        "checkedAt": "2026-09-14"
+      },
+      {
+        "id": "access",
+        "title": "交通アクセス",
+        "url": "https://www.hiroshige.bato.tochigi.jp/access",
+        "publisher": "那珂川町馬頭広重美術館",
+        "scope": "所在地。検索結果の公式情報で照合、本文取得に制限あり",
+        "sourceType": "official",
+        "checkedAt": "2026-09-14"
+      },
+      {
+        "id": "location",
+        "title": "施設座標",
+        "url": "https://ja.wikipedia.org/wiki/那珂川町馬頭広重美術館",
+        "publisher": "Wikipedia（座標のみ）",
+        "scope": "施設の概略座標。本文は転載せず、名称・住所を公式資料と照合。入口・建物輪郭は未照合。",
+        "sourceType": "reference",
+        "checkedAt": "2026-09-14"
+      }
+    ],
+    "verification": {
+      "status": "basic-checked",
+      "lastVerified": "2026-09-14",
+      "fields": {
+        "completionYear": {
+          "status": "source-checked",
+          "sourceIds": [
+            "original"
+          ],
+          "checkedAt": "2026-09-14"
+        },
+        "architects": {
+          "status": "source-checked",
+          "sourceIds": [
+            "original"
+          ],
+          "checkedAt": "2026-09-14"
+        },
+        "buildingTypes": {
+          "status": "source-checked",
+          "sourceIds": [
+            "original"
+          ],
+          "checkedAt": "2026-09-14"
+        },
+        "address": {
+          "status": "source-checked",
+          "sourceIds": [
+            "renewal",
+            "access"
+          ],
+          "checkedAt": "2026-09-14"
+        },
+        "nameJa": {
+          "status": "source-checked",
+          "sourceIds": [
+            "renewal",
+            "access"
+          ],
+          "checkedAt": "2026-09-14"
+        }
+      },
+      "pending": [
+        "現地入口と建物輪郭に対する座標の照合",
+        "公開日・料金・予約条件の訪問直前の再確認",
+        "改修部材の全範囲・メーカーと杉の供給元"
+      ]
+    }
+  },
+  {
+    "id": "gunma-museum-modern-art",
+    "slug": "gunma-museum-modern-art",
+    "nameJa": "群馬県立近代美術館",
+    "nameEn": "The Museum of Modern Art, Gunma",
+    "prefecture": "群馬県",
+    "municipality": "高崎市",
+    "area": "群馬の森",
+    "address": "群馬県高崎市綿貫町992-1",
+    "lat": 36.298722,
+    "lng": 139.078639,
+    "completionYear": 1974,
+    "era": "postwar",
+    "architects": [
+      "磯崎新"
+    ],
+    "buildingTypes": [
+      "美術館",
+      "文化施設"
+    ],
+    "styles": [],
+    "materials": [
+      "アルミ・ガラス",
+      "大理石"
+    ],
+    "oneLiner": "立方体の骨組みと、繰り返す正方形。",
+    "summary": "磯崎新が設計した、群馬の森に建つ美術館です。12メートルの立方体を基本に、外壁や床にも正方形の寸法の関係が現れます。建物全体の形から壁のパネルまで、同じ考え方がどう繰り返されるかを見ると理解しやすくなります。",
+    "highlights": [
+      "立方体を組み合わせた構成",
+      "外壁の正方形パネル",
+      "ホールの床と壁の寸法関係"
+    ],
+    "components": [
+      {
+        "part": "外壁",
+        "material": "アルミ・ガラス",
+        "description": "公式建築解説では外壁のアルミパネルとガラスの格子を120センチ角と説明しています。12メートルの基本構成を小さく分けた寸法です。",
+        "sourceIds": [
+          "architecture"
+        ]
+      },
+      {
+        "part": "ホールの床・壁",
+        "material": "大理石",
+        "description": "エントランスホールには60センチ角の大理石パネルが使われています。石種や採石地は、この解説だけでは確定できません。",
+        "sourceIds": [
+          "architecture"
+        ]
+      }
+    ],
+    "articleSourceIds": [
+      "architecture"
+    ],
+    "visit": {
+      "status": "public",
+      "officialUrl": "https://mmag.pref.gunma.jp/",
+      "note": "休館日・展覧会・各施設の公開条件は公式案内を確認してください。増築された部分は本館の創建時とは分けて見る必要があります。",
+      "lastChecked": "2026-09-14",
+      "sourceIds": []
+    },
+    "location": {
+      "status": "address-matched",
+      "precision": "facility",
+      "sourceIds": [
+        "location",
+        "architecture"
+      ],
+      "checkedAt": "2026-09-14",
+      "method": "Published facility coordinate; official name and address matched. Not rooftop or entrance geocoding.",
+      "note": "施設単位の座標です。建物輪郭・敷地内の棟・入口の位置は未照合です。"
+    },
+    "sources": [
+      {
+        "id": "architecture",
+        "title": "磯崎新の建築",
+        "url": "https://mmag.pref.gunma.jp/architecture",
+        "publisher": "群馬県立近代美術館",
+        "scope": "設計者・所在地・構成・アルミと大理石",
+        "sourceType": "official",
+        "checkedAt": "2026-09-14"
+      },
+      {
+        "id": "year",
+        "title": "磯崎新：群島としての建築",
+        "url": "https://www.arttowermito.or.jp/gallery/lineup/article_5359.html",
+        "publisher": "水戸芸術館",
+        "scope": "参考図版に群馬県立近代美術館の1974年竣工を明記",
+        "sourceType": "official",
+        "checkedAt": "2026-09-14"
+      },
+      {
+        "id": "location",
+        "title": "施設座標",
+        "url": "https://ja.wikipedia.org/wiki/群馬県立近代美術館",
+        "publisher": "Wikipedia（座標のみ）",
+        "scope": "施設の概略座標。本文は転載せず、名称・住所を公式資料と照合。入口・建物輪郭は未照合。",
+        "sourceType": "reference",
+        "checkedAt": "2026-09-14"
+      }
+    ],
+    "verification": {
+      "status": "basic-checked",
+      "lastVerified": "2026-09-14",
+      "fields": {
+        "completionYear": {
+          "status": "source-checked",
+          "sourceIds": [
+            "year"
+          ],
+          "checkedAt": "2026-09-14"
+        },
+        "architects": {
+          "status": "source-checked",
+          "sourceIds": [
+            "architecture"
+          ],
+          "checkedAt": "2026-09-14"
+        },
+        "buildingTypes": {
+          "status": "source-checked",
+          "sourceIds": [
+            "architecture"
+          ],
+          "checkedAt": "2026-09-14"
+        },
+        "address": {
+          "status": "source-checked",
+          "sourceIds": [
+            "architecture"
+          ],
+          "checkedAt": "2026-09-14"
+        },
+        "nameJa": {
+          "status": "source-checked",
+          "sourceIds": [
+            "architecture"
+          ],
+          "checkedAt": "2026-09-14"
+        }
+      },
+      "pending": [
+        "現地入口と建物輪郭に対する座標の照合",
+        "公開日・料金・予約条件の訪問直前の再確認",
+        "大理石の石種・採石地と改修材の対応"
+      ]
+    }
+  },
+  {
+    "id": "tokyo-bunka-kaikan",
+    "slug": "tokyo-bunka-kaikan",
+    "nameJa": "東京文化会館",
+    "nameEn": "",
+    "prefecture": "東京都",
+    "municipality": "台東区",
+    "area": "上野",
+    "address": "東京都台東区上野公園5-45",
+    "lat": 35.714449,
+    "lng": 139.775327,
+    "completionYear": 1961,
+    "openingYear": 1961,
+    "era": "postwar",
+    "architects": [
+      "前川國男",
+      "横山建築構造設計事務所（構造）"
+    ],
+    "buildingTypes": [
+      "ホール",
+      "文化施設"
+    ],
+    "styles": [
+      "モダニズム"
+    ],
+    "materials": [
+      "鉄骨鉄筋コンクリート",
+      "打放しコンクリート・塗装"
+    ],
+    "oneLiner": "反り上がる屋根と広いロビーを持つ音楽ホール。",
+    "summary": "国立西洋美術館と向かい合う、前川國男設計の音楽ホールです。大きな屋根の下にロビーとホワイエを広く取り、演奏の前後に人が集まる空間も重視して設計されました。",
+    "highlights": [
+      "大きな屋根と太い柱",
+      "ロビーとホワイエの広がり",
+      "国立西洋美術館と向き合う配置"
+    ],
+    "components": [
+      {
+        "part": "骨組み・屋根",
+        "material": "鉄骨鉄筋コンクリート",
+        "description": "本館の構造は鉄骨鉄筋コンクリート造です。太い柱と大きな屋根の下にロビーなどの空間を確保し、対面する美術館との高さの関係にも配慮しています。",
+        "sourceIds": [
+          "building",
+          "history"
+        ]
+      },
+      {
+        "part": "外壁の保存",
+        "material": "打放しコンクリート・塗装",
+        "description": "外壁は1981年に本格的な修復が行われ、赤みを帯びた透明な塗料で保護されました。現在の色を、そのまま竣工時の無塗装コンクリートの色だと考えないことが大切です。",
+        "sourceIds": [
+          "building"
+        ]
+      }
+    ],
+    "articleSourceIds": [
+      "building"
+    ],
+    "visit": {
+      "status": "closed",
+      "officialUrl": "https://www.t-bunka.jp/info/32755/",
+      "note": "大規模改修で休館中です。大ホールなどは2026年5月7日、小ホールは5月14日から休館し、再開は2028年度中を予定しています。予定は変更される可能性があります。地図は青海の仮事務所ではなく、上野の建物を示します。",
+      "lastChecked": "2026-09-14",
+      "sourceIds": [
+        "closure",
+        "access"
+      ]
+    },
+    "location": {
+      "status": "address-matched",
+      "precision": "facility",
+      "sourceIds": [
+        "location",
+        "access"
+      ],
+      "checkedAt": "2026-09-14",
+      "method": "Published facility point matched to official building name and permanent address. Embedded map viewport centers and temporary office addresses are not used.",
+      "note": "施設単位の公開座標です。建物輪郭・入口は未照合です。"
+    },
+    "sources": [
+      {
+        "id": "building",
+        "title": "建築について",
+        "url": "https://www.t-bunka.jp/gallery/",
+        "publisher": "東京文化会館",
+        "scope": "1961年竣工・前川國男・外壁・屋根とロビー",
+        "sourceType": "official",
+        "checkedAt": "2026-09-14"
+      },
+      {
+        "id": "history",
+        "title": "施設概要",
+        "url": "https://www.t-bunka.jp/about/venue.html",
+        "publisher": "東京文化会館",
+        "scope": "施設の用途と開館年",
+        "sourceType": "official",
+        "checkedAt": "2026-09-14"
+      },
+      {
+        "id": "access",
+        "title": "交通アクセス",
+        "url": "https://www.t-bunka.jp/access/",
+        "publisher": "東京文化会館",
+        "scope": "上野公園の建物の名称・住所",
+        "sourceType": "official",
+        "checkedAt": "2026-09-14"
+      },
+      {
+        "id": "closure",
+        "title": "大規模改修工事に伴う休館（2026年7月1日更新）",
+        "url": "https://www.t-bunka.jp/info/32755/",
+        "publisher": "東京文化会館",
+        "scope": "2026年5月7日から休館・再開予定・仮事務所との区別",
+        "sourceType": "official",
+        "checkedAt": "2026-09-14"
+      },
+      {
+        "id": "location",
+        "title": "東京文化会館の施設座標",
+        "url": "https://www.navitime.co.jp/poi?spot=00004-13104900131",
+        "publisher": "ナビタイムジャパン",
+        "scope": "施設の公開座標と住所のみ。掲載電話・営業情報は採用しない。",
+        "sourceType": "map-provider",
+        "checkedAt": "2026-09-14"
+      }
+    ],
+    "verification": {
+      "status": "basic-checked",
+      "lastVerified": "2026-09-14",
+      "fields": {
+        "nameJa": {
+          "status": "source-checked",
+          "sourceIds": [
+            "access"
+          ],
+          "checkedAt": "2026-09-14"
+        },
+        "completionYear": {
+          "status": "source-checked",
+          "sourceIds": [
+            "history"
+          ],
+          "checkedAt": "2026-09-14"
+        },
+        "openingYear": {
+          "status": "source-checked",
+          "sourceIds": [
+            "history"
+          ],
+          "checkedAt": "2026-09-14"
+        },
+        "architects": {
+          "status": "source-checked",
+          "sourceIds": [
+            "building",
+            "history"
+          ],
+          "checkedAt": "2026-09-14"
+        },
+        "address": {
+          "status": "source-checked",
+          "sourceIds": [
+            "access"
+          ],
+          "checkedAt": "2026-09-14"
+        },
+        "buildingTypes": {
+          "status": "source-checked",
+          "sourceIds": [
+            "building"
+          ],
+          "checkedAt": "2026-09-14"
+        }
+      },
+      "pending": [
+        "建物輪郭と公開入口に対する座標の照合",
+        "見学条件の訪問直前の再確認",
+        "写真・図版の利用権確認"
+      ]
+    }
+  },
+  {
+    "id": "national-art-center-tokyo",
+    "slug": "national-art-center-tokyo",
+    "nameJa": "国立新美術館",
+    "nameEn": "",
+    "prefecture": "東京都",
+    "municipality": "港区",
+    "area": "六本木",
+    "address": "東京都港区六本木7-22-2",
+    "lat": 35.665312,
+    "lng": 139.726382,
+    "completionYear": 2006,
+    "openingYear": 2007,
+    "era": "contemporary",
+    "architects": [
+      "黒川紀章",
+      "日本設計"
+    ],
+    "buildingTypes": [
+      "美術館",
+      "文化施設"
+    ],
+    "styles": [
+      "現代建築"
+    ],
+    "materials": [
+      "ガラス",
+      "鉄骨・鉄骨鉄筋コンクリート"
+    ],
+    "oneLiner": "波打つガラス外壁と吹き抜けのロビー。",
+    "summary": "黒川紀章・日本設計共同体が設計し、2006年に竣工、2007年に開館した美術館です。南側の曲面ガラスと円錐形の入口が、四角い展示室とは異なる開放的な共用空間をつくっています。",
+    "highlights": [
+      "波状のガラスカーテンウォール",
+      "円錐形の正面入口",
+      "吹き抜けロビーと庭のつながり"
+    ],
+    "components": [
+      {
+        "part": "南側の外壁",
+        "material": "ガラス",
+        "description": "波のような曲面のガラス外壁を通して、ロビーと周辺の緑がつながります。外壁の形と館内からの眺めを両方見ると、曲面の役割を理解しやすくなります。",
+        "sourceIds": [
+          "building"
+        ]
+      },
+      {
+        "part": "骨組みと免震",
+        "material": "鉄骨・鉄骨鉄筋コンクリート",
+        "description": "主な構造は鉄骨造で、一部に鉄骨鉄筋コンクリートを使います。免震装置のほか、雨水の再利用や床から空気を送る空調も採用されています。",
+        "sourceIds": [
+          "building"
+        ]
+      }
+    ],
+    "articleSourceIds": [
+      "building",
+      "history"
+    ],
+    "visit": {
+      "status": "public",
+      "officialUrl": "https://www.nact.jp/information/",
+      "note": "展示室と共用部の利用条件は異なります。展覧会の料金、開館日、臨時休館は公式案内を確認してください。乃木坂駅6出口から美術館への連絡通路があります。",
+      "lastChecked": "2026-09-14",
+      "sourceIds": [
+        "access"
+      ]
+    },
+    "location": {
+      "status": "address-matched",
+      "precision": "facility",
+      "sourceIds": [
+        "location",
+        "access"
+      ],
+      "checkedAt": "2026-09-14",
+      "method": "Published facility point matched to official building name and permanent address. Embedded map viewport centers and temporary office addresses are not used.",
+      "note": "施設単位の公開座標です。建物輪郭・入口は未照合です。"
+    },
+    "sources": [
+      {
+        "id": "building",
+        "title": "建築",
+        "url": "https://www.nact.jp/introduce/architecture.html",
+        "publisher": "国立新美術館",
+        "scope": "2006年竣工・共同設計者・構造・ガラス外壁",
+        "sourceType": "official",
+        "checkedAt": "2026-09-14"
+      },
+      {
+        "id": "history",
+        "title": "美術館のご紹介・沿革",
+        "url": "https://www.nact.jp/introduce/about.html",
+        "publisher": "国立新美術館",
+        "scope": "2007年1月21日開館",
+        "sourceType": "official",
+        "checkedAt": "2026-09-14"
+      },
+      {
+        "id": "access",
+        "title": "アクセスマップ",
+        "url": "https://www.nact.jp/information/access/",
+        "publisher": "国立新美術館",
+        "scope": "名称・所在地・乃木坂駅との連絡",
+        "sourceType": "official",
+        "checkedAt": "2026-09-14"
+      },
+      {
+        "id": "location",
+        "title": "国立新美術館の施設座標",
+        "url": "https://www.navitime.co.jp/poi?spot=02301-1300503",
+        "publisher": "ナビタイムジャパン",
+        "scope": "施設の公開座標と住所のみ。営業時間等は公式案内を優先。",
+        "sourceType": "map-provider",
+        "checkedAt": "2026-09-14"
+      }
+    ],
+    "verification": {
+      "status": "basic-checked",
+      "lastVerified": "2026-09-14",
+      "fields": {
+        "nameJa": {
+          "status": "source-checked",
+          "sourceIds": [
+            "access"
+          ],
+          "checkedAt": "2026-09-14"
+        },
+        "completionYear": {
+          "status": "source-checked",
+          "sourceIds": [
+            "building"
+          ],
+          "checkedAt": "2026-09-14"
+        },
+        "openingYear": {
+          "status": "source-checked",
+          "sourceIds": [
+            "history"
+          ],
+          "checkedAt": "2026-09-14"
+        },
+        "architects": {
+          "status": "source-checked",
+          "sourceIds": [
+            "building"
+          ],
+          "checkedAt": "2026-09-14"
+        },
+        "address": {
+          "status": "source-checked",
+          "sourceIds": [
+            "access"
+          ],
+          "checkedAt": "2026-09-14"
+        },
+        "buildingTypes": {
+          "status": "source-checked",
+          "sourceIds": [
+            "building"
+          ],
+          "checkedAt": "2026-09-14"
+        }
+      },
+      "pending": [
+        "建物輪郭と公開入口に対する座標の照合",
+        "見学条件の訪問直前の再確認",
+        "写真・図版の利用権確認"
+      ]
+    }
+  }
 ]

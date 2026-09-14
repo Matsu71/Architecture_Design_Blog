@@ -27,8 +27,8 @@
     ],
     "oneLiner": "ピロティとスロープを備えた美術館。",
     "location": {
-      "status": "address-matched",
-      "precision": "facility"
+      "status": "cross-checked",
+      "precision": "building"
     },
     "visit": {
       "status": "public"
@@ -43,8 +43,8 @@
     "municipality": "台東区",
     "area": "池之端",
     "address": "東京都台東区池之端1-3-45",
-    "lat": 35.70972,
-    "lng": 139.76778,
+    "lat": 35.7097579,
+    "lng": 139.7671857,
     "completionYear": 1896,
     "era": "early-modern",
     "architects": [
@@ -57,14 +57,36 @@
     "styles": [
       "西洋館"
     ],
-    "materials": [],
+    "materials": [
+      "木材",
+      "煉瓦",
+      "スレート",
+      "タイル"
+    ],
     "oneLiner": "明治の洋館と和館がつながる邸宅。",
     "location": {
-      "status": "address-matched",
-      "precision": "facility"
+      "status": "cross-checked",
+      "precision": "building"
     },
     "visit": {
       "status": "public"
+    },
+    "photo": {
+      "src": "assets/photos/iwasaki-exterior.webp",
+      "width": 800,
+      "height": 573,
+      "alt": "芝庭から見た旧岩崎邸の洋館と二層のベランダ",
+      "caption": "旧岩崎邸庭園の洋館、南側の外観。2009年撮影。",
+      "author": "Wiiii",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Former_Iwasaki_Family_House_and_Garden_2009.jpg",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c2/Former_Iwasaki_Family_House_and_Garden_2009.jpg",
+      "originalSha1": "96f1723a1e1922302e735a136a3c899c431a4576",
+      "dateTaken": "2009",
+      "modifications": "縮小・WebP変換",
+      "checkedAt": "2026-09-14",
+      "sha256": "67cc0f703ed4013747f93e3690eb99b5b516c707551b2170a3c5f7f511a4b8fb"
     }
   },
   {
@@ -139,11 +161,28 @@
     ],
     "oneLiner": "吊り屋根で大空間を覆う体育館。",
     "location": {
-      "status": "address-matched",
-      "precision": "facility"
+      "status": "cross-checked",
+      "precision": "building"
     },
     "visit": {
       "status": "limited"
+    },
+    "photo": {
+      "src": "assets/photos/yoyogi-exterior.webp",
+      "width": 800,
+      "height": 534,
+      "alt": "渋谷側から見た国立代々木競技場第一体育館の吊り屋根",
+      "caption": "渋谷側から見た第一体育館。2012年11月撮影。現在の入場口を示す写真ではありません。",
+      "author": "Rs1421",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Yoyogi-National-Gymnasium-01.jpg",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/1/1d/Yoyogi-National-Gymnasium-01.jpg",
+      "originalSha1": "b95894579ff3fe94b177f5878de4f07dc0d81f50",
+      "dateTaken": "2012-11",
+      "modifications": "縮小・WebP変換",
+      "checkedAt": "2026-09-14",
+      "sha256": "f363fcca8682d7b7f6c4c1b5c6c36aeb1faeb5830e02402f6ea2b03201ca7f90"
     }
   },
   {
