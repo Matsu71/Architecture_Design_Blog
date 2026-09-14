@@ -1,0 +1,37 @@
+name: Architecture quality
+on:
+  push:
+    branches: [main, 'improve/**']
+    paths: ['assets/**', 'data/**', 'articles/**', '*.html', 'scripts/**', 'tests/**', 'package.json', '.github/workflows/quality.yml']
+  pull_request:
+    paths: ['assets/**', 'data/**', 'articles/**', '*.html', 'scripts/**', 'tests/**', 'package.json', '.github/workflows/quality.yml']
+permissions:
+  contents: read
+jobs:
+  quality:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Data and generated articles
+        run: npm run validate && npm test
+      - name: Browser test dependencies
+        run: |
+          python -m pip install playwright==1.55.0
+          python -m playwright install --with-deps chromium webkit
+      - name: Real Leaflet integration
+        run: python tests/browser_integration.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: architecture-quality-${{ github.sha }}
+          path: qa/integration/
+          retention-days: 7

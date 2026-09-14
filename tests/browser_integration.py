@@ -1,0 +1,217 @@
+"""HTTP/browser integration using genuine, hash-verified Leaflet 1.9.4.
+
+No map, DOM, projection, navigation or application-fetch substitutes. Tile requests
+are intentionally aborted in deterministic tests; an independent live-tile smoke
+check reports background availability without conflating it with application QA.
+Run after `python -m playwright install --with-deps chromium webkit`.
+"""
+import base64
+import functools
+import hashlib
+import http.server
+import json
+import os
+import tempfile
+import threading
+import urllib.request
+from pathlib import Path
+from playwright.sync_api import sync_playwright
+
+ROOT = Path(__file__).resolve().parents[1]
+OUT = ROOT / 'qa' / 'integration'
+OUT.mkdir(parents=True, exist_ok=True)
+DATA = json.loads((ROOT / 'data' / 'map-index.json').read_text())
+LIBRARIES = {
+    'leaflet.js': '20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=',
+    'leaflet.css': 'p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=',
+}
+checks, failures, observations = [], [], []
+
+
+def distribution(name):
+    """Accept only the exact official distribution hash, including fallback CDN."""
+    cache = OUT / name
+    urls = [f'https://unpkg.com/leaflet@1.9.4/dist/{name}',
+            f'https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/{name}']
+    errors = []
+    for url in urls:
+        try:
+            payload = urllib.request.urlopen(url, timeout=30).read()
+            digest = base64.b64encode(hashlib.sha256(payload).digest()).decode()
+            if digest != LIBRARIES[name]:
+                raise ValueError(f'SHA-256 mismatch: {name}')
+            cache.write_bytes(payload)
+            return payload
+        except Exception as error:
+            errors.append(str(error))
+    raise RuntimeError(f'Unable to verify {name}: {errors}')
+
+
+JS, CSS = distribution('leaflet.js'), distribution('leaflet.css')
+
+
+class QuietHandler(http.server.SimpleHTTPRequestHandler):
+    def log_message(self, *_args):
+        pass
+
+
+def probe(page):
+    # Read-only observation hook; original Leaflet/app code is not replaced.
+    page.add_init_script("""document.addEventListener('load', event => {
+      if (event.target.tagName === 'SCRIPT' && /leaflet/.test(event.target.src) && window.L) {
+        L.Map.addInitHook(function () { window.__qualityMap = this; });
+      }
+    }, true);""")
+
+
+def prepare(browser, width=1440, library=True, data=None, live_tiles=False):
+    context = browser.new_context(viewport={'width': width, 'height': 1000},
+                                  reduced_motion='reduce')
+    page = context.new_page()
+    errors = []
+    page.on('pageerror', lambda error: errors.append(str(error)))
+    probe(page)
+    def resource(route):
+        url = route.request.url
+        if url.endswith('leaflet.js'):
+            if library:
+                route.fulfill(body=JS, content_type='text/javascript')
+            else:
+                route.abort()
+        elif url.endswith('leaflet.css'):
+            route.fulfill(body=CSS, content_type='text/css')
+        else:
+            route.continue_()
+    page.route('https://unpkg.com/**', resource)
+    if not live_tiles:
+        page.route('https://tile.openstreetmap.org/**', lambda route: route.abort())
+    if data is not None:
+        page.route('**/data/map-index.json', lambda route: route.fulfill(
+            body=json.dumps(data, ensure_ascii=False), content_type='application/json'))
+    return context, page, errors
+
+
+def verify(name, condition):
+    if not condition:
+        raise AssertionError(name)
+    checks.append(name)
+
+
+def no_overflow(page):
+    return page.evaluate('document.documentElement.scrollWidth <= innerWidth')
+
+
+def run_browser(engine, browser, base):
+    for width in (1440, 768, 390, 320):
+        context, page, errors = prepare(browser, width)
+        try:
+            page.goto(base, wait_until='networkidle')
+            page.wait_for_function("document.querySelectorAll('.building-card').length > 0")
+            verify(f'{engine}/{width}: genuine Leaflet', page.evaluate('L.version') == '1.9.4')
+            verify(f'{engine}/{width}: one marker per building',
+                   page.locator('.leaflet-marker-icon').count() == len(DATA))
+            coords = page.evaluate("""() => {
+                const points=[]; __qualityMap.eachLayer(layer => {
+                  if (layer instanceof L.Marker) { const p=layer.getLatLng(); points.push([p.lat,p.lng]); }
+                }); return points;
+            }""")
+            verify(f'{engine}/{width}: no coordinate mutation',
+                   sorted(coords) == sorted([[b['lat'], b['lng']] for b in DATA]))
+            verify(f'{engine}/{width}: no horizontal overflow', no_overflow(page))
+            page.locator('#search-input').fill('磯崎新')
+            page.wait_for_function("document.querySelectorAll('.building-card').length===2")
+            verify(f'{engine}/{width}: map/list search sync',
+                   page.locator('.leaflet-marker-icon').count() == 2)
+            page.locator('#reset-filters').click()
+            page.locator('[data-view="list"][type="button"]').click()
+            page.locator('[data-map="nmwa-main-building"]').click()
+            page.wait_for_selector('.leaflet-popup')
+            verify(f'{engine}/{width}: selected zoom', page.evaluate('__qualityMap.getZoom()') >= 17)
+            verify(f'{engine}/{width}: URL selection', 'building=nmwa-main-building' in page.url)
+            page.locator('.leaflet-popup a').first.click()
+            page.wait_for_url('**/articles/national-museum-western-art.html')
+            verify(f'{engine}/{width}: HTTP article navigation',
+                   page.locator('h1').inner_text() == '国立西洋美術館 本館')
+            verify(f'{engine}/{width}: article no overflow', no_overflow(page))
+            page.locator('a.secondary-button', has_text='地図で見る').click()
+            page.wait_for_selector('.leaflet-popup')
+            verify(f'{engine}/{width}: article-to-map deep link',
+                   page.locator('.leaflet-popup').inner_text().startswith('国立西洋美術館'))
+            verify(f'{engine}/{width}: no uncaught error', not errors)
+            if width in (1440, 390):
+                page.screenshot(path=str(OUT / f'{engine}-map-{width}.png'), full_page=True)
+        except Exception as error:
+            failures.append({'case': f'{engine}/{width}', 'error': str(error), 'pageErrors': errors})
+            page.screenshot(path=str(OUT / f'{engine}-failure-{width}.png'), full_page=True)
+        finally:
+            context.close()
+    # Thirty distinct records at a single location must remain individually selectable.
+    many = [dict(DATA[0], id=f'test-{i}', nameJa=f'テスト建築 {i}') for i in range(30)]
+    context, page, errors = prepare(browser, data=many)
+    try:
+        page.goto(base, wait_until='networkidle')
+        page.locator('.leaflet-marker-icon').last.click()
+        page.wait_for_selector('[data-pick]')
+        verify(f'{engine}: all 30 overlap candidates', page.locator('[data-pick]').count() == 30)
+        page.keyboard.press('Escape')
+        verify(f'{engine}: Escape dismisses picker', page.locator('#overlap-picker').is_hidden())
+        verify(f'{engine}: focus returns to marker',
+               page.locator('.leaflet-marker-icon').last.evaluate('(e)=>e===document.activeElement'))
+        page.locator('.leaflet-marker-icon').last.click()
+        page.locator('[data-pick="test-29"]').click()
+        verify(f'{engine}: exact overlap selection',
+               'テスト建築 29' in page.locator('.leaflet-popup').inner_text())
+    except Exception as error:
+        failures.append({'case': f'{engine}/overlap', 'error': str(error), 'pageErrors': errors})
+    finally:
+        context.close()
+    context, page, errors = prepare(browser, 390, library=False)
+    try:
+        page.goto(base, wait_until='networkidle')
+        page.wait_for_function("document.querySelectorAll('.building-card').length>0")
+        verify(f'{engine}: CDN failure preserves list', page.locator('.results-panel').is_visible())
+        page.locator('.building-card h2 a').first.click()
+        page.wait_for_selector('#sources')
+        verify(f'{engine}: CDN failure preserves real article links', page.locator('h1').count() == 1)
+    except Exception as error:
+        failures.append({'case': f'{engine}/fallback', 'error': str(error), 'pageErrors': errors})
+    finally:
+        context.close()
+    context, page, _ = prepare(browser, 1440, live_tiles=True)
+    try:
+        page.goto(base + '?building=nmwa-main-building', wait_until='networkidle')
+        page.wait_for_function("Array.from(document.querySelectorAll('.leaflet-tile')).some(i=>i.complete&&i.naturalWidth>0)", timeout=20000)
+        decoded = page.locator('.leaflet-tile').evaluate_all('(tiles)=>tiles.filter(i=>i.complete&&i.naturalWidth>0).length')
+        observations.append({'browser': engine, 'liveTiles': 'loaded', 'decodedTiles': decoded})
+        page.screenshot(path=str(OUT / f'{engine}-live-map.png'), full_page=True)
+    except Exception as error:
+        observations.append({'browser': engine, 'liveTiles': 'unavailable', 'error': str(error)})
+    finally:
+        context.close()
+
+
+with tempfile.TemporaryDirectory() as serving:
+    (Path(serving) / 'Architecture_Design_Blog').symlink_to(ROOT, target_is_directory=True)
+    server = http.server.ThreadingHTTPServer(('127.0.0.1', 0),
+        functools.partial(QuietHandler, directory=serving))
+    threading.Thread(target=server.serve_forever, daemon=True).start()
+    base = f'http://127.0.0.1:{server.server_port}/Architecture_Design_Blog/'
+    try:
+        with sync_playwright() as playwright:
+            for engine in ('chromium', 'webkit'):
+                browser = getattr(playwright, engine).launch()
+                try:
+                    run_browser(engine, browser, base)
+                finally:
+                    browser.close()
+    finally:
+        server.shutdown()
+report = {'commit': os.environ.get('GITHUB_SHA'), 'passed': len(checks),
+          'checks': checks, 'failures': failures, 'observations': observations,
+          'scope': 'Genuine SHA-256 verified Leaflet; real local HTTP; Chromium and WebKit.',
+          'limitations': ['WebKit is not a physical iPhone/Safari device.',
+                         'Geometry checks do not establish geographical truth.',
+                         'Tile availability is reported separately from deterministic application checks.']}
+(OUT / 'report.json').write_text(json.dumps(report, ensure_ascii=False, indent=2) + '\n')
+print('E2E_REPORT ' + json.dumps(report, ensure_ascii=False))
+raise SystemExit(1 if failures else 0)
