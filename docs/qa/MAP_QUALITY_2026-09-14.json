@@ -1,0 +1,20 @@
+{
+  "date": "2026-09-14",
+  "phase": "pre-publication assembled output",
+  "sourceCommit": "1a67a3ca7a5f4ad91608b7a2217503410498c4ac",
+  "generatedCommit": "5f09d00e9d12348c4e3ee8aa2ae35c4e5f96deef",
+  "workflowRun": 34806536515,
+  "nodeTests": {"passed": 47, "failed": 0},
+  "genuineBrowserTests": {"passed": 142, "failed": 0, "engines": ["chromium", "webkit"], "widths": [1440, 768, 390, 320]},
+  "tileSmoke": [{"engine": "chromium", "decodedTiles": 20}, {"engine": "webkit", "decodedTiles": 20}],
+  "comparedGeneratedFiles": 20,
+  "byteMismatches": [],
+  "buildings": 13,
+  "buildingPrecision": 3,
+  "facilityPrecision": 10,
+  "entrancePrecision": 0,
+  "components": 24,
+  "photos": 2,
+  "canonicalSha256": "cd9ffcd17b079de0d674eccb0afc6b5d2b6a830ee6d2e435db06cdf642e0e2a8",
+  "limitations": ["Pre-publication report; actual Pages validation is a separate public_smoke.py run.", "WebKit is not a physical Safari/iPhone device.", "IME event tests are not physical input-method tests.", "Geographic and historical truth is not established by passing code tests."]
+}
