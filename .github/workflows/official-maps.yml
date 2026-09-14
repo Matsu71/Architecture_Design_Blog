@@ -1,0 +1,25 @@
+name: Official map review
+on:
+  push:
+    branches: ['improve/regional-20260914']
+    paths: ['scripts/review-official-maps.py', '.github/workflows/official-maps.yml']
+permissions:
+  contents: read
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python scripts/review-official-maps.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: official-map-review
+          path: qa/official-maps/
+          retention-days: 7
