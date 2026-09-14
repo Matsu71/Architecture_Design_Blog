@@ -1,12 +1,13 @@
 import {isJapanCoordinate, locationLabel} from './location.mjs';
 export const KANTO = ['東京都','神奈川県','埼玉県','千葉県','茨城県','栃木県','群馬県'];
 export const ERAS = {traditional:'江戸以前','early-modern':'明治',modern:'大正・昭和前期',postwar:'戦後',contemporary:'現代'};
+export const OPENING_LABELS = ['開館','開校','開業','供用'];
 export const VISITS = {public:'公開施設',limited:'公開条件あり',reservation:'予約制','exterior-only':'外観のみ',private:'非公開',closed:'休館・閉館',demolished:'現存せず',unknown:'見学要確認'};
 export function escapeHtml(value = '') { return String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
 export function safeUrl(value) { try { const u = new URL(value); return ['https:','http:'].includes(u.protocol) ? u.href : ''; } catch { return ''; } }
 export function normalize(value) { return String(value ?? '').normalize('NFKC').toLocaleLowerCase('ja').replace(/[\u30a1-\u30f6]/g, c => String.fromCharCode(c.charCodeAt(0)-0x60)); }
 export function hasCoordinates(b) { return !!b && isJapanCoordinate(b.lat,b.lng) && b.location?.status !== 'withheld'; }
-export function searchText(b) { return normalize([b.nameJa,b.nameEn,b.prefecture,b.municipality,b.area,b.address,...(b.architects||[]),...(b.buildingTypes||[]),...(b.styles||[]),...(b.materials||[]),b.oneLiner].join(' ')); }
+export function searchText(b) { return normalize([b.nameJa,b.nameEn,...(b.aliases||[]),b.prefecture,b.municipality,b.area,b.address,...(b.architects||[]),...(b.buildingTypes||[]),...(b.styles||[]),...(b.materials||[]),b.oneLiner].join(' ')); }
 export function filterBuildings(data, filters = {}) {
   const terms = normalize(filters.query).trim().split(/\s+/).filter(Boolean);
   return data.filter(b => (!filters.region || filters.region === 'all' || (filters.region === 'kanto' ? KANTO.includes(b.prefecture) : b.prefecture === filters.region))
@@ -42,9 +43,12 @@ export function articleHtml(b, data = [], root = './') {
   const fact = (label,value,field) => `<div><dt>${label}</dt><dd>${e(value||'未確認')}${refs(b.verification?.fields?.[field]?.sourceIds)}</dd></div>`;
   const nearby=hasCoordinates(b)?data.filter(x=>x.id!==b.id&&hasCoordinates(x)).map(x=>({b:x,d:distanceMeters(b,x)})).filter(x=>x.d<20000).sort((a,c)=>a.d-c.d).slice(0,3):[];
   const coordinateStatus = locationLabel(b.location);
-  return `<header class="article-heading"><p class="eyebrow">${e(b.prefecture)} / ${e(b.municipality)}</p><h1>${e(b.nameJa)}</h1><p class="article-deck">${e(b.oneLiner)}</p>${b.visit?.status==='closed'?`<aside class="visit-alert"><strong>休館・閉館</strong><p>${e(b.visit.note)}${refs(b.visit.sourceIds)}</p></aside>`:''}</header>
+  const designNames=Array.isArray(b.designers)&&b.designers.length?b.designers.map(d=>d.role?`${d.name}（${d.role}）`:d.name):(b.architects||[]);
+  const openingLabel=OPENING_LABELS.includes(b.openingLabel)?b.openingLabel:'開館';
+  const factNotes=(b.factNotes||[]).map(n=>`<p class="fact-note">${e(n.text)}${refs(n.sourceIds)}</p>`).join('');
+  return `<header class="article-heading"><p class="eyebrow">${e(b.prefecture)} / ${e(b.municipality)}</p><h1>${e(b.nameJa)}</h1><p class="article-deck">${e(b.oneLiner)}</p>${b.visit?.status==='closed'?`<aside class="visit-alert"><strong>休館・閉館</strong><p>${e(b.visit.note)}${refs(b.visit.sourceIds)}</p></aside>`:b.visit?.notice?`<aside class="visit-alert visit-alert-compact"><strong>${e(b.visit.notice)}</strong>${refs(b.visit.sourceIds)}</aside>`:''}</header>
   ${photoHtml(b.photo,root)}
-  <dl class="facts">${fact('竣工',b.completionYear?`${b.completionYear}年`:'未確認','completionYear')}${fact('設計',(b.architects||[]).join(' / '),'architects')}${b.openingYear?fact('開館',`${b.openingYear}年`,'openingYear'):''}${fact('用途',(b.buildingTypes||[]).join(' / '),'buildingTypes')}${fact('所在地',b.address,'address')}</dl>
+  <dl class="facts">${fact('竣工',b.completionYear?`${b.completionYear}年`:'未確認','completionYear')}${fact('設計',designNames.join(' / '),'architects')}${b.openingYear?fact(openingLabel,`${b.openingYear}年`,'openingYear'):''}${fact('用途',(b.buildingTypes||[]).join(' / '),'buildingTypes')}${fact('所在地',b.address,'address')}</dl>${factNotes}
   <nav class="article-toc" aria-label="記事の目次"><a href="#highlights">見どころ</a><a href="#materials">構造・素材</a><a href="#visit">見学</a><a href="#sources">出典</a></nav>
   <section id="highlights"><h2>見どころ</h2><p>${e(b.summary)}${refs(b.articleSourceIds)}</p><ul class="highlights">${(b.highlights||[]).map(x=>`<li>${e(x)}</li>`).join('')}</ul></section>
   <section id="materials"><h2>構造・素材</h2>${(b.components||[]).length?(b.components||[]).map(c=>`<details class="component"><summary>${e(c.part)}<span>${e(c.material)}</span></summary><p>${e(c.description)}${refs(c.sourceIds)}</p>${c.origin?`<p>原材料：${e(c.origin)}${refs(c.sourceIds)}</p>`:''}</details>`).join(''):'<p class="muted">部位ごとの材料を資料で確認しています。外観だけでは判定しません。</p>'}</section>

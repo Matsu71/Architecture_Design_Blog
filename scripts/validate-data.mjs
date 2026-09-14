@@ -1,6 +1,6 @@
 import {readFile} from 'node:fs/promises';
 import {fileURLToPath} from 'node:url';
-import {hasCoordinates,duplicateCoordinates,safeUrl,localPhotoPath,VISITS,ERAS} from '../assets/core.mjs';
+import {hasCoordinates,duplicateCoordinates,safeUrl,localPhotoPath,OPENING_LABELS,VISITS,ERAS} from '../assets/core.mjs';
 import {pointInRing} from '../assets/location.mjs';
 export function validDate(value,today=new Date().toISOString().slice(0,10)) {
   if(typeof value!=='string'||!/^\d{4}-\d{2}-\d{2}$/.test(value)||value>today)return false;
@@ -20,6 +20,8 @@ export function validate(data,{today=new Date().toISOString().slice(0,10)}={}) {
     if(!/^[a-z0-9-]+$/.test(b.id||'')||!/^[a-z0-9-]+$/.test(b.slug||''))bad('IDまたはslugが不正');
     for(const field of ['completionYear',...(b.openingYear==null?[]:['openingYear'])])
       if(!Number.isInteger(b[field])||b[field]<1||b[field]>Number(today.slice(0,4)))bad(`${field}が不正`);
+    if(b.openingLabel!=null&&(!OPENING_LABELS.includes(b.openingLabel)||b.openingYear==null))bad('開館・開校・開業等のラベルまたは年が不正');
+    if(b.aliases!=null&&(!Array.isArray(b.aliases)||b.aliases.some(v=>typeof v!=='string'||!v.trim())))bad('別名が不正');
     if(!Object.hasOwn(ERAS,b.era))bad('年代区分が不正');
     for(const field of ['architects','buildingTypes'])if(!Array.isArray(b[field])||!b[field].length||b[field].some(v=>typeof v!=='string'||!v.trim()))bad(`${field}が不正`);
     const loc=b.location||{};
@@ -44,6 +46,22 @@ export function validate(data,{today=new Date().toISOString().slice(0,10)}={}) {
       const fact=b.verification?.fields?.[field];checkRefs(fact?.sourceIds,field);
       if(!validDate(fact?.checkedAt,today))bad(`${field}の確認日が不正`);
     }
+    if(b.factNotes!=null&&!Array.isArray(b.factNotes))bad('基本情報の補足は配列にしてください');
+    for(const n of Array.isArray(b.factNotes)?b.factNotes:[]){if(!n?.text||typeof n.text!=='string')bad('基本情報の補足文が不正');checkRefs(n?.sourceIds,'基本情報の補足');}
+    if(b.designers!=null){
+      if(!Array.isArray(b.designers)||!b.designers.length)bad('設計者の役割が不正');
+      else {
+        const names=b.designers.map(d=>d?.name);
+        if(names.length!==new Set(names).size||names.length!==(b.architects||[]).length||names.some(n=>!b.architects?.includes(n)))bad('設計者と役割の名前が一致しません');
+        for(const d of b.designers){if(typeof d?.role!=='string'||!d.role.trim())bad('設計者の役割が未入力');checkRefs(d?.sourceIds,'設計者の役割');}
+      }
+    }
+    if(loc.evidence?.kind==='facility-point'){
+      const ev=loc.evidence;
+      if(ev.lat!==b.lat||ev.lng!==b.lng||!['node','way','relation'].includes(ev.osmType)||!Number.isInteger(ev.osmId)||ev.osmId<=0)bad('施設位置の根拠が座標・地物と一致しません');
+      if(ev.license!=='ODbL 1.0'||ev.licenseUrl!=='https://opendatacommons.org/licenses/odbl/1-0/'||!ev.attribution)bad('施設位置の利用条件が不足');
+      checkRefs(ev.sourceIds,'施設位置の根拠');
+    }
     checkRefs(b.articleSourceIds,'本文');checkRefs(loc.sourceIds,'位置');
     for(const c of Array.isArray(b.components)?b.components:[])checkRefs(c.sourceIds,`構成要素 ${c.part}`);
     // A label alone is not enough evidence for a precise building or entrance pin.
@@ -60,9 +78,10 @@ export function validate(data,{today=new Date().toISOString().slice(0,10)}={}) {
       checkRefs(loc.evidence?.sourceIds,'公開入口');
     }
     if(loc.status==='cross-checked'&&loc.precision==='facility'&&(!loc.evidence?.method||!loc.evidence?.sourceIds?.length))bad('施設座標の照合方法と証拠が不足');
+    if(b.visit?.notice!=null&&(typeof b.visit.notice!=='string'||!b.visit.notice.trim()||b.visit.notice.length>40))bad('見学の注意見出しが不正');
     if(!Object.hasOwn(VISITS,b.visit?.status))bad('見学状態が不正');
     if(!safeUrl(b.visit?.officialUrl)||!validDate(b.visit?.lastChecked,today))bad('見学案内または確認日が不正');
-    if(b.visit?.status==='closed'||b.visit?.sourceIds?.length)checkRefs(b.visit.sourceIds,'見学');
+    if(b.visit?.status==='closed'||b.visit?.notice||b.visit?.sourceIds?.length)checkRefs(b.visit.sourceIds,'見学');
     if(!b.verification?.pending?.length&&loc.precision==='facility')warnings.push(`${label}: 入口・棟の未照合状態を明示してください`);
     if(b.photo){
       const p=b.photo;

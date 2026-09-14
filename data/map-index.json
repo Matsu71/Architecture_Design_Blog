@@ -497,5 +497,286 @@
     "visit": {
       "status": "public"
     }
+  },
+  {
+    "id": "tokyo-station-marunouchi",
+    "slug": "tokyo-station-marunouchi",
+    "nameJa": "東京駅 丸の内駅舎",
+    "nameEn": "",
+    "aliases": [
+      "東京駅",
+      "丸の内駅舎"
+    ],
+    "prefecture": "東京都",
+    "municipality": "千代田区",
+    "area": "丸の内",
+    "address": "東京都千代田区丸の内1-9-1",
+    "lat": 35.6811505,
+    "lng": 139.7659765,
+    "completionYear": 1914,
+    "era": "modern",
+    "architects": [
+      "辰野金吾",
+      "葛西萬司"
+    ],
+    "buildingTypes": [
+      "駅舎",
+      "歴史建築"
+    ],
+    "styles": [],
+    "materials": [
+      "鉄骨",
+      "煉瓦",
+      "化粧煉瓦"
+    ],
+    "oneLiner": "南北のドームと、復原された赤煉瓦の駅舎。",
+    "location": {
+      "status": "address-matched",
+      "precision": "facility"
+    },
+    "visit": {
+      "status": "limited"
+    }
+  },
+  {
+    "id": "tokyo-st-marys-cathedral",
+    "slug": "tokyo-st-marys-cathedral",
+    "nameJa": "東京カテドラル聖マリア大聖堂",
+    "nameEn": "",
+    "aliases": [
+      "聖マリア大聖堂",
+      "関口教会"
+    ],
+    "prefecture": "東京都",
+    "municipality": "文京区",
+    "area": "関口",
+    "address": "東京都文京区関口3-16-15",
+    "lat": 35.7142667,
+    "lng": 139.7265799,
+    "completionYear": 1964,
+    "era": "postwar",
+    "architects": [
+      "丹下健三"
+    ],
+    "buildingTypes": [
+      "教会",
+      "宗教建築"
+    ],
+    "styles": [],
+    "materials": [
+      "コンクリート",
+      "ステンレス"
+    ],
+    "oneLiner": "曲面の屋根と、十字架形の光。",
+    "location": {
+      "status": "address-matched",
+      "precision": "facility"
+    },
+    "visit": {
+      "status": "limited"
+    }
+  },
+  {
+    "id": "myonichikan-central",
+    "slug": "myonichikan-central",
+    "nameJa": "自由学園明日館 中央棟",
+    "nameEn": "",
+    "aliases": [
+      "自由学園明日館",
+      "明日館",
+      "ライト"
+    ],
+    "prefecture": "東京都",
+    "municipality": "豊島区",
+    "area": "西池袋",
+    "address": "東京都豊島区西池袋2-31-3",
+    "lat": 35.7266758,
+    "lng": 139.7072507,
+    "completionYear": 1922,
+    "era": "modern",
+    "architects": [
+      "フランク・ロイド・ライト",
+      "遠藤新"
+    ],
+    "buildingTypes": [
+      "学校",
+      "歴史建築"
+    ],
+    "styles": [],
+    "materials": [
+      "木材",
+      "鉄板",
+      "ガラス"
+    ],
+    "oneLiner": "大きな幾何学模様の窓と、低く広がる旧校舎。",
+    "location": {
+      "status": "address-matched",
+      "precision": "facility"
+    },
+    "visit": {
+      "status": "limited"
+    }
+  },
+  {
+    "id": "kanagawa-music-hall",
+    "slug": "kanagawa-music-hall",
+    "nameJa": "神奈川県立音楽堂",
+    "nameEn": "",
+    "aliases": [
+      "木のホール",
+      "県立音楽堂"
+    ],
+    "prefecture": "神奈川県",
+    "municipality": "横浜市西区",
+    "area": "紅葉ケ丘",
+    "address": "神奈川県横浜市西区紅葉ケ丘9-2",
+    "lat": 35.4527406,
+    "lng": 139.6261746,
+    "completionYear": 1954,
+    "era": "postwar",
+    "architects": [
+      "前川國男"
+    ],
+    "buildingTypes": [
+      "ホール",
+      "文化施設"
+    ],
+    "styles": [],
+    "materials": [
+      "鉄筋コンクリート",
+      "木材"
+    ],
+    "oneLiner": "木の内装で音を響かせる音楽ホール。",
+    "location": {
+      "status": "address-matched",
+      "precision": "facility"
+    },
+    "visit": {
+      "status": "limited"
+    }
+  },
+  {
+    "id": "osanbashi-terminal",
+    "slug": "osanbashi-terminal",
+    "nameJa": "横浜港大さん橋国際客船ターミナル",
+    "nameEn": "",
+    "aliases": [
+      "大さん橋",
+      "横浜大さん橋",
+      "くじらのせなか"
+    ],
+    "prefecture": "神奈川県",
+    "municipality": "横浜市中区",
+    "area": "海岸通",
+    "address": "神奈川県横浜市中区海岸通1-1-4",
+    "lat": 35.4519425,
+    "lng": 139.6479434,
+    "completionYear": 2002,
+    "era": "contemporary",
+    "architects": [
+      "アレハンドロ・ザエラ・ポロ",
+      "ファッシド・ムサヴィ"
+    ],
+    "buildingTypes": [
+      "客船ターミナル",
+      "交通施設"
+    ],
+    "styles": [],
+    "materials": [
+      "鉄骨",
+      "鉄筋コンクリート",
+      "イペ材"
+    ],
+    "oneLiner": "スロープと木のデッキが連続する客船ターミナル。",
+    "location": {
+      "status": "address-matched",
+      "precision": "facility"
+    },
+    "visit": {
+      "status": "limited"
+    }
+  },
+  {
+    "id": "asakusa-culture-center",
+    "slug": "asakusa-culture-center",
+    "nameJa": "浅草文化観光センター",
+    "nameEn": "",
+    "aliases": [
+      "浅草観光センター",
+      "雷門観光案内所"
+    ],
+    "prefecture": "東京都",
+    "municipality": "台東区",
+    "area": "雷門",
+    "address": "東京都台東区雷門2-18-9",
+    "lat": 35.7106419,
+    "lng": 139.7965189,
+    "completionYear": 2012,
+    "era": "contemporary",
+    "architects": [
+      "隈研吾"
+    ],
+    "buildingTypes": [
+      "観光案内所",
+      "公共施設"
+    ],
+    "styles": [],
+    "materials": [
+      "鉄骨",
+      "木材",
+      "Low-E複層ガラス"
+    ],
+    "oneLiner": "木のルーバーと、重なる勾配屋根。",
+    "location": {
+      "status": "address-matched",
+      "precision": "facility"
+    },
+    "visit": {
+      "status": "public"
+    }
+  },
+  {
+    "id": "ilcl-brick-building",
+    "slug": "ilcl-brick-building",
+    "nameJa": "国際子ども図書館 レンガ棟",
+    "nameEn": "",
+    "aliases": [
+      "旧帝国図書館",
+      "帝国図書館",
+      "国際子ども図書館"
+    ],
+    "prefecture": "東京都",
+    "municipality": "台東区",
+    "area": "上野",
+    "address": "東京都台東区上野公園12-49",
+    "lat": 35.719583,
+    "lng": 139.773722,
+    "completionYear": 1906,
+    "era": "early-modern",
+    "architects": [
+      "久留正道",
+      "真水英夫",
+      "関東地方建設局営繕部",
+      "安藤忠雄",
+      "日建設計"
+    ],
+    "buildingTypes": [
+      "図書館",
+      "歴史建築"
+    ],
+    "styles": [],
+    "materials": [
+      "煉瓦",
+      "鉄骨",
+      "ガラス"
+    ],
+    "oneLiner": "旧帝国図書館を、ガラスの増築で使い継ぐ建物。",
+    "location": {
+      "status": "address-matched",
+      "precision": "facility"
+    },
+    "visit": {
+      "status": "public"
+    }
   }
 ]

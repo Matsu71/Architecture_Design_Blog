@@ -14,7 +14,7 @@ test('normalization supports width, kana, case',()=>assert.equal(normalize('Ａ�
 test('multiple search terms are ANDed',()=>{const result=filterBuildings(data,{query:'東京 美術館'});assert(result.length>0);assert(result.every(b=>b.prefecture==='東京都'&&b.buildingTypes.includes('美術館')));});
 test('region, architect and use can be combined',()=>assert.equal(filterBuildings(data,{region:'群馬県',architect:'磯崎新',type:'美術館'}).length,1));
 test('empty result is not silently relaxed',()=>assert.equal(filterBuildings(data,{region:'神奈川県',architect:'隈研吾'}).length,0));
-test('oldest and newest use completion year',()=>{const old=filterBuildings(data,{sort:'oldest'}),recent=filterBuildings(data,{sort:'newest'});assert.equal(old[0].completionYear,1896);assert.equal(recent[0].completionYear,2010);});
+test('oldest and newest use completion year',()=>{const old=filterBuildings(data,{sort:'oldest'}),recent=filterBuildings(data,{sort:'newest'});assert.equal(old[0].completionYear,Math.min(...data.map(b=>b.completionYear)));assert.equal(recent[0].completionYear,Math.max(...data.map(b=>b.completionYear)));assert(old.every((b,i)=>i===0||b.completionYear>=old[i-1].completionYear));});
 test('no mutated shared data during sort',()=>{const ids=data.map(b=>b.id);filterBuildings(data,{sort:'oldest'});assert.deepEqual(data.map(b=>b.id),ids);});
 test('thirty colocated buildings are not deduplicated',()=>{const many=Array.from({length:30},(_,i)=>({...data[0],id:`same-${i}`}));assert.equal(filterBuildings(many).filter(hasCoordinates).length,30);assert.equal(duplicateCoordinates(many)[0].ids.length,30);});
 test('dataset has no exact coordinate duplicates',()=>assert.deepEqual(duplicateCoordinates(data),[]));

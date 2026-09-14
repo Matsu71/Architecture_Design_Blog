@@ -165,7 +165,7 @@ def run_browser(engine, browser, base):
     try:
         page.goto(base+'?architect='+urllib.parse.quote('隈研吾'),wait_until='networkidle')
         verify(f'{engine}: advanced query reveals its control', page.locator('#architect-filter').is_visible())
-        verify(f'{engine}: advanced filter query result',page.locator('.building-card').count()==1)
+        verify(f'{engine}: advanced filter query result',page.locator('.building-card').count()==sum('隈研吾' in b['architects'] for b in DATA))
         page.goto(base+'articles/kyu-iwasaki-tei-gardens.html',wait_until='networkidle')
         page.locator('.building-photo img').scroll_into_view_if_needed()
         page.wait_for_function("document.querySelector('.building-photo img').naturalWidth===800")
@@ -179,6 +179,26 @@ def run_browser(engine, browser, base):
         verify(f'{engine}: building precision visible in popup','建物位置を照合' in page.locator('.leaflet-popup').inner_text())
     except Exception as error:
         failures.append({'case':f'{engine}/photos-and-filters','error':str(error),'pageErrors':errors})
+    finally:
+        context.close()
+    context, page, errors = prepare(browser, 390)
+    try:
+        additions=json.loads((ROOT/'data/additions/kanto-20260914.json').read_text())
+        for b in additions:
+            page.goto(base+'articles/'+b['slug']+'.html',wait_until='networkidle')
+            verify(f"{engine}: new article {b['id']}",page.locator('h1').inner_text()==b['nameJa'])
+            verify(f"{engine}: readable new article {b['id']}",no_overflow(page) and page.locator('#sources').is_visible())
+        page.goto(base+'?query='+urllib.parse.quote('旧帝国図書館'),wait_until='networkidle')
+        verify(f'{engine}: historical-name search',page.locator('.building-card').count()==1 and 'レンガ棟' in page.locator('.building-card').inner_text())
+        page.goto(base+'articles/myonichikan-central.html',wait_until='networkidle')
+        verify(f'{engine}: date qualification visible','1921年' in page.locator('.fact-note').inner_text() and '1922年' in page.locator('.fact-note').inner_text())
+        page.screenshot(path=str(OUT/f'{engine}-myonichikan-390.png'),full_page=True)
+        page.goto(base+'articles/kanagawa-music-hall.html',wait_until='networkidle')
+        verify(f'{engine}: tour-only notice visible',page.locator('.visit-alert-compact').is_visible())
+        page.screenshot(path=str(OUT/f'{engine}-ongakudo-390.png'),full_page=True)
+        verify(f'{engine}: additions have no uncaught script errors',not errors)
+    except Exception as error:
+        failures.append({'case':f'{engine}/new-buildings','error':str(error),'pageErrors':errors})
     finally:
         context.close()
     # Thirty distinct records at a single location must remain individually selectable.

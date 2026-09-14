@@ -19,3 +19,7 @@
   .filters>#more-filters,.filters>#reset-filters{min-width:0;padding-inline:2px}
   .card-photo img{max-height:200px}
 }
+
+.fact-note{font-size:13px;line-height:1.8;color:var(--muted);margin:-8px 0 22px;padding-left:12px;border-left:2px solid var(--line)}
+.fact-note + .fact-note{margin-top:0}
+.visit-alert-compact{padding:.7rem 1rem;font-size:13px}

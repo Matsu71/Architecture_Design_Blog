@@ -11,6 +11,7 @@ from playwright.sync_api import sync_playwright
 ROOT=Path(__file__).resolve().parents[1]; OUT=ROOT/'qa'/'integration'; OUT.mkdir(parents=True,exist_ok=True)
 BASE='https://matsu71.github.io/Architecture_Design_Blog/'
 TARGETS=['assets/app.js','assets/core.mjs','data/map-index.json']
+EXPECTED_BUILDINGS=len(json.loads((ROOT/'data/map-index.json').read_text()))
 expected={path:hashlib.sha256((ROOT/path).read_bytes()).hexdigest() for path in TARGETS}
 matched=False;attempts=[]
 for n in range(12):
@@ -36,8 +37,8 @@ try:
                 page.goto(BASE+'?building=kyu-iwasaki-tei',wait_until='networkidle')
                 page.wait_for_selector('.leaflet-popup')
                 assert page.evaluate('L.version')=='1.9.4'
-                assert page.locator('.leaflet-marker-icon').count()==13
-                report['checks'].append(f'{engine}: deployed Leaflet and 13 individual pins')
+                assert page.locator('.leaflet-marker-icon').count()==EXPECTED_BUILDINGS
+                report['checks'].append(f'{engine}: deployed Leaflet and {EXPECTED_BUILDINGS} individual pins')
                 assert '旧岩崎邸庭園 洋館' in page.locator('.leaflet-popup').inner_text()
                 assert '建物位置を照合' in page.locator('.leaflet-popup').inner_text()
                 report['checks'].append(f'{engine}: deployed corrected building link and precision')
