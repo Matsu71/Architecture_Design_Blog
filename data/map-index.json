@@ -1,0 +1,462 @@
+[
+  {
+    "id": "nmwa-main-building",
+    "slug": "national-museum-western-art",
+    "nameJa": "国立西洋美術館 本館",
+    "nameEn": "The National Museum of Western Art — Main Building",
+    "prefecture": "東京都",
+    "municipality": "台東区",
+    "area": "上野",
+    "address": "東京都台東区上野公園7-7",
+    "lat": 35.71556,
+    "lng": 139.77583,
+    "completionYear": 1959,
+    "era": "postwar",
+    "architects": [
+      "ル・コルビュジエ"
+    ],
+    "buildingTypes": [
+      "美術館",
+      "文化施設"
+    ],
+    "styles": [
+      "モダニズム"
+    ],
+    "materials": [
+      "鉄筋コンクリート"
+    ],
+    "oneLiner": "ピロティとスロープを備えた美術館。",
+    "location": {
+      "status": "address-matched",
+      "precision": "facility"
+    },
+    "visit": {
+      "status": "public"
+    }
+  },
+  {
+    "id": "kyu-iwasaki-tei",
+    "slug": "kyu-iwasaki-tei-gardens",
+    "nameJa": "旧岩崎邸庭園 洋館",
+    "nameEn": "Former Iwasaki Residence — Western-style House",
+    "prefecture": "東京都",
+    "municipality": "台東区",
+    "area": "池之端",
+    "address": "東京都台東区池之端1-3-45",
+    "lat": 35.70972,
+    "lng": 139.76778,
+    "completionYear": 1896,
+    "era": "early-modern",
+    "architects": [
+      "ジョサイア・コンドル"
+    ],
+    "buildingTypes": [
+      "邸宅",
+      "歴史建築"
+    ],
+    "styles": [
+      "西洋館"
+    ],
+    "materials": [],
+    "oneLiner": "明治の洋館と和館がつながる邸宅。",
+    "location": {
+      "status": "address-matched",
+      "precision": "facility"
+    },
+    "visit": {
+      "status": "public"
+    }
+  },
+  {
+    "id": "teien-art-museum-main",
+    "slug": "tokyo-metropolitan-teien-art-museum",
+    "nameJa": "東京都庭園美術館 本館",
+    "nameEn": "Tokyo Metropolitan Teien Art Museum — Main Building",
+    "prefecture": "東京都",
+    "municipality": "港区",
+    "area": "白金台",
+    "address": "東京都港区白金台5-21-9",
+    "lat": 35.636862,
+    "lng": 139.719269,
+    "completionYear": 1933,
+    "era": "modern",
+    "architects": [
+      "宮内省内匠寮",
+      "権藤要吉（基本設計）",
+      "アンリ・ラパン（主要内装）"
+    ],
+    "buildingTypes": [
+      "美術館",
+      "邸宅",
+      "歴史建築"
+    ],
+    "styles": [
+      "アール・デコ"
+    ],
+    "materials": [
+      "室内装飾",
+      "ガラス",
+      "カエデ",
+      "ケヤキ",
+      "黒檀",
+      "カリン",
+      "蛇紋岩"
+    ],
+    "oneLiner": "旧朝香宮邸に残るアール・デコの室内。",
+    "location": {
+      "status": "address-matched",
+      "precision": "facility"
+    },
+    "visit": {
+      "status": "public"
+    }
+  },
+  {
+    "id": "yoyogi-national-gymnasium",
+    "slug": "yoyogi-national-gymnasium",
+    "nameJa": "国立代々木競技場 第一体育館",
+    "nameEn": "Yoyogi National Gymnasium — First Gymnasium",
+    "prefecture": "東京都",
+    "municipality": "渋谷区",
+    "area": "代々木",
+    "address": "東京都渋谷区神南2-1-1",
+    "lat": 35.66775,
+    "lng": 139.700139,
+    "completionYear": 1964,
+    "era": "postwar",
+    "architects": [
+      "丹下健三",
+      "坪井善勝（構造）"
+    ],
+    "buildingTypes": [
+      "スポーツ施設"
+    ],
+    "styles": [
+      "モダニズム"
+    ],
+    "materials": [
+      "吊り構造"
+    ],
+    "oneLiner": "吊り屋根で大空間を覆う体育館。",
+    "location": {
+      "status": "address-matched",
+      "precision": "facility"
+    },
+    "visit": {
+      "status": "limited"
+    }
+  },
+  {
+    "id": "tokyo-international-forum",
+    "slug": "tokyo-international-forum",
+    "nameJa": "東京国際フォーラム",
+    "nameEn": "Tokyo International Forum",
+    "prefecture": "東京都",
+    "municipality": "千代田区",
+    "area": "有楽町",
+    "address": "東京都千代田区丸の内3-5-1",
+    "lat": 35.67667,
+    "lng": 139.76444,
+    "completionYear": 1996,
+    "era": "contemporary",
+    "architects": [
+      "ラファエル・ヴィニオリ"
+    ],
+    "buildingTypes": [
+      "ホール",
+      "文化施設",
+      "複合施設"
+    ],
+    "styles": [],
+    "materials": [
+      "ガラス"
+    ],
+    "oneLiner": "ガラス棟とホール群が向き合う文化施設。",
+    "location": {
+      "status": "address-matched",
+      "precision": "facility"
+    },
+    "visit": {
+      "status": "public"
+    }
+  },
+  {
+    "id": "yokohama-kaiko-kinen-kaikan",
+    "slug": "yokohama-kaiko-kinen-kaikan",
+    "nameJa": "横浜市開港記念会館",
+    "nameEn": "Yokohama Port Opening Memorial Hall",
+    "prefecture": "神奈川県",
+    "municipality": "横浜市中区",
+    "area": "関内",
+    "address": "神奈川県横浜市中区本町1-6",
+    "lat": 35.447648,
+    "lng": 139.641359,
+    "completionYear": 1917,
+    "era": "modern",
+    "architects": [
+      "山田七五郎",
+      "福田重義（原案）"
+    ],
+    "buildingTypes": [
+      "集会場",
+      "歴史建築"
+    ],
+    "styles": [
+      "辰野式フリークラシック"
+    ],
+    "materials": [
+      "煉瓦・花崗岩",
+      "復元部分"
+    ],
+    "oneLiner": "赤煉瓦と花崗岩、時計塔を備える公会堂。",
+    "location": {
+      "status": "address-matched",
+      "precision": "facility"
+    },
+    "visit": {
+      "status": "limited"
+    }
+  },
+  {
+    "id": "momas",
+    "slug": "saitama-museum-modern-art",
+    "nameJa": "埼玉県立近代美術館",
+    "nameEn": "The Museum of Modern Art, Saitama",
+    "prefecture": "埼玉県",
+    "municipality": "さいたま市浦和区",
+    "area": "北浦和",
+    "address": "埼玉県さいたま市浦和区常盤9-30-1",
+    "lat": 35.869611,
+    "lng": 139.642917,
+    "completionYear": 1982,
+    "era": "postwar",
+    "architects": [
+      "黒川紀章"
+    ],
+    "buildingTypes": [
+      "美術館",
+      "文化施設"
+    ],
+    "styles": [],
+    "materials": [
+      "鉄筋コンクリート・鉄骨鉄筋コンクリート",
+      "アトリウム・サンクガーデン"
+    ],
+    "oneLiner": "格子状の骨組みと中央の吹き抜け。",
+    "location": {
+      "status": "address-matched",
+      "precision": "facility"
+    },
+    "visit": {
+      "status": "public"
+    }
+  },
+  {
+    "id": "hoki-museum",
+    "slug": "hoki-museum",
+    "nameJa": "ホキ美術館",
+    "nameEn": "Hoki Museum",
+    "prefecture": "千葉県",
+    "municipality": "千葉市緑区",
+    "area": "あすみが丘",
+    "address": "千葉県千葉市緑区あすみが丘東3-15",
+    "lat": 35.52194,
+    "lng": 140.28,
+    "completionYear": 2010,
+    "era": "contemporary",
+    "architects": [
+      "日建設計",
+      "山梨知彦"
+    ],
+    "buildingTypes": [
+      "美術館"
+    ],
+    "styles": [],
+    "materials": [
+      "鉄筋コンクリート・鉄骨",
+      "LED照明・設備孔"
+    ],
+    "oneLiner": "絵画に向き合う、回廊型の展示空間。",
+    "location": {
+      "status": "address-matched",
+      "precision": "facility"
+    },
+    "visit": {
+      "status": "public"
+    }
+  },
+  {
+    "id": "art-tower-mito",
+    "slug": "art-tower-mito",
+    "nameJa": "水戸芸術館",
+    "nameEn": "Art Tower Mito",
+    "prefecture": "茨城県",
+    "municipality": "水戸市",
+    "area": "五軒町",
+    "address": "茨城県水戸市五軒町1-6-8",
+    "lat": 36.38028,
+    "lng": 140.46583,
+    "completionYear": 1990,
+    "era": "contemporary",
+    "architects": [
+      "磯崎新"
+    ],
+    "buildingTypes": [
+      "文化施設",
+      "美術館",
+      "ホール",
+      "劇場"
+    ],
+    "styles": [],
+    "materials": [],
+    "oneLiner": "音楽・演劇・美術の三つの空間。",
+    "location": {
+      "status": "address-matched",
+      "precision": "facility"
+    },
+    "visit": {
+      "status": "public"
+    }
+  },
+  {
+    "id": "bato-hiroshige",
+    "slug": "bato-hiroshige-museum",
+    "nameJa": "那珂川町馬頭広重美術館",
+    "nameEn": "Nakagawa-machi Bato Hiroshige Museum of Art",
+    "prefecture": "栃木県",
+    "municipality": "那珂川町",
+    "area": "馬頭",
+    "address": "栃木県那須郡那珂川町馬頭116-9",
+    "lat": 36.739111,
+    "lng": 140.170944,
+    "completionYear": 2000,
+    "era": "contemporary",
+    "architects": [
+      "隈研吾"
+    ],
+    "buildingTypes": [
+      "美術館"
+    ],
+    "styles": [],
+    "materials": [
+      "杉",
+      "木目付きアルミ"
+    ],
+    "oneLiner": "重なるルーバーと、改修で変わった屋根材。",
+    "location": {
+      "status": "address-matched",
+      "precision": "facility"
+    },
+    "visit": {
+      "status": "public"
+    }
+  },
+  {
+    "id": "gunma-museum-modern-art",
+    "slug": "gunma-museum-modern-art",
+    "nameJa": "群馬県立近代美術館",
+    "nameEn": "The Museum of Modern Art, Gunma",
+    "prefecture": "群馬県",
+    "municipality": "高崎市",
+    "area": "群馬の森",
+    "address": "群馬県高崎市綿貫町992-1",
+    "lat": 36.298722,
+    "lng": 139.078639,
+    "completionYear": 1974,
+    "era": "postwar",
+    "architects": [
+      "磯崎新"
+    ],
+    "buildingTypes": [
+      "美術館",
+      "文化施設"
+    ],
+    "styles": [],
+    "materials": [
+      "アルミ・ガラス",
+      "大理石"
+    ],
+    "oneLiner": "立方体の骨組みと、繰り返す正方形。",
+    "location": {
+      "status": "address-matched",
+      "precision": "facility"
+    },
+    "visit": {
+      "status": "public"
+    }
+  },
+  {
+    "id": "tokyo-bunka-kaikan",
+    "slug": "tokyo-bunka-kaikan",
+    "nameJa": "東京文化会館",
+    "nameEn": "",
+    "prefecture": "東京都",
+    "municipality": "台東区",
+    "area": "上野",
+    "address": "東京都台東区上野公園5-45",
+    "lat": 35.714449,
+    "lng": 139.775327,
+    "completionYear": 1961,
+    "era": "postwar",
+    "architects": [
+      "前川國男",
+      "横山建築構造設計事務所（構造）"
+    ],
+    "buildingTypes": [
+      "ホール",
+      "文化施設"
+    ],
+    "styles": [
+      "モダニズム"
+    ],
+    "materials": [
+      "鉄骨鉄筋コンクリート",
+      "打放しコンクリート・塗装"
+    ],
+    "oneLiner": "反り上がる屋根と広いロビーを持つ音楽ホール。",
+    "location": {
+      "status": "address-matched",
+      "precision": "facility"
+    },
+    "visit": {
+      "status": "closed"
+    }
+  },
+  {
+    "id": "national-art-center-tokyo",
+    "slug": "national-art-center-tokyo",
+    "nameJa": "国立新美術館",
+    "nameEn": "",
+    "prefecture": "東京都",
+    "municipality": "港区",
+    "area": "六本木",
+    "address": "東京都港区六本木7-22-2",
+    "lat": 35.665312,
+    "lng": 139.726382,
+    "completionYear": 2006,
+    "era": "contemporary",
+    "architects": [
+      "黒川紀章",
+      "日本設計"
+    ],
+    "buildingTypes": [
+      "美術館",
+      "文化施設"
+    ],
+    "styles": [
+      "現代建築"
+    ],
+    "materials": [
+      "ガラス",
+      "鉄骨・鉄骨鉄筋コンクリート"
+    ],
+    "oneLiner": "波打つガラス外壁と吹き抜けのロビー。",
+    "location": {
+      "status": "address-matched",
+      "precision": "facility"
+    },
+    "visit": {
+      "status": "public"
+    }
+  }
+]

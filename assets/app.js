@@ -1,370 +1,116 @@
-const ERA_LABELS = {
-  traditional: "江戸以前",
-  "early-modern": "明治",
-  modern: "大正〜昭和前期",
-  postwar: "戦後",
-  contemporary: "現代"
-};
-
-const VISIT_LABELS = {
-  public: "見学しやすい",
-  limited: "条件あり",
-  reservation: "予約制",
-  "exterior-only": "外観のみ",
-  private: "非公開",
-  closed: "閉館",
-  demolished: "現存せず",
-  unknown: "要確認"
-};
-
-let allBuildings = [];
-let filteredBuildings = [];
-let activeBuildingId = null;
-let map;
-let markers = new Map();
-
-const els = {
-  list: document.getElementById("building-list"),
-  resultSummary: document.getElementById("result-summary"),
-  search: document.getElementById("search-input"),
-  prefecture: document.getElementById("prefecture-filter"),
-  era: document.getElementById("era-filter"),
-  visit: document.getElementById("visit-filter"),
-  sort: document.getElementById("sort-filter"),
-  reset: document.getElementById("reset-filters"),
-  showKanto: document.getElementById("show-kanto"),
-  showJapan: document.getElementById("show-japan"),
-  dialog: document.getElementById("building-dialog"),
-  dialogContent: document.getElementById("dialog-content"),
-  dialogClose: document.getElementById("dialog-close")
-};
-
-function escapeHtml(value = "") {
-  return String(value)
-    .replaceAll("&", "&amp;")
-    .replaceAll("<", "&lt;")
-    .replaceAll(">", "&gt;")
-    .replaceAll('"', "&quot;")
-    .replaceAll("'", "&#039;");
+import {KANTO,ERAS,VISITS,escapeHtml as e,hasCoordinates,filterBuildings,directionsUrl} from './core.mjs';
+import {nearbyScreenPoints} from './location.mjs';
+const $=id=>document.getElementById(id);
+let all=[],byId=new Map(),results=[],map=null,active=null,markers=new Map(),visibleLabels=false,pickerOrigin=null;
+const controls={query:$('search-input'),region:$('region-filter'),architect:$('architect-filter'),type:$('type-filter'),era:$('era-filter'),visit:$('visit-filter'),sort:$('sort-filter')};
+const reduceMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+function filters(){return Object.fromEntries(Object.entries(controls).map(([k,v])=>[k,v.value]));}
+function articleUrl(b){return `articles/${encodeURIComponent(b.slug)}.html`;}
+function icon(selected=false){return L.divIcon({className:`arch-pin${selected?' active':''}`,html:'<span></span>',iconSize:[24,24],iconAnchor:[12,12]});}
+function initMap(){
+  if(!window.L){$('map').innerHTML='<p class="map-fallback">地図を読み込めませんでした。建物一覧と各記事の「行き方」は利用できます。</p>';$('map-note').textContent='地図ライブラリを読み込めませんでした。';$('map-note').classList.add('error');return;}
+  map=L.map('map',{minZoom:3,maxZoom:19,scrollWheelZoom:true,zoomAnimation:!reduceMotion}).setView([35.78,139.52],10);
+  const tiles=L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:19,attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'}).addTo(map);
+  tiles.on('tileerror',()=>{$('map-note').textContent='背景地図を取得できません。位置情報と建物一覧は利用できます。';$('map-note').classList.add('error');});
+  map.on('zoomend',updateLabels);
+  map.on('click',()=>closePicker());
+  new ResizeObserver(()=>map.invalidateSize()).observe($('map'));
 }
-
-function initMap() {
-  map = L.map("map", {
-    zoomControl: true,
-    minZoom: 4,
-    maxZoom: 18,
-    scrollWheelZoom: true
-  }).setView([36.0, 139.4], 8);
-
-  L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-    maxZoom: 19,
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-  }).addTo(map);
+function updateLabels(){
+  if(!map)return;
+  visibleLabels=map.getZoom()>=14;
+  for(const [id,m]of markers){const b=byId.get(id);if(m.getTooltip())m.unbindTooltip();m.bindTooltip(e(b.nameJa),{permanent:visibleLabels,direction:'top',offset:[0,-9],className:'arch-label'});}
 }
-
-function makeMarkerIcon(building, isActive = false) {
-  const year = building.completionYear ? String(building.completionYear).slice(-2) : "建";
-  return L.divIcon({
-    className: `arch-marker${isActive ? " marker-active" : ""}`,
-    html: `<span>${escapeHtml(year)}</span>`,
-    iconSize: [34, 34],
-    iconAnchor: [17, 17]
-  });
+function select(id,{pan=false,scroll=false,commit=true}={}){
+  if(commit)active=id;
+  for(const [key,m]of markers){m.setIcon(icon(key===id));m.setZIndexOffset(key===id?1000:0);}
+  for(const card of $('building-list').querySelectorAll('[data-id]')){const isActive=card.dataset.id===id;card.classList.toggle('is-active',isActive);if(isActive&&scroll)card.scrollIntoView({block:'nearest',behavior:reduceMotion?'instant':'smooth'});}
+  const b=byId.get(id);
+  if(pan&&map&&hasCoordinates(b))map.setView([b.lat,b.lng],Math.max(map.getZoom(),17),{animate:!reduceMotion});
 }
-
-function renderMarkers(buildings) {
-  for (const marker of markers.values()) marker.remove();
-  markers.clear();
-
-  buildings.forEach((building) => {
-    if (!Number.isFinite(building.lat) || !Number.isFinite(building.lng)) return;
-
-    const marker = L.marker([building.lat, building.lng], {
-      icon: makeMarkerIcon(building, building.id === activeBuildingId),
-      title: building.nameJa
-    }).addTo(map);
-
-    marker.bindPopup(`
-      <div class="map-popup">
-        <strong>${escapeHtml(building.nameJa)}</strong>
-        <span>${escapeHtml(building.area)} · ${escapeHtml(building.completionYear || "年代不明")} · ${escapeHtml(building.architects?.join(" / ") || "設計者不明")}</span>
-      </div>
-    `);
-
-    marker.on("click", () => {
-      setActive(building.id, false);
-      scrollCardIntoView(building.id);
-    });
-
-    markers.set(building.id, marker);
-  });
+function showOne(b){
+  if(!b)return;closePicker();select(b.id,{pan:true,scroll:true});saveUrl();
+  const marker=markers.get(b.id);if(marker)marker.bindPopup(`<div class="map-popup"><strong>${e(b.nameJa)}</strong><span>${e(b.address)}</span><a href="${e(articleUrl(b))}">建物を読む →</a><a href="${e(directionsUrl(b))}" target="_blank" rel="noopener noreferrer">行き方</a></div>`).openPopup();
 }
-
-function renderPrefectures() {
-  const current = els.prefecture.value || "all";
-  const prefectures = [...new Set(allBuildings.map((building) => building.prefecture))].sort((a, b) => a.localeCompare(b, "ja"));
-
-  els.prefecture.innerHTML = '<option value="all">すべて</option>' + prefectures
-    .map((prefecture) => `<option value="${escapeHtml(prefecture)}">${escapeHtml(prefecture)}</option>`)
-    .join("");
-
-  if (["all", ...prefectures].includes(current)) els.prefecture.value = current;
+function closePicker({restoreFocus=false}={}){
+  $('overlap-picker').hidden=true;
+  if(restoreFocus&&pickerOrigin?.isConnected)pickerOrigin.focus({preventScroll:true});
+  pickerOrigin=null;
 }
-
-function cardTemplate(building) {
-  const era = ERA_LABELS[building.era] || building.era || "年代未分類";
-  const visit = VISIT_LABELS[building.visit?.status] || "要確認";
-  const activeClass = building.id === activeBuildingId ? " is-active" : "";
-
-  return `
-    <button class="building-card${activeClass}" type="button" data-building-id="${escapeHtml(building.id)}">
-      <div class="card-year">${escapeHtml(building.completionYear || "—")}</div>
-      <div>
-        <div class="card-meta">
-          <span>${escapeHtml(building.prefecture)} ${escapeHtml(building.area)}</span>
-          <span>${escapeHtml(era)}</span>
-          <span>${escapeHtml(visit)}</span>
-        </div>
-        <h3>${escapeHtml(building.nameJa)}</h3>
-        <p class="card-one-liner">${escapeHtml(building.oneLiner)}</p>
-        <p class="card-architect">${escapeHtml(building.architects?.join(" / ") || "設計者未登録")}</p>
-      </div>
-      <span class="card-arrow" aria-hidden="true">↗</span>
-    </button>
-  `;
+function markerClick(b){
+  select(b.id,{scroll:true});
+  const close=nearbyScreenPoints(results,b,x=>map.latLngToContainerPoint([x.lat,x.lng]));
+  if(close.length<2){showOne(b);return;}
+  closePicker();pickerOrigin=markers.get(b.id)?.getElement?.()||document.activeElement;
+  const picker=$('overlap-picker');picker.hidden=false;
+  picker.innerHTML=`<header><strong>この付近の建築 ${close.length}件</strong><button type="button" id="close-picker" aria-label="付近の建築を閉じる">閉じる</button></header>${close.map(x=>`<button type="button" class="candidate" data-pick="${e(x.id)}">${e(x.nameJa)}</button>`).join('')}<p class="muted">選ぶと、その建物の位置へ拡大します。</p>`;
+  $('close-picker').onclick=()=>closePicker({restoreFocus:true});
+  picker.querySelectorAll('[data-pick]').forEach(button=>button.onclick=()=>{const chosen=byId.get(button.dataset.pick);showOne(chosen);markers.get(chosen.id)?.getElement?.()?.focus({preventScroll:true});});
+  picker.querySelector('[data-pick]')?.focus({preventScroll:true});
 }
-
-function renderList(buildings) {
-  if (!buildings.length) {
-    els.list.innerHTML = '<div class="empty-state">条件に一致する建築がありません。フィルターを変更してください。</div>';
-    return;
+function renderMarkers(){
+  if(!map)return;
+  for(const m of markers.values())m.remove();markers.clear();
+  for(const b of results.filter(hasCoordinates)){
+    const marker=L.marker([b.lat,b.lng],{icon:icon(b.id===active),title:b.nameJa,alt:b.nameJa,keyboard:true}).addTo(map);
+    marker.on('click',()=>markerClick(b));markers.set(b.id,marker);
   }
-
-  els.list.innerHTML = buildings.map(cardTemplate).join("");
-
-  els.list.querySelectorAll("[data-building-id]").forEach((card) => {
-    card.addEventListener("mouseenter", () => setActive(card.dataset.buildingId, false));
-    card.addEventListener("focus", () => setActive(card.dataset.buildingId, false));
-    card.addEventListener("click", () => openBuilding(card.dataset.buildingId));
-  });
+  updateLabels();
 }
-
-function normalize(value) {
-  return String(value || "").toLocaleLowerCase("ja").normalize("NFKC");
+function renderList(){
+  $('building-list').innerHTML=results.length?results.map(b=>`<article class="building-card${b.id===active?' is-active':''}" data-id="${e(b.id)}"><div class="card-meta"><span>${e(b.prefecture)} · ${e(b.municipality)}</span><time>${e(b.completionYear??'年代未確認')}</time></div><h2><a href="${e(articleUrl(b))}">${e(b.nameJa)}</a></h2><p class="card-architect">${e((b.architects||[]).join(' / '))}</p><p class="card-deck">${e(b.oneLiner)}</p><div class="card-actions"><span class="type-label">${e(b.buildingTypes?.[0]||'建築')}</span>${b.visit?.status==='closed'?'<span class="closed-badge">休館中</span>':''}${hasCoordinates(b)?`<button class="map-link" type="button" data-map="${e(b.id)}" aria-label="${e(b.nameJa)}を地図で見る">地図で見る ↗</button>`:'<span class="muted">位置を確認中</span>'}</div></article>`).join(''):'<div class="empty-state"><p>条件に合う建築がありません。</p><button id="empty-reset" class="secondary-button" type="button">条件をクリア</button></div>';
+  $('empty-reset')?.addEventListener('click',reset);
+  $('building-list').querySelectorAll('[data-map]').forEach(button=>button.onclick=()=>{setView(window.innerWidth<=700?'map':'split');showOne(byId.get(button.dataset.map));});
+  $('building-list').querySelectorAll('[data-id]').forEach(card=>{card.onmouseenter=()=>select(card.dataset.id,{commit:false});card.onmouseleave=()=>select(active,{commit:false});card.onfocusin=()=>select(card.dataset.id,{commit:false});card.onfocusout=()=>select(active,{commit:false});});
 }
-
-function matchesSearch(building, query) {
-  if (!query) return true;
-  const haystack = [
-    building.nameJa,
-    building.nameEn,
-    building.prefecture,
-    building.municipality,
-    building.area,
-    building.address,
-    ...(building.architects || []),
-    ...(building.buildingTypes || []),
-    ...(building.styles || []),
-    building.oneLiner,
-    building.summary
-  ].map(normalize).join(" ");
-
-  return haystack.includes(query);
+function fitResults(){
+  const points=results.filter(hasCoordinates).map(b=>[b.lat,b.lng]);if(!map||!points.length)return;
+  if(points.length===1)map.setView(points[0],17,{animate:!reduceMotion});else map.fitBounds(points,{padding:[45,65],maxZoom:14,animate:!reduceMotion});
 }
-
-function applyFilters({ fitMap = false } = {}) {
-  const query = normalize(els.search.value.trim());
-  const prefecture = els.prefecture.value;
-  const era = els.era.value;
-  const visit = els.visit.value;
-  const sort = els.sort.value;
-
-  filteredBuildings = allBuildings.filter((building) => {
-    if (!matchesSearch(building, query)) return false;
-    if (prefecture !== "all" && building.prefecture !== prefecture) return false;
-    if (era !== "all" && building.era !== era) return false;
-    if (visit !== "all" && building.visit?.status !== visit) return false;
-    return true;
-  });
-
-  filteredBuildings.sort((a, b) => {
-    if (sort === "oldest") return (a.completionYear ?? 9999) - (b.completionYear ?? 9999);
-    if (sort === "newest") return (b.completionYear ?? 0) - (a.completionYear ?? 0);
-    return (b.visitPriority ?? 0) - (a.visitPriority ?? 0) || (b.importance ?? 0) - (a.importance ?? 0) || (a.completionYear ?? 9999) - (b.completionYear ?? 9999);
-  });
-
-  if (activeBuildingId && !filteredBuildings.some((building) => building.id === activeBuildingId)) {
-    activeBuildingId = filteredBuildings[0]?.id || null;
-  }
-
-  renderList(filteredBuildings);
-  renderMarkers(filteredBuildings);
-  els.resultSummary.textContent = `${filteredBuildings.length}件表示 / 現在は関東シードデータを整備中`;
-
-  if (fitMap && filteredBuildings.length) fitMapToBuildings(filteredBuildings);
+function saveUrl(){
+  const u=new URL(location.href);u.search='';
+  for(const[k,v]of Object.entries(filters()))if(v&&!(k==='region'&&v==='kanto')&&!(k==='sort'&&v==='name'))u.searchParams.set(k,v);
+  if(active)u.searchParams.set('building',active);
+  history.replaceState(null,'',u);
 }
-
-function fitMapToBuildings(buildings, fallbackZoom = 9) {
-  const points = buildings
-    .filter((building) => Number.isFinite(building.lat) && Number.isFinite(building.lng))
-    .map((building) => [building.lat, building.lng]);
-
-  if (!points.length) return;
-  if (points.length === 1) {
-    map.setView(points[0], fallbackZoom);
-    return;
-  }
-
-  map.fitBounds(L.latLngBounds(points), { padding: [50, 50], maxZoom: 11 });
+function apply({fit=true}={}){
+  results=filterBuildings(all,filters());if(!results.some(b=>b.id===active))active=null;
+  closePicker();renderList();renderMarkers();
+  const mapped=results.filter(hasCoordinates).length;
+  $('result-summary').textContent=`${results.length}件 / 全${all.length}件${mapped<results.length?` · 位置確認中 ${results.length-mapped}件`:''}`;
+  const f=filters();$('active-filters').textContent=[f.region==='kanto'?'関東':f.region==='all'?'全国':f.region,f.query,f.architect,f.type,ERAS[f.era],VISITS[f.visit]].filter(Boolean).join(' / ');
+  saveUrl();if(fit)fitResults();
 }
-
-function setActive(id, pan = true) {
-  if (activeBuildingId === id) return;
-  const previous = activeBuildingId;
-  activeBuildingId = id;
-
-  if (previous && markers.has(previous)) {
-    const building = allBuildings.find((item) => item.id === previous);
-    if (building) markers.get(previous).setIcon(makeMarkerIcon(building, false));
-  }
-
-  if (id && markers.has(id)) {
-    const building = allBuildings.find((item) => item.id === id);
-    if (building) {
-      markers.get(id).setIcon(makeMarkerIcon(building, true));
-      if (pan) map.panTo([building.lat, building.lng]);
-    }
-  }
-
-  document.querySelectorAll(".building-card").forEach((card) => {
-    card.classList.toggle("is-active", card.dataset.buildingId === id);
-  });
+function reset(){for(const[k,c]of Object.entries(controls))c.value=k==='region'?'all':k==='sort'?'name':'';active=null;apply();}
+function setView(view){
+  if(view==='split'&&window.innerWidth<=700)view='map';
+  document.querySelector('.explore-layout').dataset.view=view;
+  document.querySelectorAll('[data-view][type="button"]').forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.view===view)));
+  if(map)requestAnimationFrame(()=>map.invalidateSize());
 }
-
-function scrollCardIntoView(id) {
-  const card = document.querySelector(`[data-building-id="${CSS.escape(id)}"]`);
-  card?.scrollIntoView({ block: "nearest", behavior: "smooth" });
+function fillOptions(control,values){for(const value of values){const option=document.createElement('option');option.value=value;option.textContent=value;control.append(option);}}
+async function boot(){
+  const initial=new URLSearchParams(location.search);
+  try{
+    const response=await fetch('data/map-index.json');if(!response.ok)throw Error(`HTTP ${response.status}`);all=await response.json();if(!Array.isArray(all))throw Error('建築データの形式が不正です');byId=new Map(all.map(b=>[b.id,b]));
+    fillOptions(controls.region,[...new Set(all.map(b=>b.prefecture))].sort((a,b)=>(KANTO.indexOf(a)<0?99:KANTO.indexOf(a))-(KANTO.indexOf(b)<0?99:KANTO.indexOf(b))||a.localeCompare(b,'ja')));
+    for(const[key,field]of [['architect','architects'],['type','buildingTypes']])fillOptions(controls[key],[...new Set(all.flatMap(b=>b[field]||[]))].sort((a,b)=>a.localeCompare(b,'ja')));
+    for(const[k,c]of Object.entries(controls)){if(initial.has(k)){c.value=initial.get(k);if(k==='region'&&!c.value)c.value='kanto';}}
+    if(['era','visit','sort'].some(k=>initial.has(k))){$('extra-filters').hidden=false;$('more-filters').setAttribute('aria-expanded','true');}
+    $('overlap-picker').addEventListener('keydown',event=>{if(event.key==='Escape'){event.preventDefault();event.stopPropagation();closePicker({restoreFocus:true});}});
+    initMap();setView(!map?'list':window.innerWidth<=700?'map':'split');
+    let timer;Object.entries(controls).forEach(([k,c])=>c.addEventListener(k==='query'?'input':'change',()=>{clearTimeout(timer);if(k==='query')timer=setTimeout(()=>apply(),180);else apply();}));
+    $('filters').onsubmit=event=>{event.preventDefault();clearTimeout(timer);apply();};
+    $('reset-filters').onclick=()=>{clearTimeout(timer);reset();};
+    $('more-filters').onclick=()=>{const expanded=$('more-filters').getAttribute('aria-expanded')==='true';$('more-filters').setAttribute('aria-expanded',String(!expanded));$('extra-filters').hidden=expanded;};
+    $('fit-results').onclick=fitResults;
+    $('show-kanto').onclick=()=>{controls.region.value='kanto';apply();};
+    $('show-japan').onclick=()=>{controls.region.value='all';apply({fit:false});if(map)map.fitBounds([[24,123],[46,146]],{padding:[20,40],animate:!reduceMotion});};
+    document.querySelectorAll('[data-view][type="button"]').forEach(button=>button.onclick=()=>setView(button.dataset.view));
+    window.matchMedia('(max-width:700px)').addEventListener('change',()=>setView(document.querySelector('.explore-layout').dataset.view));
+    apply();
+    const linked=byId.get(initial.get('building'));
+    if(linked){if(!results.some(b=>b.id===linked.id)){for(const[k,c]of Object.entries(controls))c.value=k==='region'?linked.prefecture:k==='sort'?'name':'';apply();}showOne(linked);}
+  }catch(error){console.error(error);$('result-summary').textContent='データを読み込めませんでした';$('building-list').innerHTML='<div class="empty-state"><p>通信状況をご確認のうえ、再読み込みしてください。</p><a href="catalogue.html">建築一覧を開く</a></div>';}
 }
-
-function detailTemplate(building) {
-  const visit = building.visit || {};
-  const sources = (building.sources || []).map((source) => `
-    <li>
-      <a href="${escapeHtml(source.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(source.title)}</a>
-      — ${escapeHtml(source.publisher || "")}
-    </li>
-  `).join("");
-
-  return `
-    <article class="dialog-inner">
-      <p class="dialog-kicker">${escapeHtml(building.prefecture)} / ${escapeHtml(building.area)} / ${escapeHtml(building.completionYear || "年代不明")}</p>
-      <h2>${escapeHtml(building.nameJa)}</h2>
-      <p class="dialog-sub">${escapeHtml(building.nameEn || "")} ${building.architects?.length ? ` · ${escapeHtml(building.architects.join(" / "))}` : ""}</p>
-      <p class="dialog-lead">${escapeHtml(building.summary)}</p>
-
-      <section class="dialog-section">
-        <h3>なぜ見に行く？</h3>
-        <p>${escapeHtml(building.whyVisit)}</p>
-      </section>
-
-      <section class="dialog-section">
-        <h3>現地で見るポイント</h3>
-        <ol class="highlight-list">
-          ${(building.highlights || []).map((item) => `<li>${escapeHtml(item)}</li>`).join("")}
-        </ol>
-      </section>
-
-      <section class="dialog-section">
-        <h3>基本情報</h3>
-        <div class="detail-grid">
-          <div><small>竣工</small><strong>${escapeHtml(building.completionYear || "未登録")}</strong></div>
-          <div><small>設計</small><strong>${escapeHtml(building.architects?.join(" / ") || "未登録")}</strong></div>
-          <div><small>用途</small><strong>${escapeHtml(building.buildingTypes?.join(" / ") || "未登録")}</strong></div>
-          <div><small>様式・分類</small><strong>${escapeHtml(building.styles?.join(" / ") || ERA_LABELS[building.era] || "未登録")}</strong></div>
-          <div><small>所在地</small><strong>${escapeHtml(building.address || "未登録")}</strong></div>
-          <div><small>見学</small><strong>${escapeHtml(VISIT_LABELS[visit.status] || "要確認")}</strong></div>
-          <div><small>目安時間</small><strong>${escapeHtml(visit.estimatedVisitMinutes ? `${visit.estimatedVisitMinutes}分` : "未登録")}</strong></div>
-          <div><small>最終確認</small><strong>${escapeHtml(visit.lastChecked || building.verification?.lastVerified || "未確認")}</strong></div>
-        </div>
-        ${visit.officialUrl ? `<a class="official-link" href="${escapeHtml(visit.officialUrl)}" target="_blank" rel="noopener noreferrer">公式サイトで最新情報を確認 →</a>` : ""}
-      </section>
-
-      <section class="dialog-section">
-        <h3>出典</h3>
-        <ul class="source-list">${sources || "<li>出典を整備中</li>"}</ul>
-      </section>
-    </article>
-  `;
-}
-
-function openBuilding(id) {
-  const building = allBuildings.find((item) => item.id === id);
-  if (!building) return;
-
-  setActive(id, true);
-  els.dialogContent.innerHTML = detailTemplate(building);
-
-  if (typeof els.dialog.showModal === "function") {
-    els.dialog.showModal();
-  } else {
-    els.dialog.setAttribute("open", "");
-  }
-}
-
-function closeDialog() {
-  if (typeof els.dialog.close === "function") els.dialog.close();
-  else els.dialog.removeAttribute("open");
-}
-
-function wireEvents() {
-  [els.search, els.prefecture, els.era, els.visit, els.sort].forEach((element) => {
-    element.addEventListener(element === els.search ? "input" : "change", () => applyFilters({ fitMap: false }));
-  });
-
-  els.reset.addEventListener("click", () => {
-    els.search.value = "";
-    els.prefecture.value = "all";
-    els.era.value = "all";
-    els.visit.value = "all";
-    els.sort.value = "recommended";
-    activeBuildingId = null;
-    applyFilters({ fitMap: true });
-  });
-
-  els.showKanto.addEventListener("click", () => map.setView([36.0, 139.4], 8));
-  els.showJapan.addEventListener("click", () => map.setView([37.2, 137.2], 5));
-  els.dialogClose.addEventListener("click", closeDialog);
-  els.dialog.addEventListener("click", (event) => {
-    if (event.target === els.dialog) closeDialog();
-  });
-}
-
-async function loadBuildings() {
-  const response = await fetch("data/buildings.json");
-  if (!response.ok) throw new Error(`Failed to load building data: ${response.status}`);
-  const data = await response.json();
-  if (!Array.isArray(data)) throw new Error("Building data must be an array");
-  return data;
-}
-
-async function boot() {
-  initMap();
-  wireEvents();
-
-  try {
-    allBuildings = await loadBuildings();
-    renderPrefectures();
-    applyFilters({ fitMap: true });
-  } catch (error) {
-    console.error(error);
-    els.resultSummary.textContent = "データの読み込みに失敗しました";
-    els.list.innerHTML = `
-      <div class="empty-state">
-        建築データを読み込めませんでした。<br />
-        <small>ローカルではファイルを直接開かず、README記載の簡易HTTPサーバーを使用してください。</small>
-      </div>
-    `;
-  }
-}
-
 boot();

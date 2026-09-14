@@ -1,0 +1,14 @@
+{
+  "name": "architecture-japan-guide",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test tests/*.test.mjs && node scripts/build-articles.mjs --check",
+    "validate": "node scripts/validate-data.mjs",
+    "build:articles": "node scripts/build-articles.mjs",
+    "check:articles": "node scripts/build-articles.mjs --check"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
