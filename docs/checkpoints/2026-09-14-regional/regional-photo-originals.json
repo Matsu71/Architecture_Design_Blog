@@ -1,0 +1,20 @@
+{
+  "hitachi-station": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/b/bd/Hitachi_station_21-11-14-1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "sha256": "129101b80518a28c46781b8a61047d9342ef48ffbe2302acbc11bb7462ff6527",
+    "license": "CC BY-SA 4.0",
+    "src": "assets/photos/hitachi-station-exterior.webp",
+    "derivativeSha256": "2724267f06efe2ffa64202717645792250148ef7d694d929c9f94637dde8fc16",
+    "width": 800,
+    "height": 600
+  },
+  "tochigi-prefectural-art": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/7/73/Tochigi_Prefectural_Museum_of_Fine_Arts_2020_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "sha256": "27b56e82091aed30ed8425d61141a8abf4b2c9aaecb916a99320c49d06a717c6",
+    "license": "CC BY-SA 4.0",
+    "src": "assets/photos/tochigi-prefectural-art-exterior.webp",
+    "derivativeSha256": "da73d6da7616d1ba40da8e3b390e3bb70b0148b1a66463816c613385fcef3823",
+    "width": 800,
+    "height": 600
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "savedDate": "2026-09-14",
+  "timezone": "Asia/Tokyo",
+  "request": "gitに作業進捗を保存して",
+  "checkpointOnly": true,
+  "repository": "Matsu71/Architecture_Design_Blog",
+  "branch": "improve/regional-20260914",
+  "mainAtRead": "50d016299718b7a69c61fb0782e64c8dd5442b48",
+  "branchAtRead": "ba458911d4fb7082b3a41bc8a586627d43829e42",
+  "recoveredUnreferencedTree": "d941a438ccc802b6c97abefd0d2964176bd0cd18",
+  "production": {"buildings": 20, "prefectures": 7, "components": 38, "photos": 2, "buildingPrecision": 3, "facilityPrecision": 17, "entrancePrecision": 0},
+  "draft": {
+    "status": "unpublished-unvalidated",
+    "count": 10,
+    "ids": ["saitama-kaikan", "kadokawa-culture-museum", "chiba-prefectural-art", "chiba-sayado", "tsukuba-center", "hitachi-station", "tochigi-prefectural-art", "ashino-stone-museum", "tomioka-silk-mill", "ota-art-museum-library"],
+    "photoCandidateIds": ["hitachi-station", "tochigi-prefectural-art"],
+    "generatedCanonicalDataset": false,
+    "newArticlesGenerated": false,
+    "testsPassedForDraft": null,
+    "draftSourceSaved": false,
+    "draftSourcePath": null,
+    "draftSourceSaveLimitation": "Attempt to archive the interrupted Python draft was blocked by OpenAI's tool safety check. The blocked code was not retried through another route.",
+    "originalIntendedDraftPath": "data/revisions/regional-20260914.py",
+    "preservedScope": "Candidate inventory and restart notes in docs/WORK_PROGRESS.md; exact existing location and photo candidate blobs in this checkpoint."
+  },
+  "recoveredBlobs": {
+    "regional-locations-20260914.json": "6224a6928d20dc3719fcf0a15c16bfa4c1478b6e",
+    "regional-photos-20260914.json": "0277410572c106fcf0a3c05c521a06a8ec903247",
+    "regional-photo-originals.json": "8d04071c58feae72734e358e421dd57d57e2dcf5"
+  },
+  "blockers": [
+    "Complete primary-source audit of all ten additions; do not rely on draft basic-checked flags.",
+    "Confirm proposed locations and rejected coordinate candidates; no building-outline or entrance upgrade.",
+    "Resolve completionLabel rendering for renovation year.",
+    "Resolve expiry-aware noticeValidThrough behavior in static and dynamic articles and temporary-closure filters.",
+    "Review CC BY-SA 4.0 photo rights and add license, credit and hash verification support.",
+    "Update fixed two-photo assumptions without weakening validation.",
+    "Generate and test expanded data and articles before production merge."
+  ],
+  "evidenceArtifacts": [
+    {"runId": 34812662846, "artifactId": 10335555639, "kind": "regional-source-review", "result": "OSM failed; 25 Commons candidates saved"},
+    {"runId": 34813301483, "artifactId": 10335901131, "kind": "regional-detail-evidence", "result": "OSM failed; 4 source photographs saved"},
+    {"runId": 34813567945, "artifactId": 10335248275, "kind": "named-regional-coordinates", "result": "retrieved candidates"},
+    {"runId": 34814012828, "artifactId": 10335293818, "kind": "official-map-review", "result": "retrieved official map links"}
+  ],
+  "artifactExpiryDate": "2026-09-21",
+  "previousProductionTests": {"commit": "50d016299718b7a69c61fb0782e64c8dd5442b48", "node": 60, "browser": 178, "publicSmoke": 10, "publicArticles": 14, "appliesToDraft": false},
+  "newBuildOrDeployRequested": false,
+  "mainModifiedByCheckpoint": false
+}

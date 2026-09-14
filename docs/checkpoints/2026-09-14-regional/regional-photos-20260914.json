@@ -1,0 +1,36 @@
+{
+  "hitachi-station": {
+    "src": "assets/photos/hitachi-station-exterior.webp",
+    "width": 800,
+    "height": 600,
+    "alt": "海側の広場から見た日立駅のガラスの自由通路",
+    "caption": "日立駅の海側の外観。2021年11月14日撮影。現在の入口や公開範囲を保証する写真ではありません。",
+    "author": "Totti",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hitachi_station_21-11-14-1.jpg",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/b/bd/Hitachi_station_21-11-14-1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "originalSha1": "28d4a77d82412217a4d071ed052ce749f4b2c4aa",
+    "dateTaken": "2021-11-14",
+    "modifications": "縮小・WebP変換（トリミングなし）",
+    "checkedAt": "2026-09-14",
+    "sha256": "2724267f06efe2ffa64202717645792250148ef7d694d929c9f94637dde8fc16"
+  },
+  "tochigi-prefectural-art": {
+    "src": "assets/photos/tochigi-prefectural-art-exterior.webp",
+    "width": 800,
+    "height": 600,
+    "alt": "庭側から見た栃木県立美術館の外観",
+    "caption": "栃木県立美術館の外観。2020年8月23日撮影。現在の入口や公開範囲を保証する写真ではありません。",
+    "author": "Miyuki Meinaka",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tochigi_Prefectural_Museum_of_Fine_Arts_2020_2.jpg",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/7/73/Tochigi_Prefectural_Museum_of_Fine_Arts_2020_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "originalSha1": "c80474619533406335835bcb5bceaf32b505acd1",
+    "dateTaken": "2020-08-23",
+    "modifications": "縮小・WebP変換（トリミングなし）",
+    "checkedAt": "2026-09-14",
+    "sha256": "da73d6da7616d1ba40da8e3b390e3bb70b0148b1a66463816c613385fcef3823"
+  }
+}
