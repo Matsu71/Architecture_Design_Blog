@@ -7,17 +7,36 @@ import json
 import math
 import urllib.parse
 import urllib.request
+import time
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
 OUT=ROOT/'qa'/'location-audit'; OUT.mkdir(parents=True,exist_ok=True)
 TARGETS={'kyu-iwasaki-tei','teien-art-museum-main','yoyogi-national-gymnasium','nmwa-main-building'}
 buildings=[b for b in json.loads((ROOT/'data/buildings.json').read_text()) if b['id'] in TARGETS]
-query='[out:json][timeout:60];('+''.join(f'way(around:200,{b["lat"]},{b["lng"]})["building"];' for b in buildings)+');out geom;'
-endpoint='https://overpass.private.coffee/api/interpreter'
-request=urllib.request.Request(endpoint,data=urllib.parse.urlencode({'data':query}).encode(),headers={'User-Agent':'ArchitectureJapanGuide/0.1 (https://github.com/Matsu71/Architecture_Design_Blog; source-location-audit)','Content-Type':'application/x-www-form-urlencoded'})
-raw=urllib.request.urlopen(request,timeout=90).read()
-response=json.loads(raw)
-if response.get('remark'):raise RuntimeError(response['remark'])
+# Bounding boxes keep the spatial lookup small and predictable.
+query='[out:json][timeout:25];('+''.join(
+    f'way({b["lat"]-.002},{b["lng"]-.0025},{b["lat"]+.002},{b["lng"]+.0025})["building"];'
+    for b in buildings)+');out geom;'
+errors=[]
+for endpoint in ('https://overpass-api.de/api/interpreter',
+                 'https://overpass.private.coffee/api/interpreter'):
+    try:
+        request=urllib.request.Request(endpoint,data=urllib.parse.urlencode({'data':query}).encode(),headers={
+            'User-Agent':'ArchitectureJapanGuide/0.1 (https://github.com/Matsu71/Architecture_Design_Blog; source-location-audit)',
+            'Content-Type':'application/x-www-form-urlencoded'})
+        with urllib.request.urlopen(request,timeout=45) as reply:
+            raw=reply.read()
+        response=json.loads(raw)
+        if response.get('remark'):raise RuntimeError(response['remark'])
+        if not isinstance(response.get('elements'),list):raise ValueError('Missing OSM elements')
+        break
+    except Exception as error:
+        errors.append({'endpoint':endpoint,'error':str(error)})
+        print('SOURCE_RETRY '+json.dumps(errors[-1]))
+        time.sleep(3)
+else:
+    (OUT/'errors.json').write_text(json.dumps(errors,indent=2)+'\n')
+    raise RuntimeError('Both bounded source requests failed; production locations remain unchanged')
 (OUT/'overpass.json').write_bytes(raw)
 
 def inside(x,y,ring):
